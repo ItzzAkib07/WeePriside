@@ -1319,9 +1319,9 @@ h1:hover {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) {
-  body {
+/*   body {
     background: green;
-  }
+  } */
 
   .pricing p {
     width: 90%;
