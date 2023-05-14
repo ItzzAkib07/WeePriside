@@ -1,38 +1,1429 @@
-.App {
-  text-align: center;
+body {
+  background-color: rgb(47, 46, 46);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: orange;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: orangered;
+}
+
+.scroll {
+  width: 100%;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: orange;
+  cursor: pointer;
+  position: sticky;
+  bottom: 1rem;
+  left: 95%;
+}
+
+.scroll:hover {
+  color: black;
+  font-weight: bold;
+  background-color: orangered;
+}
+
+.scroll button {
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Slding bar */
+
+/* Sliding Nav Bar */
+
+.side-navbar {
+  top: 0;
+  left: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  position: fixed;
+  transition: 0.5s;
+  align-items: center;
+  overflow-x: hidden;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: black;
+  box-shadow: inset 0 0 6px #888888;
+}
+
+.close-hamburger {
+  height: 4rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+}
+
+.close-hamburger span {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.close-hamburger button {
+  height: 1.5rem;
+  width: 1.5rem;
+  font-size: 1.3rem;
+  margin: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+/* nav content */
+
+.side-navItems {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.subnavbtn {
+  gap: 1rem;
+  height: 3rem;
+  display: flex;
+  color: white;
+  padding: 0 2rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.subnavbtn a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.subnavbtn:hover {
+  color: orangered;
+  font-weight: bold;
+  background-color: orange;
+}
+
+.active {
+  color: white;
+  font-weight: bold;
+  background-color: #2196f3;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Header section  //////////////////////////////////////////////////////////////////////////////// */
+
+#header {
+  top: 0;
+  z-index: 1000;
+  position: sticky;
+}
+
+.header {
+  margin-bottom: 2rem;
+  height: 5rem;
+  color: whitesmoke;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+}
+
+.header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+}
+
+.header .logo img {
+  height: 4rem;
+  margin-left: 1rem;
+  -webkit-transform: scale(0.7);
+  transform: scale(0.7);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.header .logo img:hover {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.title a {
+  text-decoration: none;
+  color: white;
+}
+
+.header .logo span {
+  font-size: 1.5rem;
+}
+
+.header .logo span {
+  color: orangered;
+}
+
+.header .logo .half-title {
+  color: orange;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  margin-right: 2rem;
+}
+
+header li {
+  list-style: none;
+}
+
+header li a {
+  color: orange;
+  font-size: 1rem;
+  list-style: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+header li a:hover {
+  color: orangered;
+  border-bottom: 1px solid orange;
+  transition: ease 0.5s linear;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Home section  //////////////////////////////////////////////////////////////////////////////// */
+
+.home-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-sections {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Main section  //////////////////////////////////////////////////////////////////////////////// */
+
+.bikes {
+  padding: 2rem 0;
+  max-height: 20rem;
+  width: 100%;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.bike {
+  width: 50%;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bike img {
+  height: 100%;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.bike img:hover {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.bike-details {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bike-details ul {
+  display: flex;
+  max-height: 100%;
+  padding: 1rem;
+  flex-wrap: wrap;
+  color: orange;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.bike-details li {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.bike-details li span {
+  margin-left: 1rem;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Service section  //////////////////////////////////////////////////////////////////////////////// */
+
+.service .information p {
+  width: 90%;
+  height: 5.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  overflow: hidden;
+  color: whitesmoke;
+}
+
+.service .img {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.service button {
+  width: 50%;
+  display: flex;
+  color: orange;
+  border: none;
+  background-color: inherit;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.service button:hover {
+  color: orangered;
+}
+
+#close-btn {
+  margin-top: 1rem;
+}
+
+.service-container {
+  max-height: 100%;
+  /* max-width: 100%; */
+  padding: 0 1rem;
+}
+
+h1 {
+  color: orange;
+  font-size: 2.5rem;
+}
+
+h1:hover {
+  color: orangered;
+}
+
+.service-details {
+  height: 100%;
+  /* width: 100%; */
+  gap: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.service-details .service {
+  height: 20rem;
+  width: 32.2%;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-top: 1px solid orange;
+  border-bottom: 1px solid orange;
+}
+
+.service-details .service:hover {
+  border-top: 1px solid orangered;
+  border-bottom: 1px solid orangered;
+}
+
+.service h4 {
+  color: orange;
+}
+
+.service-details .service:hover h4 {
+  color: orangered;
+}
+
+.servicing {
+  height: 100%;
+  /* width: 100%; */
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.servicing .section-1 {
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.section-1 .sub-1 {
+  width: 50%;
+  height: 20rem;
+  background-color: red;
+}
+
+.section-1 .sub-2 {
+  width: 50%;
+  height: 20rem;
+  background-color: black;
+}
+
+.section-1 .sub-1 img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.section-1 .sub-1 img:hover {
+  width: 110%;
+  overflow: hidden;
+}
+
+.servicing .section-2 {
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.section-2 .sub-3 {
+  width: 50%;
+  height: 20rem;
+  background-color: black;
+}
+
+.section-2 .sub-4 {
+  width: 50%;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.section-2 .sub-4 img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  object-fit: cover;
+}
+
+.section-2 .sub-4 img:hover {
+  width: 110%;
+}
+
+.servicing .section-3 {
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.section-3 .sub-5 {
+  width: 50%;
+  height: 20rem;
+}
+
+.section-3 .sub-6 {
+  width: 50%;
+  height: 20rem;
+  overflow: hidden;
+  background-color: black;
+}
+
+.section-3 .sub-5 img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  object-fit: cover;
+}
+
+.section-3 .sub-5 img:hover {
+  width: 110%;
+}
+
+.servicing .section-4 {
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.section-4 .sub-7 {
+  width: 50%;
+  height: 20rem;
+  background-color: black;
+}
+
+.section-4 .sub-8 {
+  width: 50%;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.section-4 .sub-8 img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  object-fit: cover;
+}
+
+.section-4 .sub-8 img:hover {
+  width: 110%;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Pricing Section  //////////////////////////////////////////////////////////////////////////////// */
+
+.pricing-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 1rem 0;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.listing {
+  height: 100%;
+  width: 100%;
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pricing {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  flex: 1 1 20%;
+
+  --c: orangered; /* the border color */
+  --b: 3px; /* the border thickness*/
+  --g: 5px; /* the gap on hover */
+  padding: calc(var(--g) + var(--b));
+
+  --_g: #0000 25%, var(--c) 0;
+
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+
+  background-color: black;
+  padding: 2rem 0;
+
+  transition: 0.3s, background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.pricing:hover {
+  --_i: 100%;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transition: 0.3s, background-size 0.3s 0.3s;
+}
+
+.pricing h2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: orange;
+}
+
+.pricing h2 span {
+  font-size: 0.7rem;
+  color: orangered;
+}
+.pricing h2 .h2-span {
+  font-size: 0.7rem;
+  color: black;
+}
+
+.pricing span {
+  color: orange;
+  font-size: 1.2rem;
+}
+
+.pricing p {
+  text-align: center;
+  width: 100%;
+  color: orange;
+}
+
+.pricing a {
+  width: 50%;
+  padding: 0.5rem;
+
+  cursor: pointer;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: orange;
+}
+
+.pricing a button{
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.pricing a:hover {
+  background-color: orangered;
+}
+
+.pricing-information {
+  width: 25%;
+  height: 22rem;
+  display: flex;
+  color: orange;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  --c: orangered; /* the border color */
+  --b: 3px; /* the border thickness*/
+  --g: 5px; /* the gap on hover */
+  padding: calc(var(--g) + var(--b));
+
+  --_g: #0000 25%, var(--c) 0;
+
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+
+  background-color: rgb(28, 27, 27);
+
+  transition: 0.3s, background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.pricing-information:hover {
+  --_i: 100%;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transition: 0.3s, background-size 0.3s 0.3s;
+}
+
+.pricing-information h2 {
+  width: 90%;
+  color: orangered;
+  font-size: 2rem;
+}
+
+.pricing-information p {
+  width: 90%;
+}
+
+.pricing-information span {
+  width: 90%;
+  color: orange;
+}
+
+.pricing-information li {
+  color: orangered;
+}
+
+/* Service information */
+
+.service-information {
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.service-information p {
+  color: whitesmoke;
+}
+
+.service-information h3 {
+  color: orange;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Booking Section  //////////////////////////////////////////////////////////////////////////////// */
+
+.booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.booking-container .form {
+  /* width: 100%; */
+  --c: orange; /* the border color */
+  --b: 3px; /* the border thickness*/
+  --g: 5px; /* the gap on hover */
+  padding: calc(var(--g) + var(--b));
+
+  --_g: #0000 25%, var(--c) 0;
+
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+
+  background-color: black;
+
+  padding: 1.5rem 0;
+
+  transition: 0.3s, background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.booking-container .form:hover {
+  --_i: 100%;
+  transition: 0.3s, background-size 0.3s 0.3s;
+}
+
+.booking-container h3 {
+  border-bottom: 2px solid orange;
+}
+
+.booking-container h3:hover {
+  color: orange;
+  border-bottom: 2px solid orangered;
+}
+
+.booking-container a {
+  color: gray;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid orange;
+}
+
+.booking-container a:hover {
+  color: orange;
+  cursor: pointer;
+  border-bottom: 1px solid orangered;
+}
+
+.form .booking-btn {
+  width: 30%;
+  height: 2rem;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: 1px solid black;
+  background-color: orange;
+}
+
+.form .booking-btn:hover {
+  color: black;
+  font-weight: bold;
+  background-color: orangered;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Contact section  //////////////////////////////////////////////////////////////////////////////// */
+
+.form-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-container h3 {
+  border-bottom: 2px solid orange;
+}
+
+.form-container h3:hover {
+  color: orange;
+  cursor: pointer;
+  border-bottom: 2px solid orangered;
+}
+
+.form {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  height: 25rem;
+  width: 60%;
+  gap: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  color: whitesmoke;
+  align-items: center;
+  flex-direction: column;
+  --c: orange; /* the border color */
+  --b: 3px; /* the border thickness*/
+  --g: 5px; /* the gap on hover */
+  padding: calc(var(--g) + var(--b));
+
+  --_g: #0000 25%, var(--c) 0;
+
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+
+  background-color: black;
+
+  transition: 0.3s, background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.form:hover {
+  --_i: 100%;
+  transition: 0.3s, background-size 0.3s 0.3s;
+}
+
+.form .input {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.form input {
+  width: 100%;
+  color: whitesmoke;
+  height: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  border-bottom: 1px solid gray;
+}
+
+.form .btn {
+  width: 30%;
+  height: 2rem;
+  margin-top: 2rem;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: 1px solid black;
+  background-color: orange;
+}
+
+.form .btn:hover {
+  color: black;
+  font-weight: bold;
+  background-color: orangered;
+}
+
+.center-info {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Address section  //////////////////////////////////////////////////////////////////////////////// */
+
+.address {
+  width: 35%;
+  height: 20rem;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  text-align: center;
+  align-items: center;
+
+  --c: orange; /* the border color */
+  --b: 1px; /* the border thickness*/
+  --g: 5px; /* the gap on hover */
+  padding: calc(var(--g) + var(--b));
+
+  --_g: #0000 25%, var(--c) 0;
+
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+
+  background-color: black;
+
+  transition: 0.3s, background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.address:hover {
+  --_i: 100%;
+  transition: 0.3s, background-size 0.3s 0.3s;
+}
+
+.address .details a {
+  color: orange;
+  text-decoration: none;
+}
+
+.address:hover a {
+  color: orangered;
+}
+
+.address .details {
+  width: 90%;
+  margin-top: 4rem;
+}
+
+.address .address-btn {
+  height: 2rem;
+  width: 10rem;
+  color: black;
+  margin-top: 2rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: orange;
+}
+
+.address .address-btn:hover {
+  background-color: orangered;
+  color: black;
+}
+
+.address .address-btn a {
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.hours {
+  width: 35%;
+  height: 20rem;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  align-items: center;
+
+  --c: orange; /* the border color */
+  --b: 1px; /* the border thickness*/
+  --g: 5px; /* the gap on hover */
+  padding: calc(var(--g) + var(--b));
+
+  --_g: #0000 25%, var(--c) 0;
+
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+
+  background-color: black;
+
+  transition: 0.3s, background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.hours:hover {
+  --_i: 100%;
+  transition: 0.3s, background-size 0.3s 0.3s;
+}
+
+.hours .timing {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.hours p {
+  color: orange;
+}
+
+.hours:hover p {
+  color: orangered;
+}
+
+.support {
+  width: 35%;
+  height: 20rem;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  align-items: center;
+  --c: orange; /* the border color */
+  --b: 1px; /* the border thickness*/
+  --g: 5px; /* the gap on hover */
+  padding: calc(var(--g) + var(--b));
+
+  --_g: #0000 25%, var(--c) 0;
+
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+
+  background-color: black;
+
+  transition: 0.3s, background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.support:hover {
+  --_i: 100%;
+  transition: 0.3s, background-size 0.3s 0.3s;
+}
+
+.support p {
+  color: orange;
+}
+.support:hover p {
+  color: orangered;
+}
+
+.support .info {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Brands section  //////////////////////////////////////////////////////////////////////////////// */
+
+#slideshow h1 {
+  text-align: center;
+}
+
+.partners {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.brands-container {
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.brands {
+  height: 100%;
+  gap: 1.5rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.brands .brand {
+  color: orange;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  object-fit: cover;
+  justify-content: center;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.brands .brand:hover {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.brand img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: color-burn;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Footer section  //////////////////////////////////////////////////////////////////////////////// */
+
+.footer {
+  height: 100%;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  display: flex;
+  color: orange;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Media Queries section  //////////////////////////////////////////////////////////////////////////////// */
+
+
+/* @media only screen and (max-width:440px) {
+  body {
+    background: green;
   }
-  to {
-    transform: rotate(360deg);
+} */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  .header .logo {
+    gap: 0;
   }
+
+  .header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .header .logo img {
+    height: 3rem;
+  }
+
+  .header .logo span {
+    font-size: 100%;
+  }
+
+  .bike {
+    width: 100%;
+  }
+
+  .bike img {
+    width: 100%;
+  }
+
+  .service-details {
+    flex-direction: column;
+  }
+
+  .service-details .service {
+    width: 100%;
+  }
+
+  .listing {
+    flex-direction: column;
+  }
+
+  .pricing {
+    width: 100%;
+  }
+
+  .pricing p {
+    width: 90%;
+  }
+
+  .pricing-information {
+    width: 100%;
+  }
+
+  .servicing .section-1 {
+    flex-direction: column;
+  }
+
+  .section-1 .sub-1 {
+    width: 100%;
+  }
+
+  .section-1 .sub-1 img {
+    object-fit: fill;
+  }
+
+  .section-1 .sub-2 {
+    width: 100%;
+  }
+
+  .servicing .section-2 {
+    flex-direction: column;
+  }
+
+  .section-2 .sub-3 {
+    width: 100%;
+  }
+
+  .section-2 .sub-4 {
+    width: 100%;
+  }
+
+  .section-2 .sub-4 img {
+    object-fit: fill;
+  }
+
+  .servicing .section-3 {
+    flex-direction: column;
+  }
+
+  .section-3 .sub-5 {
+    width: 100%;
+  }
+
+  .section-3 .sub-5 img {
+    object-fit: fill;
+  }
+
+  .section-3 .sub-6 {
+    width: 100%;
+  }
+
+  .servicing .section-4 {
+    flex-direction: column;
+  }
+
+  .section-4 .sub-7 {
+    width: 100%;
+  }
+
+  .section-4 .sub-8 {
+    width: 100%;
+  }
+
+  .section-4 .sub-8 img {
+    object-fit: fill;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .center-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .address {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .hours {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .support {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .scroll {
+    left: 85%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+  body {
+    background: green;
+  }
+
+  .pricing p {
+    width: 90%;
+  }
+
+  .service-details{
+    gap: 2rem;
+  }
+
+  .service-details .service{
+    width: 45%;
+  }
+
+  .pricing-information {
+    width: 50%;
+  }
+
+  .section-1 .sub-1 img {
+    object-fit: fill;
+  }
+
+  .section-2 .sub-4 img {
+    object-fit: fill;
+  }
+
+
+  .section-3 .sub-5 img {
+    object-fit: fill;
+  }
+
+  .section-4 .sub-8 img {
+    object-fit: fill;
+  }
+
+  .form{
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .form-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.center-info {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  justify-content: center;
+}
+
+.address{
+  margin: 0;
+  width: 45%;
+}
+
+.hours{
+  margin: 0;
+  width: 45%;
+}
+
+.support{
+  margin: 0;
+  width: 50%;
+}
+
+.support .info {
+  margin-top: 1rem;
+}
+
+.scroll{
+  left: 90%;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 769px) {
+  body {
+    /* background: blue; */
+  }
+
+  .pricing p {
+    width: 90%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 993px) {
+  body {
+    /* background: orange; */
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1201px) {
+  /* body {background: pink;} */
 }

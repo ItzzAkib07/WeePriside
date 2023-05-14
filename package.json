@@ -3,12 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
+    "email-js": "^2.0.2",
+    "emailjs-com": "^3.2.0",
+    "jquery": "^3.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
+    "react-slideshow-image": "^4.2.1",
+    "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.16"
   }
 }
