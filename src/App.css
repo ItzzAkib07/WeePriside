@@ -1423,6 +1423,19 @@ h1:hover {
     .scroll{
   left: 95%;
 }
+    .section-1 .sub-1 img {
+  object-fit: cover;
+}
+    .section-2 .sub-4 img {
+  object-fit: cover;
+}
+      .section-3 .sub-5 img {
+  object-fit: cover;
+}
+    
+      .section-4 .sub-8 img {
+  object-fit: cover;
+}
   }
 }
 
