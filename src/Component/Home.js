@@ -190,7 +190,7 @@ const Home = () => {
 
                         <div className='menu-btn'>
 
-                            <button className='btn' id='open' onClick={slide}><i class="fa-solid fa-bars"></i></button>
+                            <button className='btn' id='open' onClick={slide} style={{cursor:'pointer'}}><i class="fa-solid fa-bars"></i></button>
 
                         </div>
 
