@@ -220,26 +220,26 @@ const Home = () => {
                             <div className='side-navItems' id='side-navItems'>
 
 
-                                <a className="subnavbtn" href='#home'>
+                                <a className="subnavbtn" href='#home' onClick={close}>
                                     <i class="fa-solid fa-home"></i>
                                     <span>Home</span>
                                 </a>
 
 
 
-                                <a className="subnavbtn" href='#services'>
+                                <a className="subnavbtn" href='#services' onClick={close}>
                                     <i class="fa-solid fa-gear"></i>
                                     <span>Our Services</span>
                                 </a>
 
 
 
-                                <a className="subnavbtn" href='#booking' >
+                                <a className="subnavbtn" href='#booking' onClick={close}>
                                     <i class="fa-solid fa-user-pen"></i>
                                     <span >Book service</span>
                                 </a>
 
-                                <a className="subnavbtn" href='#contact'>
+                                <a className="subnavbtn" href='#contact' onClick={close}>
                                     <i class="fa-solid fa-phone"></i>
                                     <span>Contact Us</span>
                                 </a>
