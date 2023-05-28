@@ -1221,6 +1221,7 @@ h1:hover {
 
   .section-1 .sub-1 img {
     object-fit: fill;
+    overflow:hidden;
   }
 
   .section-1 .sub-2 {
@@ -1241,6 +1242,7 @@ h1:hover {
 
   .section-2 .sub-4 img {
     object-fit: fill;
+    overflow:hidden;
   }
 
   .servicing .section-3 {
@@ -1253,6 +1255,7 @@ h1:hover {
 
   .section-3 .sub-5 img {
     object-fit: fill;
+    overflow:hidden;
   }
 
   .section-3 .sub-6 {
@@ -1273,6 +1276,7 @@ h1:hover {
 
   .section-4 .sub-8 img {
     object-fit: fill;
+    overflow:hidden;
   }
 
   .form {
