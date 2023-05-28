@@ -1420,10 +1420,16 @@ h1:hover {
 @media only screen and (min-width: 993px) {
   body {
     /* background: orange; */
+    .scroll{
+  left: 95%;
+}
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1201px) {
   /* body {background: pink;} */
+  .scroll{
+  left: 95%;
+}
 }
