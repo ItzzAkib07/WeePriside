@@ -1230,7 +1230,7 @@ h1:hover {
   }
 
   .servicing .section-2 {
-    flex-direction: column;
+        flex-direction: column-reverse;
   }
 
   .section-2 .sub-3 {
@@ -1266,7 +1266,7 @@ h1:hover {
   }
 
   .servicing .section-4 {
-    flex-direction: column;
+        flex-direction: column-reverse;
   }
 
   .section-4 .sub-7 {
