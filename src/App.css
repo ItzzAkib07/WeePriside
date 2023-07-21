@@ -1217,15 +1217,16 @@ h1:hover {
 
   .section-1 .sub-1 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-1 .sub-1 img {
     object-fit: fill;
-    overflow:hidden;
   }
 
   .section-1 .sub-2 {
     width: 100%;
+    overflow: hidden;
   }
 
   .servicing .section-2 {
@@ -1234,15 +1235,16 @@ h1:hover {
 
   .section-2 .sub-3 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-2 .sub-4 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-2 .sub-4 img {
     object-fit: fill;
-    overflow:hidden;
   }
 
   .servicing .section-3 {
@@ -1251,15 +1253,16 @@ h1:hover {
 
   .section-3 .sub-5 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-3 .sub-5 img {
     object-fit: fill;
-    overflow:hidden;
   }
 
   .section-3 .sub-6 {
     width: 100%;
+    overflow: hidden;
   }
 
   .servicing .section-4 {
@@ -1268,15 +1271,16 @@ h1:hover {
 
   .section-4 .sub-7 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-4 .sub-8 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-4 .sub-8 img {
     object-fit: fill;
-    overflow:hidden;
   }
 
   .form {
