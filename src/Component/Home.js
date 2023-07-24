@@ -2,11 +2,13 @@ import React, { useEffect, useRef } from 'react';
 
 // Header
 import 'animate.css';
-import logo from '../images/Logo.png'
-import { useNavigate, NavLink } from "react-router-dom";
+import logo from '../images/The Piston Lounge.png'
 
 // Home
-import bike from '../images/bike.png';
+import bike from '../images/The Piston Lounge.png';
+
+// quality 
+import quality from '../images/maintainance.svg'
 
 // services
 import brake from '../images/brake.png';
@@ -38,6 +40,16 @@ import RE from '../images/RE.png';
 import jawa from '../images/jawa.png';
 import tvs from '../images/tvs.png';
 
+// Jquery
+import $ from 'jquery';
+
+// AOS Animation 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+// react-tostify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -58,127 +70,49 @@ const Home = () => {
 
     }
 
-    // header
-    const navigate = useNavigate();
-
-    const home = () => {
-        var element = document.getElementById("li");
-        element.classList.add("active");
-        navigate('/Home');
-
-    }
-
-    const services = () => {
-        navigate('/Services');
-    }
-
-    const booking = () => {
-        navigate('#booking');
-    }
-
-    const contact = () => {
-        navigate('/Contact');
-    }
-
-
-
-
-    // home
-
-    // service
-    const expand_1 = () => {
-        document.getElementById('service1').style.height = "100%";
-
-        document.getElementById("p1").style.height = "100%";
-
-        document.getElementById('btn1').style.display = "none";
-    }
-    const expand_2 = () => {
-        document.getElementById('service2').style.height = "100%";
-
-        document.getElementById("p2").style.height = "100%";
-
-        document.getElementById('btn2').style.display = "none";
-    }
-    const expand_3 = () => {
-        document.getElementById('service3').style.height = "100%";
-
-        document.getElementById("p3").style.height = "100%";
-
-        document.getElementById('btn3').style.display = "none";
-    }
-    const expand_4 = () => {
-        document.getElementById('service4').style.height = "100%";
-
-        document.getElementById("p4").style.height = "100%";
-
-        document.getElementById('btn4').style.display = "none";
-    }
-    const expand_5 = () => {
-        document.getElementById('service5').style.height = "100%";
-
-        document.getElementById("p5").style.height = "100%";
-
-        document.getElementById('btn5').style.display = "none";
-    }
-
-
-    const close_1 = () => {
-        document.getElementById('service1').style.height = "20rem";
-
-        document.getElementById("p1").style.height = "5.5rem";
-
-        document.getElementById('btn1').style.display = "flex";
-    }
-    const close_2 = () => {
-        document.getElementById('service2').style.height = "20rem";
-
-        document.getElementById("p2").style.height = "5.5rem";
-
-        document.getElementById('btn2').style.display = "flex";
-    }
-    const close_3 = () => {
-        document.getElementById('service3').style.height = "20rem";
-
-        document.getElementById("p3").style.height = "5.5rem";
-
-        document.getElementById('btn3').style.display = "flex";
-    }
-    const close_4 = () => {
-        document.getElementById('service4').style.height = "20rem";
-
-        document.getElementById("p4").style.height = "5.5rem";
-
-        document.getElementById('btn4').style.display = "flex";
-    }
-    const close_5 = () => {
-        document.getElementById('service5').style.height = "20rem";
-
-        document.getElementById("p5").style.height = "5.5rem";
-
-        document.getElementById('btn5').style.display = "flex";
-    }
 
     // booking
     const form = useRef();
 
+    const [getName, setName] = React.useState('');
+    const [getPhone, setPhone] = React.useState('');
+    const [getQuery, setQuery] = React.useState('');
+
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
-            .then((result) => {
-                alert("Thank you for Booking a service. Give us some time will get back to you soon.")
-                window.location.reload(false);
-                console.log(result.text);
-            }, (error) => {
-                alert("Not able to book service. Please check your internet connection or try again after some time.");
-                console.log(error.text);
-            });
+        if (getName !== "" && getPhone !== "" && getQuery !== "") {
+
+            emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
+                .then((result) => {
+                    toast("Thank you for choosing The Piston Lounge.\n Give us some time will get back to you soon.")
+                    window.location.reload(false);
+                }, (error) => {
+                    toast.error("Not able to book service. Please check your connection or try again later.");
+                    console.log(error.text);
+                });
+        } else {
+            toast.error("Please fill all the fields");
+        }
     };
 
+    // smooth scrolling effet
+    $('a[href*="#"]').on('click', function (e) {
 
+        e.preventDefault();
 
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top,
+        },
+            500,
+            'linear'
+        );
+    });
 
+    //   init Aos animation
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <>
 
@@ -190,7 +124,7 @@ const Home = () => {
 
                         <div className='menu-btn'>
 
-                            <button className='btn' id='open' onClick={slide}><i class="fa-solid fa-bars"></i></button>
+                            <button className='btn' id='open' onClick={slide} style={{ cursor: 'pointer', backgroundColor: 'inherit', outline: 'none', border: 'none', color: 'white', fontSize: '2rem' }}><i class="fa-solid fa-bars"></i></button>
 
                         </div>
 
@@ -199,17 +133,14 @@ const Home = () => {
                             <a href='/Home'> <img src={logo} /></a>
 
                             <div className='title animate__animated animate__shakeX'>
-                                <a href='/Home'><span >Hindustan <span className='half-title'>Automobiles</span> </span></a>
+                                <a href='/Home'><span >THE <span className='half-title'>PISTON LOUNGE</span> </span></a>
                             </div>
                         </div>
-
-
-
 
                         <div className='side-navbar' id='side-navbar'>
 
                             <div className='close-hamburger'>
-                                <span >Hindustan Automobiles</span>
+                                <span style={{ marginLeft: '1rem' }}>THE PISTON LOUNGE</span>
 
                                 <button id='close' onClick={close}><i class="fa-solid fa-xmark"></i></button>
 
@@ -220,26 +151,26 @@ const Home = () => {
                             <div className='side-navItems' id='side-navItems'>
 
 
-                                <a className="subnavbtn" href='#home'>
+                                <a className="subnavbtn" href='#home' onClick={close}>
                                     <i class="fa-solid fa-home"></i>
                                     <span>Home</span>
                                 </a>
 
 
 
-                                <a className="subnavbtn" href='#services'>
+                                <a className="subnavbtn" href='#services' onClick={close}>
                                     <i class="fa-solid fa-gear"></i>
                                     <span>Our Services</span>
                                 </a>
 
 
 
-                                <a className="subnavbtn" href='#booking' >
+                                <a className="subnavbtn" href='#book' onClick={close}>
                                     <i class="fa-solid fa-user-pen"></i>
                                     <span >Book service</span>
                                 </a>
 
-                                <a className="subnavbtn" href='#contact'>
+                                <a className="subnavbtn" href='#contact' onClick={close}>
                                     <i class="fa-solid fa-phone"></i>
                                     <span>Contact Us</span>
                                 </a>
@@ -255,29 +186,51 @@ const Home = () => {
 
                 <div className='home-sections'>
 
-                    <section id='home'>
+                    <section id='home' className='hero' data-aos="zoom-in">
 
-                        <div className='bikes'>
+                        <div className='downArrow'>
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                            <span >SCROLL DOWN</span>
+                        </div>
 
 
-                            <div className='bike'>
+                    </section>
 
-                                <img src={bike} alt="bike" />
+                    <section className='quality'>
 
-                            </div>
+                        <div className='sec-1' data-aos="fade-up">
 
+                            <span>Quality Assured</span>
+
+                            <span>
+                                The best two wheeler services delivery with assured quality.
+                            </span>
+
+                            <ul class="circle-list">
+                                <li>Skilled Mechanics</li>
+                                <li>7 Day Service Warranty</li>
+                                <li>Genuine Spares</li>
+                                <li>Contactless Service</li>
+                            </ul>
+
+                        </div>
+
+                        <div className='sec-2' data-aos="fade-up">
+                            <img src={quality}></img>
                         </div>
 
                     </section>
 
                     <section id='services'>
+
+
                         <div className='service-container'>
 
-                            <h1>Our Services</h1>
+                            <h1 style={{ textAlign: 'center' }} data-aos="fade-down">Our Services</h1>
 
                             <div className='service-details' id='service-details'>
 
-                                <div className='service' id='service1'>
+                                <div className='service' id='service1' data-aos="fade-right">
 
                                     <div className='img'>
                                         <img src={brake} />
@@ -289,32 +242,13 @@ const Home = () => {
 
                                         <p id='p1'>
 
-                                            Bike brake service is necessary to ensure that your bike's brakes are working properly and effectively. There are several reasons why you should perform regular brake service on your bike.
-
-                                            <br />
-                                            <br />
-                                            <strong>Safety: </strong>Properly functioning brakes are essential for your safety while riding your bike. If your brakes are not working correctly, you could be putting yourself and others in danger.
-
-                                            <br />
-                                            <br />
-                                            <strong>Longevity: </strong>Regular brake service can help prolong the lifespan of your bike's brake components, preventing premature wear and tear and reducing the need for costly repairs or replacements.
-
-                                            <br />
-                                            <br />
-                                            <strong>Performance: </strong>Well-maintained brakes provide better stopping power and control, which is especially important when riding in challenging terrain or weather conditions.;
-
-                                            <br />
-                                            <br />
-                                            <strong>Comfort:</strong> Smooth and consistent brake performance can make your rides more comfortable and enjoyable, allowing you to focus on the ride itself rather than worrying about your bike's braking system.
-
-                                            <button className='service-btn' id='close-btn' onClick={close_1}>Show less</button>
+                                            Regular bike brake service is crucial for safety, longevity, performance, and comfort. Properly maintained brakes ensure your safety while riding, prolong the lifespan of components, enhance stopping power, and provide a more enjoyable riding experience.
                                         </p>
 
                                     </div>
-                                    <button className='service-btn' id='btn1' onClick={expand_1}>Get more information...</button>
                                 </div>
 
-                                <div className='service' id='service2'>
+                                <div className='service' id='service2' data-aos="fade-left">
                                     <div className='img'>
                                         <img src={engine} />
                                     </div>
@@ -323,37 +257,13 @@ const Home = () => {
 
                                     <div className='information'>
                                         <p id='p2'>
-                                            Regular bike engine service is essential to keep your motorcycle running smoothly and efficiently. Here are some reasons why you need to do bike engine service.
-
-                                            <br></br>
-                                            <br></br>
-
-                                            <strong>Performance: </strong> Regular engine servicing helps to maintain the bike's performance by ensuring that all the components are functioning correctly. This will also help to prevent engine problems and poor performance, ensuring a smooth and efficient ride.
-
-                                            <br />
-                                            <br />
-                                            <strong> Safety:</strong> Regular bike engine servicing ensures that your bike's engine is in good working order, reducing the risk of engine failure and other mechanical issues that could cause accidents on the road.
-
-                                            <br />
-                                            <br />
-                                            <strong>Longevity:</strong> Regular engine servicing can help prolong the lifespan of your motorcycle's engine by identifying and addressing any issues before they become serious problems.
-
-                                            <br />
-                                            <br />
-                                            <strong> Fuel efficiency:</strong> A well-maintained engine can increase your bike's fuel efficiency, reducing the amount of fuel you need to use and saving you money in the long run.
-
-                                            <br />
-                                            <br />
-                                            <strong>Resale value:</strong> A well-maintained bike engine will also help to maintain the resale value of your motorcycle, making it easier to sell when the time comes.
-
-                                            <button className='service-btn' id='close-btn' onClick={close_2}>Show less</button>
+                                            Regular bike engine service is essential for performance, safety, longevity, fuel efficiency, and resale value. Maintaining your engine ensures proper functionality, prevents issues, reduces the risk of accidents, prolongs its lifespan, saves fuel costs, and enhances resale prospects.
                                         </p>
                                     </div>
 
-                                    <button className='service-btn' id='btn2' onClick={expand_2}>Get more information...</button>
                                 </div>
 
-                                <div className='service' id='service3'>
+                                <div className='service' id='service3' data-aos="fade-right">
                                     <div className='img'>
                                         <img src={wheel} />
                                     </div>
@@ -363,37 +273,14 @@ const Home = () => {
                                     <div className='information'>
 
                                         <p id='p3'>
+                                            Regular bike wheel service ensures safety, performance, and longevity. It provides smoother rides, prevents accidents, and extends the lifespan of your bike components.it enhances comfort and aesthetics for an overall biking experience.
 
-                                            Regular bike wheel service is important to ensure that your bike is safe and performs optimally. Here are some reasons why you should consider bike wheel service:;
-
-                                            <br />
-                                            <br />
-                                            <strong>Safety: </strong>Wheels that are not properly maintained can lead to serious accidents. Regular wheel service can help identify issues such as worn or damaged bearings, loose spokes, and bent rims, which can compromise the safety of your bike.
-
-                                            <br />
-                                            <br />
-                                            <strong>Performance:</strong> Well-maintained wheels can enhance your bike's performance by providing a smoother ride and better handling. This is particularly important for off-road riding, where the condition of your wheels can make a significant difference in your ride experience.;
-
-                                            <br />
-                                            <br />
-                                            <strong>Longevity: </strong>Regular wheel service can help prolong the lifespan of your wheels and other bike components by preventing premature wear and tear. This can save you money on costly repairs or replacements down the road.
-
-                                            <br />
-                                            <br />
-                                            <strong>Comfort:</strong> Well-maintained wheels can provide a more comfortable ride by reducing vibrations and other discomforts associated with worn or damaged wheels.
-
-                                            <br />
-                                            <br />
-                                            <strong>Aesthetics:</strong> Regular wheel service can help improve the appearance of your bike, making it look more polished and well-maintained.
-
-                                            <button className='service-btn' id='close-btn' onClick={close_3}>Show less</button>
                                         </p>
 
                                     </div>
-                                    <button className='service-btn' id='btn3' onClick={expand_3}>Get more information...</button>
                                 </div>
 
-                                <div className='service' id='service4'>
+                                <div className='service' id='service4' data-aos="fade-left">
                                     <div className='img'>
                                         <img src={oil} />
                                     </div>
@@ -403,36 +290,13 @@ const Home = () => {
                                     <div className='information'>
 
                                         <p id='p4'>
-                                            Regular bike oil service is important to maintain your motorcycle's engine and keep it running smoothly. Here are some reasons why you should consider bike oil service:;
-
-                                            <br />
-                                            <br />
-                                            <strong>Lubrication:</strong> The primary function of engine oil is to lubricate the engine's moving parts, reducing friction and wear. Regular oil changes ensure that the oil is fresh and effective at lubricating the engine components.
-
-                                            <br />
-                                            <br />
-                                            <strong>Cooling:</strong> Engine oil also helps to cool the engine by carrying away heat generated by the moving parts. Old or dirty oil can lose its cooling properties, leading to increased engine temperatures and potentially damaging the engine.
-
-                                            <br />
-                                            <br />
-                                            <strong>Contamination:</strong> Over time, engine oil can become contaminated with dirt, metal shavings, and other debris. Regular oil changes help to remove these contaminants, preventing them from building up in the engine and causing damage.
-
-                                            <br />
-                                            <br />
-                                            <strong>Performance:</strong> Fresh engine oil can help improve your bike performance by reducing engine drag and increasing horsepower. It can also improve fuel efficiency, which can save you money on gas over time.
-
-                                            <br />
-                                            <br />
-                                            <strong>Longevity:</strong> Regular oil changes can help extend the life of your motorcycle's engine by reducing wear and tear on the components and preventing damage from overheating or contamination.
-
-                                            <button className='service-btn' id='close-btn' onClick={close_4}>Show less</button>
+                                            Regular bike oil service ensures proper lubrication, cooling, and performance, extending engine life and preventing damage from contamination. Fresh oil reduces friction, increases horsepower, and improves fuel efficiency for a smooth ride.
                                         </p>
                                     </div>
 
-                                    <button className='service-btn' id='btn4' onClick={expand_4}>Get more information...</button>
                                 </div>
 
-                                <div className='service' id='service5'>
+                                <div className='service' id='service5' data-aos="fade-right">
                                     <div className='img'>
                                         <img src={battery} />
                                     </div>
@@ -442,42 +306,32 @@ const Home = () => {
                                     <div className='information'>
 
                                         <p id='p5'>
-                                            Regular bike battery service is important to ensure that your motorcycle's electrical system is functioning properly. Here are some reasons why you should consider bike battery service:;
-
-                                            <br />
-                                            <br />
-                                            <strong>Starting:</strong> A well-maintained battery is essential for starting your bike. Regular battery service can help ensure that your battery has sufficient charge and is capable of starting your bike reliably.
-
-                                            <br />
-                                            <br />
-                                            <strong>Performance:</strong> Your bike's battery powers the electrical components of your motorcycle, such as the lights, horn, and gauges. Regular battery service can help ensure that these components are functioning properly and efficiently.
-
-                                            <br />
-                                            <br />
-                                            <strong>Longevity:</strong> Regular battery service can help extend the life of your battery by preventing overcharging or undercharging, which can damage the battery over time.
-
-                                            <br />
-                                            <br />
-                                            <strong>Safety:</strong> A weak or failing battery can cause electrical problems or engine stalling, which can be dangerous while riding. Regular battery service can help prevent these issues and ensure your safety on the road.
-
-                                            <br />
-                                            <br />
-                                            <strong>Cost savings:</strong> A well-maintained battery can save you money in the long run by avoiding costly repairs or replacements.
-
-                                            <button className='service-btn' id='close-btn' onClick={close_5}>Show less</button>
+                                            Regular bike battery service ensures reliable starting, proper electrical component functioning, and enhanced battery lifespan. It also promotes safety by preventing electrical issues and potential engine stalling while providing long-term cost savings.
                                         </p>
                                     </div>
 
-                                    <button className='service-btn' id='btn5' onClick={expand_5}>Get more information...</button>
                                 </div>
 
                             </div>
 
-                            <div className='pricing-container'>
+                            <div className='pricing-container' data-aos="fade-up">
 
-                                <h1>Pricing</h1>
+                                <h1 id='pricing' data-aos="fade-down">Pricing</h1>
 
                                 <div className='listing'>
+
+                                    <div className='pricing' >
+                                        <h2>General Service <span>Without Oil</span></h2>
+
+                                        <span>399rs</span>
+
+                                        <span>This Service Includes </span>
+
+                                        <p>nw qkjvbehj vbqhie vkbjqiehvb qhjfbvqhw fbv    weiu hfbwq riuvkj qrvb</p>
+
+
+                                        <a href='#booking'><button>Book Service</button></a>
+                                    </div>
 
                                     <div className='pricing'>
                                         <h2>General Service <span>With Oil</span></h2>
@@ -493,22 +347,9 @@ const Home = () => {
                                     </div>
 
                                     <div className='pricing'>
-                                        <h2>General Service <span>Without Oil</span></h2>
-
-                                        <span>399rs</span>
-
-                                        <span>This Service Includes </span>
-
-                                        <p>nw qkjvbehj vbqhie vkbjqiehvb qhjfbvqhw fbv    weiu hfbwq riuvkj qrvb</p>
-
-
-                                        <a href='#booking'><button>Book Service</button></a>
-                                    </div>
-
-                                    <div className='pricing'>
                                         <h2>Special Service <span className='h2-span'>With Oil</span></h2>
 
-                                        <span>499rs</span>
+                                        <span>599rs</span>
 
                                         <span>This Service Includes </span>
 
@@ -536,99 +377,126 @@ const Home = () => {
 
                             </div>
 
-                            <div className='servicing'>
+                        </div>
 
-                                <div className='section-1'>
+                    </section>
 
-                                    <div className='sub-1'>
-                                        <img src={service1} />
-                                    </div>
+                    <section className='servicing-images'>
 
-                                    <div className='sub-2'>
 
-                                    </div>
+                        <div className='servicing'>
+
+                            <div className='section-1' >
+
+                                <div className='sub-1' data-aos="fade-right">
+                                    <img src={service1} />
                                 </div>
 
-                                <div className='section-2'>
+                                <div className='sub-2' data-aos="fade-left">
+                                    <p>
+                                        <h1>PERIODIC SERVICE</h1>
 
-                                    <div className='sub-3'>
-                                    </div>
+                                        At our garage, we provide reliable periodic service to keep your bike in peak condition. Our skilled technicians perform thorough inspections, adjustments, and lubrication to ensure smooth and safe rides, giving you peace of mind on the road. Trust us to maintain your bike's performance and keep it running at its best.
+                                    </p>
+                                </div>
+                            </div>
 
-                                    <div className='sub-4'>
-                                        <img src={service2} />
-                                    </div>
+                            <div className='section-2'>
+
+                                <div className='sub-3' data-aos="fade-right">
+                                    <p>
+                                        <h1>COMPLETE BIKE SERVICE</h1>
+
+                                        Our full bike service covers all your motorcycle's needs, from inspections to tune-ups and fluid replacements. Ride with confidence knowing your bike is in excellent condition with our top-notch care and expertise. Experience the convenience and reliability of our comprehensive service for a smooth and efficient ride.
+                                    </p>
                                 </div>
 
-                                <div className='section-3'>
+                                <div className='sub-4' data-aos="fade-left">
+                                    <img src={service2} />
+                                </div>
+                            </div>
 
-                                    <div className='sub-5'>
-                                        <img src={wasing} />
-                                    </div>
+                            <div className='section-3'>
 
-                                    <div className='sub-6'>
-                                    </div>
+                                <div className='sub-5' data-aos="fade-right">
+                                    <img src={wasing} />
                                 </div>
 
-                                <div className='section-4'>
+                                <div className='sub-6' data-aos="fade-left">
 
-                                    <div className='sub-7'>
-                                    </div>
+                                    <p>
+                                        <h1>WASHING & POLISHING</h1>
 
-                                    <div className='sub-8'>
-                                        <img src={painting} />
-                                    </div>
+                                        At our garage, we provide meticulous bike washing and polishing services to bring back the shine and luster to your motorcycle. Our skilled team ensures thorough cleaning, removing dirt and grime, and follows it up with expert polishing to leave your bike looking brand new and well-maintained. Trust us to give your two-wheeler the care and attention it deserves, leaving you with a gleaming and refreshed ride after each visit.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className='section-4'>
+
+                                <div className='sub-7' data-aos="fade-right">
+
+                                    <p>
+                                        <h1>PAINTING</h1>
+
+                                        In our garage, we offer comprehensive services, including bike painting. Trust us to revitalize your bike's appearance with skilled and professional painting techniques, adding a fresh and vibrant look to your beloved ride. Let our team of experts handle your bike painting needs, ensuring excellent results and customer satisfaction.
+                                    </p>
                                 </div>
 
+                                <div className='sub-8' data-aos="fade-left">
+                                    <img src={painting} />
+                                </div>
                             </div>
 
                         </div>
 
                     </section>
 
+
                     <section id='booking'>
-                        <div className='booking-container'>
-                            <h1>Book your Services</h1>
 
-                            <form className='form' ref={form} onSubmit={sendEmail}>
+                        <div className='booking-container' data-aos="flip-up">
 
-                                <h3>Book Service</h3>
+                            <h1 id='book' data-aos="fade-down">Book your Services</h1>
+
+                            <form className='form' ref={form} onSubmit={sendEmail} >
 
                                 <div className='input'>
                                     <i className="fa-solid fa-user"></i>
-                                    <input type='text' id='name' name='name' placeholder='Enter your name' autoFocus autoComplete='off' required />
+                                    <input type='text' id='name' name='name' placeholder='Enter your name' autoFocus autoComplete='off' onChange={(e) => setName(e.target.value)} />
                                 </div>
 
                                 <div className='input'>
                                     <i className="fa-solid fa-phone"></i>
-                                    <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' required />
+                                    <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' onChange={(e) => setPhone(e.target.value)} />
                                 </div>
 
                                 <div className='input'>
                                     <i className="fa-solid fa-note-sticky"></i>
-                                    <input type='text' id='details' name='details' placeholder='Tell us which service you want' autoComplete='off' required />
+                                    <input type='text' id='details' name='details' placeholder='Tell us how we can help you?' autoComplete='off' onChange={(e) => setQuery(e.target.value)} />
                                 </div>
 
-                                <a className='serivce-link' href='#services'>Check our services here</a>
+                                <a className='serivce-link' href='#pricing'>Check our services here</a>
 
                                 <button className='booking-btn' id='btn' type='submit'>Book service</button>
 
                             </form>
                         </div>
+                        <ToastContainer />
 
                     </section>
 
                     <section id='contact'>
 
+                        <div className='form-container' data-aos="fade-up">
 
-                        <div className='form-container'>
-
-                            <h1>Contact Us</h1>
+                            <h1 id='contact' data-aos="fade-down">Contact Us</h1>
 
                             <div className='center-info'>
 
                                 <div className='address'>
 
-                                    <h3>Address</h3>
+                                    <h2>Address</h2>
 
 
                                     <div className='details '>
@@ -643,7 +511,7 @@ const Home = () => {
 
                                 <div className='hours'>
 
-                                    <h3>Open Hours</h3>
+                                    <h2>Open Hours</h2>
 
 
                                     <div className='timing'>
@@ -668,7 +536,7 @@ const Home = () => {
 
                                 <div className='support'>
 
-                                    <h3>Customer support</h3>
+                                    <h2>Customer support</h2>
 
                                     <div className='info'>
 
@@ -676,14 +544,12 @@ const Home = () => {
                                             <p><i class="fa-solid fa-envelope"></i></p>
                                             <p><i class="fa-solid fa-envelope"></i></p>
                                             <p><i class="fa-solid fa-phone"></i></p>
-                                            {/* <p><i class="fa-solid fa-phone"></i></p> */}
                                         </div>
 
                                         <div className='time'>
                                             <p>: &nbsp;&nbsp;hindustanautomobiles1934@gmail.com</p>
-                                            <p>: &nbsp;&nbsp; Tausifshaikh2505@gmail.com</p>
-                                            <p>: &nbsp;&nbsp; 8657445050</p>
-                                            {/* <p>: &nbsp;&nbsp; </p> */}
+                                            <p>: &nbsp;&nbsp;tausifshaikh2505@gmail.com</p>
+                                            <p>: &nbsp;&nbsp;8657445050</p>
                                         </div>
 
                                     </div>
@@ -698,7 +564,7 @@ const Home = () => {
 
                     </section>
 
-                    <section id='slideshow'>
+                    <section id='slideshow' data-aos="zoom-in">
 
                         <h1>Brands we have serviced</h1>
 
@@ -771,7 +637,7 @@ const Home = () => {
 
                         <footer>
                             <span>
-                                @ Hindustan Automobiles
+                                &copy; Hindustan Automobiles 2023
                             </span>
                         </footer>
 
