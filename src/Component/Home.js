@@ -124,7 +124,7 @@ const Home = () => {
 
                         <div className='menu-btn'>
 
-                            <button className='btn' id='open' onClick={slide} style={{ cursor: 'pointer', backgroundColor: 'inherit', outline: 'none', border: 'none', color: 'white', fontSize: '2rem' }}><i class="fa-solid fa-bars"></i></button>
+                            <button className='btn' id='open' onClick={slide}><i class="fa-solid fa-bars"></i></button>
 
                         </div>
 
@@ -165,7 +165,7 @@ const Home = () => {
 
 
 
-                                <a className="subnavbtn" href='#book' onClick={close}>
+                                <a className="subnavbtn" href='#booking' >
                                     <i class="fa-solid fa-user-pen"></i>
                                     <span >Book service</span>
                                 </a>

@@ -1501,6 +1501,7 @@ h1:hover {
   .section-1 .sub-2 {
     width: 100%;
     overflow: hidden;
+
   }
 
   .section-1 .sub-2 h1{
@@ -1510,6 +1511,11 @@ h1:hover {
 
   .servicing .section-2 {
     flex-direction: column-reverse;
+
+  }
+
+  .servicing .section-2 {
+        flex-direction: column-reverse;
   }
 
   .section-2 .sub-3 {
@@ -1537,6 +1543,7 @@ h1:hover {
 
   .section-3 .sub-5 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-3 .sub-5 img {
@@ -1545,6 +1552,7 @@ h1:hover {
 
   .section-3 .sub-6 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-3 .sub-6 h1{
@@ -1554,10 +1562,13 @@ h1:hover {
 
   .servicing .section-4 {
     flex-direction: column-reverse;
+
+        flex-direction: column-reverse;
   }
 
   .section-4 .sub-7 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-4 .sub-7 h1{
@@ -1567,6 +1578,7 @@ h1:hover {
 
   .section-4 .sub-8 {
     width: 100%;
+    overflow: hidden;
   }
 
   .section-4 .sub-8 img {
@@ -1721,10 +1733,29 @@ h1:hover {
 @media only screen and (min-width: 993px) {
   body {
     /* background: orange; */
+    .scroll{
+  left: 95%;
+}
+    .section-1 .sub-1 img {
+  object-fit: cover;
+}
+    .section-2 .sub-4 img {
+  object-fit: cover;
+}
+      .section-3 .sub-5 img {
+  object-fit: cover;
+}
+    
+      .section-4 .sub-8 img {
+  object-fit: cover;
+}
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1201px) {
   /* body {background: pink;} */
+  .scroll{
+  left: 95%;
+}
 }
