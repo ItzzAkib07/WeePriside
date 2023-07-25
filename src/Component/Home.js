@@ -637,7 +637,7 @@ const Home = () => {
 
                         <footer>
                             <span>
-                                &copy; Hindustan Automobiles 2023
+                                &copy; The Piston Lounge - 2023
                             </span>
                         </footer>
 
