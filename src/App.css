@@ -189,9 +189,26 @@ body {
   font-size: 1.5rem;
   color: gray;
 }
+.header .logo:hover span {
+  color: white;
+  text-shadow:5px 5px 30px white;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
 
 .header .logo .half-title {
   color: rgb(189, 183, 183);
+}
+
+.header .logo:hover .half-title {
+  color: white;
+  text-shadow:5px 5px 30px white;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 header ul {
@@ -220,20 +237,30 @@ header li a:hover {
   transition: ease 0.5s linear;
 }
 
-/* ///////////////////////////////////////////////////////////////////////////////   Home section  //////////////////////////////////////////////////////////////////////////////// */
-
-/* .home-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.header .menu-btn .btn{
+  font-size: 1.5rem;
+  outline: none;
+  cursor: pointer;
+  color:gray;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
-.home-sections {
-  height: 100%;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-} */
+.header .menu-btn .btn:hover{
+  color: white;
+  text-shadow:5px 5px 30px white;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////////////////   Home section  //////////////////////////////////////////////////////////////////////////////// */
 
 .hero {
   width: 100%;
@@ -1428,7 +1455,7 @@ h1:hover {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    background-image: url("/src/images/asthetic.jpg"); /* The image used */
+    background-image: url("/src/images/Hero_Bg.jpg"); /* The image used */
   }
 
   .downArrow {

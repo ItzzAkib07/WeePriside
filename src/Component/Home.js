@@ -124,16 +124,16 @@ const Home = () => {
 
                         <div className='menu-btn'>
 
-                            <button className='btn' id='open' onClick={slide}><i class="fa-solid fa-bars"></i></button>
+                            <span className='btn' id='open' onClick={slide}><i class="fa-solid fa-bars"></i></span>
 
                         </div>
 
                         <div className='logo'>
 
-                            <a href='/Home'> <img src={logo} /></a>
+                            <a href='#home'> <img src={logo} /></a>
 
                             <div className='title animate__animated animate__shakeX'>
-                                <a href='/Home'><span >THE <span className='half-title'>PISTON LOUNGE</span> </span></a>
+                                <a href='#home'><span >THE <span className='half-title'>PISTON LOUNGE</span> </span></a>
                             </div>
                         </div>
 
