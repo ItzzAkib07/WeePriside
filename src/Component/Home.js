@@ -457,7 +457,7 @@ const Home = () => {
 
                         <div className='booking-container' data-aos="flip-up">
 
-                            <h1 id='book' data-aos="fade-down">Book your Services</h1>
+                            <h1 id='book' data-aos="fade-down">Book Your Services</h1>
 
                             <form className='form' ref={form} onSubmit={sendEmail} >
 
@@ -490,9 +490,9 @@ const Home = () => {
 
                         <div className='form-container' data-aos="fade-up">
 
-                            <h1 id='contact' data-aos="fade-down">Contact Us</h1>
+                            <h1 data-aos="fade-down">Contact Us</h1>
 
-                            <div className='center-info'>
+                            <div className='center-info' >
 
                                 <div className='address'>
 
@@ -639,8 +639,16 @@ const Home = () => {
                             <span>
                                 &copy; The Piston Lounge - 2023
                             </span>
+
                         </footer>
 
+                        <div>
+                            <p class="footer-heart">
+                                Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+                                    <img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"/>
+                                    </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank'>Akib Mulla</a>
+                            </p>
+                        </div>
                     </div>
 
                 </section>
