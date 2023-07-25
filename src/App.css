@@ -1477,9 +1477,9 @@ h1:hover {
     width: 100%;
   }
 
-  .service-details {
+  /* .service-details {
     flex-direction: column;
-  }
+  } */
 
   .service-details .service {
     width: 100%;
@@ -1596,8 +1596,6 @@ h1:hover {
 
   .servicing .section-4 {
     flex-direction: column-reverse;
-
-        flex-direction: column-reverse;
   }
 
   .section-4 .sub-7 {
@@ -1671,11 +1669,13 @@ h1:hover {
     background: green;
   } */
 
+
   .pricing p {
     width: 90%;
   }
 
   .service-details {
+    justify-content: center;
     gap: 2rem;
   }
 
