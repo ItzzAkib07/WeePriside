@@ -1423,7 +1423,7 @@ h1:hover {
 @media only screen and (max-width: 600px) {
 
   .hero {
-    height: 91vh;
+    height: 85vh;
     margin-bottom: 2rem;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
