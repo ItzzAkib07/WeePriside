@@ -66,7 +66,7 @@ const style = {
     flexDirection:'column',
     alignItems:'center',
     transform: 'translate(-50%, -50%)',
-    width: '20%',
+    width: '20rem',
     height:'auto',
     bgcolor: 'black',
     border: '2px solid #000',
