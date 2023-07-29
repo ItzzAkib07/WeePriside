@@ -1725,6 +1725,11 @@ h1:hover {
     width: 100%;
   }
 
+  .form .booking-btn{
+    width: 50%;
+    height: 3rem;
+  }
+
   .form-container {
     height: 100%;
     width: 100%;
