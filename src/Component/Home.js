@@ -51,20 +51,44 @@ import 'aos/dist/aos.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// MUI imports
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+// Modal style
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
+    transform: 'translate(-50%, -50%)',
+    width: '20%',
+    height:'auto',
+    bgcolor: 'black',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
+
 
 
 const Home = () => {
 
+    // 👇️ scroll to top on page load
     useEffect(() => {
-        // 👇️ scroll to top on page load
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, []);
 
-
+    // funtion to slide the navbar
     function slide() {
         document.getElementById('side-navbar').style.width = "20rem";
     }
 
+    // funtion to close the nav bar
     function close() {
         document.getElementById('side-navbar').style.width = "0";
 
@@ -73,7 +97,6 @@ const Home = () => {
 
     // booking
     const form = useRef();
-
     const [getName, setName] = React.useState('');
     const [getPhone, setPhone] = React.useState('');
     const [getQuery, setQuery] = React.useState('');
@@ -113,6 +136,22 @@ const Home = () => {
     useEffect(() => {
         AOS.init();
     }, [])
+
+
+    // modal states
+    const [open, setOpen] = React.useState(false);
+    const handleOpen1 = () => setOpen(true);
+    const handleClose1 = () => setOpen(false);
+    
+    const [open2, setOpen2] = React.useState(false);
+    const handleOpen2 = () => setOpen2(true);
+    const handleClose2 = () => setOpen2(false);
+    
+    const [open3, setOpen3] = React.useState(false);
+    const handleOpen3 = () => setOpen3(true);
+    const handleClose3 = () => setOpen3(false);
+
+
     return (
         <>
 
@@ -318,44 +357,170 @@ const Home = () => {
 
                                 <h1 id='pricing' data-aos="fade-down">Pricing</h1>
 
-                                <div className='listing'>
+                                <div className='listing' >
 
                                     <div className='pricing' >
                                         <h2>General Service <span>Without Oil</span></h2>
 
-                                        <span>399rs</span>
+                                        <span>Rs 399/-</span>
 
-                                        <span>This Service Includes </span>
+                                        <span>Get to know more about this service </span>
 
-                                        <p>nw qkjvbehj vbqhie vkbjqiehvb qhjfbvqhw fbv    weiu hfbwq riuvkj qrvb</p>
-
+                                        <p onClick={handleOpen1}>Click here</p>
 
                                         <a href='#booking'><button>Book Service</button></a>
+
+                                        <Modal
+                                            open={open}
+                                            onClose={handleClose1}
+                                            aria-labelledby="modal-modal-title"
+                                            aria-describedby="modal-modal-description"
+                                        >
+                                            <Box sx={style}>
+
+                                                <Box sx = {{
+                                                    position:'relative',
+                                                    alignItems:'center',
+                                                    color:'white',
+                                                    left:'50%',
+                                                    top:'-1rem',
+                                                    fontSize:'1.5rem',
+                                                    fontWeight:'900',
+                                                    cursor:'pointer'
+                                                }}
+                                                onClick = {handleClose1}
+                                                > 
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </Box>
+
+                                                <div className='modal-header'>
+                                                    <h2>General Service <span>Without Oil</span></h2>
+                                                </div>
+
+                                                <Box>
+                                                    <ul className='serviceList'>
+                                                        <li> <span> Cleaning</span> </li>
+                                                        <li> <span> Chain Cleaning </span> </li>
+                                                        <li> <span> Chain Lubrication </span> </li>
+                                                        <li> <span> Brake Adjustment </span> </li>
+                                                        <li> <span> Brake Pad Inspection </span> </li>
+                                                        <li> <span> Brake Caliper Alignment </span> </li>
+                                                        <li> <span> Gear Shifting Adjustment </span> </li>
+                                                        <li> <span> Tire Inspection </span> </li>
+                                                        <li> <span> Headset Adjustment </span> </li>
+                                                        <li> <span> Cable Inspection </span> </li>
+                                                    </ul>
+                                                </Box>
+                                                
+                                            </Box>
+                                        </Modal>
+
                                     </div>
 
                                     <div className='pricing'>
                                         <h2>General Service <span>With Oil</span></h2>
 
-                                        <span>499rs</span>
+                                        <span>rs 499/-</span>
 
-                                        <span>This Service Includes </span>
+                                        <span>Get to know more about this service </span>
 
-                                        <p>nw qkjvbehj vbqhie vkbjqiehvb qhjfbvqhw fbv    weiu hfbwq riuvkj qrvb</p>
-
+                                        <p onClick={handleOpen2}>Click here</p>
 
                                         <a href='#booking'><button>Book Service</button></a>
+
+                                        <Modal
+                                            open={open2}
+                                            onClose={handleClose2}
+                                            aria-labelledby="modal-modal-title"
+                                            aria-describedby="modal-modal-description"
+                                        >
+                                            <Box sx={style}>
+
+                                                <Box sx = {{
+                                                    position:'relative',
+                                                    alignItems:'center',
+                                                    color:'white',
+                                                    left:'50%',
+                                                    top:'-1rem',
+                                                    fontSize:'1.5rem',
+                                                    fontWeight:'900',
+                                                    cursor:'pointer'
+                                                }}
+                                                onClick = {handleClose2}
+                                                > 
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </Box>
+
+                                                <div className='modal-header'>
+                                                    <h2>General Service <span>Without Oil</span></h2>
+                                                </div>
+
+                                                <Box>
+                                                    <span style={{color:'rgb(189, 183, 183)'}}>
+                                                        This service will cover all the tasks from general service without oil and adds oil-based component maintenance,such as 
+                                                    </span>
+
+                                                    <ul className='serviceList'>
+                                                        <li> <span> checking oil levels</span> </li>
+                                                        <li> <span> Draining and topping up the oil </span> </li>
+                                                        <li> <span> suspension forks </span> </li>
+                                                        <li> <span> shock absorbers </span> </li>
+                                                        <li> <span> nternal gear hubs </span> </li>
+                                                        <li> <span> Brake and grar oil </span> </li>
+                                                    </ul>
+                                                </Box>
+                                                
+                                            </Box>
+                                        </Modal>
                                     </div>
 
                                     <div className='pricing'>
                                         <h2>Special Service <span className='h2-span'>With Oil</span></h2>
 
-                                        <span>599rs</span>
+                                        <span>Rs 599/-</span>
 
-                                        <span>This Service Includes </span>
+                                        <span>Get to know more about this service</span>
 
-                                        <p>nw qkjvbehj vbqhie vkbjqiehvb qhjfbvqhw fbv    weiu hfbwq riuvkj qrvb</p>
+                                        <p onClick={handleOpen3}>Click here</p>
 
                                         <a href='#booking'><button>Book Service</button></a>
+                                        
+                                        <Modal
+                                            open={open3}
+                                            onClose={handleClose3}
+                                            aria-labelledby="modal-modal-title"
+                                            aria-describedby="modal-modal-description"
+                                        >
+                                            <Box sx={style}>
+
+                                                <Box sx = {{
+                                                    position:'relative',
+                                                    alignItems:'center',
+                                                    color:'white',
+                                                    left:'50%',
+                                                    top:'-1rem',
+                                                    fontSize:'1.5rem',
+                                                    fontWeight:'900',
+                                                    cursor:'pointer'
+                                                }}
+                                                onClick = {handleClose3}
+                                                > 
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </Box>
+
+                                                <div className='modal-header'>
+                                                    <h2>General Service <span>Without Oil</span></h2>
+                                                </div>
+
+                                                <Box>
+                                                    <span style={{color:'rgb(189, 183, 183)'}}>
+                                                        This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new. </strong>
+                                                    </span>
+                                                </Box>
+                                                
+                                            </Box>
+                                        </Modal>
+
                                     </div>
 
                                     <div className='pricing-information'>
@@ -382,7 +547,6 @@ const Home = () => {
                     </section>
 
                     <section className='servicing-images'>
-
 
                         <div className='servicing'>
 
@@ -451,7 +615,6 @@ const Home = () => {
                         </div>
 
                     </section>
-
 
                     <section id='booking'>
 
@@ -645,8 +808,8 @@ const Home = () => {
                         <div>
                             <p class="footer-heart">
                                 Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
-                                    <img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"/>
-                                    </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank'>Akib Mulla</a>
+                                    <img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
+                                </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank'>Akib Mulla</a>
                             </p>
                         </div>
                     </div>
