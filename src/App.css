@@ -6,6 +6,17 @@ body {
   background-color: #f5f5f5;
 }
 
+/* @import "https://rsms.me/inter/inter.css"; */
+
+:root 
+{
+   font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -1008,7 +1019,7 @@ h1:hover {
   border-bottom: 1px solid white;
 }
 
-.form .booking-btn {
+/* .form .booking-btn {
   width: 30%;
   height: 2rem;
   color: black;
@@ -1023,6 +1034,72 @@ h1:hover {
   color: white;
   font-weight: bold;
   background-color: #212121;
+} */
+
+
+
+
+.form .booking-btn { 
+  min-width: 30%; 
+  height: 4rem; 
+  position: relative; 
+  border-radius: 50px; 
+  cursor: pointer 
+}
+
+.form .booking-btn:hover::after {
+  opacity: 0.5;
+  color: white;
+}
+
+.form .booking-btn::after {
+  content: "BOOK SERVICE";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 900;
+  position: absolute;
+  background: #111;
+  inset: 5px;
+  border-radius: 45px;
+  z-index: 1;
+  transition: opacity .3s ease;
+}
+
+
+@property --r {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+#btn {
+  background: conic-gradient(from var(--r), #222 0%, #eee 10%, #222 20%);
+  animation: rotating 3s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    --r: 0deg;
+  }
+  100% {
+    --r: 360deg;
+  }
+}
+
+/* better version */
+
+@property --r2 {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --x {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////   Contact section  //////////////////////////////////////////////////////////////////////////////// */
@@ -1202,7 +1279,7 @@ h1:hover {
   padding: 1rem;
   cursor: pointer;
   border-radius: 0.5rem;
-  background-color: #757575;
+  background-color: black;
   outline: none;
 }
 
@@ -1210,12 +1287,12 @@ h1:hover {
   background-color: #424242;
 }
 .address .address-btn:hover a {
-  color: whitesmoke;
+  color: black;
   font-weight: bold;
 }
 
 .address .address-btn a {
-  color: black;
+  color: whitesmoke;
   font-weight: bold;
   font-size: 1rem;
   text-decoration: none;

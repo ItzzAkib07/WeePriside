@@ -478,7 +478,7 @@ const Home = () => {
 
                                 <a className='serivce-link' href='#pricing'>Check our services here</a>
 
-                                <button className='booking-btn' id='btn' type='submit'>Book service</button>
+                                <button className='booking-btn' id='btn' type='submit'></button>
 
                             </form>
                         </div>
@@ -504,7 +504,7 @@ const Home = () => {
                                     </div>
 
                                     <button className='address-btn'>
-                                        <a href='https://goo.gl/maps/WoDP7swRrsGZ1fzi8' target="_blank">Get Directions</a>
+                                        <a href='https://goo.gl/maps/WoDP7swRrsGZ1fzi8' target="_blank">Get Directions <i class="fa-solid fa-road"></i></a>
                                     </button>
 
                                 </div>
