@@ -204,7 +204,7 @@ const Home = () => {
 
 
 
-                                <a className="subnavbtn" href='#booking' >
+                                <a className="subnavbtn" href='#booking' onClick={close}>
                                     <i class="fa-solid fa-user-pen"></i>
                                     <span >Book service</span>
                                 </a>

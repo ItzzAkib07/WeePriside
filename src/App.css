@@ -350,10 +350,11 @@ header li a:hover {
 
 .quality .sec-1 span:nth-child(1) {
   font-size: 3rem;
+  font-weight: bold;
 }
 
 .quality .sec-1 span:nth-child(2) {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .quality .sec-2 {
@@ -471,6 +472,7 @@ header li a:hover {
   margin-bottom: 1rem;
   text-align: left;
   overflow: hidden;
+  font-weight: 600;
   color: black;
 }
 
@@ -537,6 +539,7 @@ h1:hover {
 
 .service h4 {
   color: black;
+  font-weight: 900;
 }
 
 .service-details .service:hover h4 {
@@ -601,6 +604,7 @@ h1:hover {
   width: 90%;
   padding: 0 1rem;
   font-size: 1rem;
+  font-weight: 700;
   color: rgb(189, 183, 183);
 }
 
@@ -629,6 +633,7 @@ h1:hover {
   width: 90%;
   padding: 0 1rem;
   font-size: 1rem;
+  font-weight: 700;
   color: rgb(189, 183, 183);
 }
 
@@ -692,6 +697,7 @@ h1:hover {
   width: 90%;
   padding: 0 1rem;
   font-size: 1rem;
+  font-weight: 700;
   color: rgb(189, 183, 183);
 }
 
@@ -717,14 +723,18 @@ h1:hover {
 }
 
 .servicing h1 {
-  color: gray;
-  text-shadow: 2px 2px white;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .section-4 .sub-7 p {
   width: 90%;
   padding: 0 1rem;
   font-size: 1rem;
+  font-weight: 700;
   color: rgb(189, 183, 183);
 }
 
@@ -845,7 +855,7 @@ h1:hover {
 .pricing p {
   text-align: center;
   width: 100%;
-  color: blue;
+  color: #9469ff;
   font-weight: 900;
 }
 
@@ -971,13 +981,17 @@ h1:hover {
 
 .pricing-information h2 {
   width: 90%;
-  color: rgb(189, 183, 183);
   font-size: 2rem;
-  text-shadow: 2px 2px white;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .pricing-information p {
   width: 90%;
+  font-size: 1.5rem;
 }
 
 .pricing-information span {
