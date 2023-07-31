@@ -87,7 +87,6 @@ const Home = () => {
     // funtion to close the nav bar
     function close() {
         document.getElementById('side-navbar').style.width = "0";
-
     }
 
 
@@ -186,14 +185,14 @@ const Home = () => {
                             <div className='side-navItems' id='side-navItems'>
 
                             <SmoothScrollingLink to="home" >
-                                <span className="subnavbtn" onClick={close}>
+                                <span className="subnavbtn" >
                                     <i class="fa-solid fa-home"></i>
                                     <span>Home</span>
                                 </span>
                             </SmoothScrollingLink>
 
                             <SmoothScrollingLink to="services" >
-                                <span className="subnavbtn" onClick={close}>
+                                <span className="subnavbtn" >
                                     <i class="fa-solid fa-gear"></i>
                                     <span>Our Services</span>
                                 </span>
@@ -201,7 +200,7 @@ const Home = () => {
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="booking" >
-                                <span className="subnavbtn" onClick={close}>
+                                <span className="subnavbtn" >
                                     <i class="fa-solid fa-user-pen"></i>
                                     <span >Book service</span>
                                 </span>
@@ -209,12 +208,11 @@ const Home = () => {
 
 
                                 <SmoothScrollingLink to="contact" > 
-                                <span className="subnavbtn" onClick={close}>
+                                <span className="subnavbtn" >
                                     <i class="fa-solid fa-phone"></i>
                                     <span>Contact Us</span>
                                 </span>
                                 </SmoothScrollingLink>
-
 
                             </div>
 

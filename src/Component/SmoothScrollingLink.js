@@ -6,10 +6,11 @@ const SmoothScrollingLink = ({ to, children }) => {
     <ScrollLink
       to={to}
       smooth={true}
-      duration={500}
+      duration={100}
       offset={-80} // Change this offset based on your header height or sticky elements.
       onClick={() => {
         // Handle any additional logic here if needed before scrolling.
+        document.getElementById('side-navbar').style.width = "0";
       }}
     >
       {children}
