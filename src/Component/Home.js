@@ -244,13 +244,84 @@ const Home = () => {
 
                     </section>
 
-                    <section id='services'>
+                    <section className='servicing-images' id='services'>
+
+                    <h1 style={{ textAlign: 'center', marginTop:'3rem' }} data-aos="fade-down">Our Services</h1>
+
+                        <div className='servicing'>
+
+                            <div className='section-1' >
+
+                                <div className='sub-1' data-aos="fade-right">
+                                    <img src={service1} />
+                                </div>
+
+                                <div className='sub-2' data-aos="fade-left">
+                                    <p>
+                                        <h1>PERIODIC SERVICE</h1>
+
+                                        At our garage, we provide reliable periodic service to keep your bike in peak condition. Our skilled technicians perform thorough inspections, adjustments, and lubrication to ensure smooth and safe rides, giving you peace of mind on the road. Trust us to maintain your bike's performance and keep it running at its best.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className='section-2'>
+
+                                <div className='sub-3' data-aos="fade-right">
+                                    <p>
+                                        <h1>COMPLETE BIKE SERVICE</h1>
+
+                                        Our full bike service covers all your motorcycle's needs, from inspections to tune-ups and fluid replacements. Ride with confidence knowing your bike is in excellent condition with our top-notch care and expertise. Experience the convenience and reliability of our comprehensive service for a smooth and efficient ride.
+                                    </p>
+                                </div>
+
+                                <div className='sub-4' data-aos="fade-left">
+                                    <img src={service2} />
+                                </div>
+                            </div>
+
+                            <div className='section-3'>
+
+                                <div className='sub-5' data-aos="fade-right">
+                                    <img src={wasing} />
+                                </div>
+
+                                <div className='sub-6' data-aos="fade-left">
+
+                                    <p>
+                                        <h1>WASHING & POLISHING</h1>
+
+                                        At our garage, we provide meticulous bike washing and polishing services to bring back the shine and luster to your motorcycle. Our skilled team ensures thorough cleaning, removing dirt and grime, and follows it up with expert polishing to leave your bike looking brand new and well-maintained. Trust us to give your two-wheeler the care and attention it deserves, leaving you with a gleaming and refreshed ride after each visit.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className='section-4'>
+
+                                <div className='sub-7' data-aos="fade-right">
+
+                                    <p>
+                                        <h1>PAINTING</h1>
+
+                                        In our garage, we offer comprehensive services, including bike painting. Trust us to revitalize your bike's appearance with skilled and professional painting techniques, adding a fresh and vibrant look to your beloved ride. Let our team of experts handle your bike painting needs, ensuring excellent results and customer satisfaction.
+                                    </p>
+                                </div>
+
+                                <div className='sub-8' data-aos="fade-left">
+                                    <img src={painting} />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <section >
 
 
                         <div className='service-container'>
 
-                            <h1 style={{ textAlign: 'center' }} data-aos="fade-down">Our Services</h1>
-
+                            
                             <div className='service-details' id='service-details'>
 
                                 <div className='service' id='service1' data-aos="fade-right">
@@ -436,7 +507,7 @@ const Home = () => {
                                                 </Box>
 
                                                 <div className='modal-header'>
-                                                    <h2>General Service <span>Without Oil</span></h2>
+                                                    <h2>General Service <span>With Oil</span></h2>
                                                 </div>
 
                                                 <Box>
@@ -459,7 +530,7 @@ const Home = () => {
                                     </div>
 
                                     <div className='pricing'>
-                                        <h2>Special Service <span className='h2-span'>With Oil</span></h2>
+                                        <h2>Special Service <span className='h2-span'>Customizable</span></h2>
 
                                         <span>Rs 799/-</span>
 
@@ -493,12 +564,12 @@ const Home = () => {
                                                 </Box>
 
                                                 <div className='modal-header'>
-                                                    <h2>General Service <span>Without Oil</span></h2>
+                                                    <h2>Special Service <span>Customizable</span></h2>
                                                 </div>
 
                                                 <Box>
                                                     <span style={{ color: 'rgb(189, 183, 183)' }}>
-                                                        This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new. </strong>
+                                                        This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new.</strong>
                                                     </span>
                                                 </Box>
 
@@ -530,75 +601,6 @@ const Home = () => {
 
                     </section>
 
-                    <section className='servicing-images'>
-
-                        <div className='servicing'>
-
-                            <div className='section-1' >
-
-                                <div className='sub-1' data-aos="fade-right">
-                                    <img src={service1} />
-                                </div>
-
-                                <div className='sub-2' data-aos="fade-left">
-                                    <p>
-                                        <h1>PERIODIC SERVICE</h1>
-
-                                        At our garage, we provide reliable periodic service to keep your bike in peak condition. Our skilled technicians perform thorough inspections, adjustments, and lubrication to ensure smooth and safe rides, giving you peace of mind on the road. Trust us to maintain your bike's performance and keep it running at its best.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className='section-2'>
-
-                                <div className='sub-3' data-aos="fade-right">
-                                    <p>
-                                        <h1>COMPLETE BIKE SERVICE</h1>
-
-                                        Our full bike service covers all your motorcycle's needs, from inspections to tune-ups and fluid replacements. Ride with confidence knowing your bike is in excellent condition with our top-notch care and expertise. Experience the convenience and reliability of our comprehensive service for a smooth and efficient ride.
-                                    </p>
-                                </div>
-
-                                <div className='sub-4' data-aos="fade-left">
-                                    <img src={service2} />
-                                </div>
-                            </div>
-
-                            <div className='section-3'>
-
-                                <div className='sub-5' data-aos="fade-right">
-                                    <img src={wasing} />
-                                </div>
-
-                                <div className='sub-6' data-aos="fade-left">
-
-                                    <p>
-                                        <h1>WASHING & POLISHING</h1>
-
-                                        At our garage, we provide meticulous bike washing and polishing services to bring back the shine and luster to your motorcycle. Our skilled team ensures thorough cleaning, removing dirt and grime, and follows it up with expert polishing to leave your bike looking brand new and well-maintained. Trust us to give your two-wheeler the care and attention it deserves, leaving you with a gleaming and refreshed ride after each visit.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className='section-4'>
-
-                                <div className='sub-7' data-aos="fade-right">
-
-                                    <p>
-                                        <h1>PAINTING</h1>
-
-                                        In our garage, we offer comprehensive services, including bike painting. Trust us to revitalize your bike's appearance with skilled and professional painting techniques, adding a fresh and vibrant look to your beloved ride. Let our team of experts handle your bike painting needs, ensuring excellent results and customer satisfaction.
-                                    </p>
-                                </div>
-
-                                <div className='sub-8' data-aos="fade-left">
-                                    <img src={painting} />
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </section>
 
                     <section id='booking'>
 
