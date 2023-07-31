@@ -38,8 +38,6 @@ import RE from '../images/RE.png';
 import jawa from '../images/jawa.png';
 import tvs from '../images/tvs.png';
 
-// Jquery
-import $ from 'jquery';
 
 // AOS Animation 
 import AOS from 'aos';
@@ -114,19 +112,6 @@ const Home = () => {
         }
     };
 
-    // smooth scrolling effet
-    $('a[href*="#"]').on('click', function (e) {
-
-        e.preventDefault();
-
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        },
-            500,
-            'linear'
-        );
-    });
-
     //   init Aos animation
     useEffect(() => {
         AOS.init();
@@ -184,34 +169,34 @@ const Home = () => {
 
                             <div className='side-navItems' id='side-navItems'>
 
-                            <SmoothScrollingLink to="home" >
-                                <span className="subnavbtn" >
-                                    <i class="fa-solid fa-home"></i>
-                                    <span>Home</span>
-                                </span>
-                            </SmoothScrollingLink>
+                                <SmoothScrollingLink to="home" >
+                                    <span className="subnavbtn" >
+                                        <i class="fa-solid fa-home"></i>
+                                        <span>Home</span>
+                                    </span>
+                                </SmoothScrollingLink>
 
-                            <SmoothScrollingLink to="services" >
-                                <span className="subnavbtn" >
-                                    <i class="fa-solid fa-gear"></i>
-                                    <span>Our Services</span>
-                                </span>
+                                <SmoothScrollingLink to="services" >
+                                    <span className="subnavbtn" >
+                                        <i class="fa-solid fa-gear"></i>
+                                        <span>Our Services</span>
+                                    </span>
 
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="booking" >
-                                <span className="subnavbtn" >
-                                    <i class="fa-solid fa-user-pen"></i>
-                                    <span >Book service</span>
-                                </span>
+                                    <span className="subnavbtn" >
+                                        <i class="fa-solid fa-user-pen"></i>
+                                        <span >Book service</span>
+                                    </span>
                                 </SmoothScrollingLink>
 
 
-                                <SmoothScrollingLink to="contact" > 
-                                <span className="subnavbtn" >
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span>Contact Us</span>
-                                </span>
+                                <SmoothScrollingLink to="contact" >
+                                    <span className="subnavbtn" >
+                                        <i class="fa-solid fa-phone"></i>
+                                        <span>Contact Us</span>
+                                    </span>
                                 </SmoothScrollingLink>
 
                             </div>
@@ -815,9 +800,12 @@ const Home = () => {
 
                 </section>
 
-                <a className='scroll' href='#home'>
-                    <button><i class="fa-solid fa-jet-fighter-up"></i></button>
-                </a>
+
+                <SmoothScrollingLink to="home" >
+                    <span className='scroll' href='#home'>
+                        <button><i class="fa-solid fa-jet-fighter-up"></i></button>
+                    </span>
+                </SmoothScrollingLink>
             </div>
 
         </>
