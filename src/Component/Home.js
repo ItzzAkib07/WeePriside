@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import SmoothScrollingLink from '../Component/SmoothScrollingLink';
 
 // Header
 import 'animate.css';
@@ -184,30 +185,35 @@ const Home = () => {
 
                             <div className='side-navItems' id='side-navItems'>
 
-
-                                <a className="subnavbtn" href='#home' onClick={close}>
+                            <SmoothScrollingLink to="home" >
+                                <span className="subnavbtn" onClick={close}>
                                     <i class="fa-solid fa-home"></i>
                                     <span>Home</span>
-                                </a>
+                                </span>
+                            </SmoothScrollingLink>
 
-
-
-                                <a className="subnavbtn" href='#services' onClick={close}>
+                            <SmoothScrollingLink to="services" >
+                                <span className="subnavbtn" onClick={close}>
                                     <i class="fa-solid fa-gear"></i>
                                     <span>Our Services</span>
-                                </a>
+                                </span>
 
+                                </SmoothScrollingLink>
 
-
-                                <a className="subnavbtn" href='#booking' onClick={close}>
+                                <SmoothScrollingLink to="booking" >
+                                <span className="subnavbtn" onClick={close}>
                                     <i class="fa-solid fa-user-pen"></i>
                                     <span >Book service</span>
-                                </a>
+                                </span>
+                                </SmoothScrollingLink>
 
-                                <a className="subnavbtn" href='#contact' onClick={close}>
+
+                                <SmoothScrollingLink to="contact" > 
+                                <span className="subnavbtn" onClick={close}>
                                     <i class="fa-solid fa-phone"></i>
                                     <span>Contact Us</span>
-                                </a>
+                                </span>
+                                </SmoothScrollingLink>
 
 
                             </div>
