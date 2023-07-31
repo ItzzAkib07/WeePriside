@@ -4,9 +4,6 @@ import React, { useEffect, useRef } from 'react';
 import 'animate.css';
 import logo from '../images/The Piston Lounge.png'
 
-// Home
-import bike from '../images/The Piston Lounge.png';
-
 // quality 
 import quality from '../images/maintainance.svg'
 
@@ -53,8 +50,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // MUI imports
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 // Modal style
@@ -62,12 +57,12 @@ const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    display:'flex',
-    flexDirection:'column',
-    alignItems:'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     transform: 'translate(-50%, -50%)',
     width: '20rem',
-    height:'auto',
+    height: 'auto',
     bgcolor: 'black',
     border: '2px solid #000',
     boxShadow: 24,
@@ -142,11 +137,11 @@ const Home = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen1 = () => setOpen(true);
     const handleClose1 = () => setOpen(false);
-    
+
     const [open2, setOpen2] = React.useState(false);
     const handleOpen2 = () => setOpen2(true);
     const handleClose2 = () => setOpen2(false);
-    
+
     const [open3, setOpen3] = React.useState(false);
     const handleOpen3 = () => setOpen3(true);
     const handleClose3 = () => setOpen3(false);
@@ -378,18 +373,18 @@ const Home = () => {
                                         >
                                             <Box sx={style}>
 
-                                                <Box sx = {{
-                                                    position:'relative',
-                                                    alignItems:'center',
-                                                    color:'white',
-                                                    left:'50%',
-                                                    top:'-1rem',
-                                                    fontSize:'1.5rem',
-                                                    fontWeight:'900',
-                                                    cursor:'pointer'
+                                                <Box sx={{
+                                                    position: 'relative',
+                                                    alignItems: 'center',
+                                                    color: 'white',
+                                                    left: '50%',
+                                                    top: '-1rem',
+                                                    fontSize: '1.5rem',
+                                                    fontWeight: '900',
+                                                    cursor: 'pointer'
                                                 }}
-                                                onClick = {handleClose1}
-                                                > 
+                                                    onClick={handleClose1}
+                                                >
                                                     <i class="fa-solid fa-xmark"></i>
                                                 </Box>
 
@@ -411,7 +406,7 @@ const Home = () => {
                                                         <li> <span> Cable Inspection </span> </li>
                                                     </ul>
                                                 </Box>
-                                                
+
                                             </Box>
                                         </Modal>
 
@@ -420,7 +415,7 @@ const Home = () => {
                                     <div className='pricing'>
                                         <h2>General Service <span>With Oil</span></h2>
 
-                                        <span>rs 499/-</span>
+                                        <span>Rs 699/-</span>
 
                                         <span>Get to know more about this service </span>
 
@@ -436,18 +431,18 @@ const Home = () => {
                                         >
                                             <Box sx={style}>
 
-                                                <Box sx = {{
-                                                    position:'relative',
-                                                    alignItems:'center',
-                                                    color:'white',
-                                                    left:'50%',
-                                                    top:'-1rem',
-                                                    fontSize:'1.5rem',
-                                                    fontWeight:'900',
-                                                    cursor:'pointer'
+                                                <Box sx={{
+                                                    position: 'relative',
+                                                    alignItems: 'center',
+                                                    color: 'white',
+                                                    left: '50%',
+                                                    top: '-1rem',
+                                                    fontSize: '1.5rem',
+                                                    fontWeight: '900',
+                                                    cursor: 'pointer'
                                                 }}
-                                                onClick = {handleClose2}
-                                                > 
+                                                    onClick={handleClose2}
+                                                >
                                                     <i class="fa-solid fa-xmark"></i>
                                                 </Box>
 
@@ -456,8 +451,8 @@ const Home = () => {
                                                 </div>
 
                                                 <Box>
-                                                    <span style={{color:'rgb(189, 183, 183)'}}>
-                                                        This service will cover all the tasks from general service without oil and adds oil-based component maintenance,such as 
+                                                    <span style={{ color: 'rgb(189, 183, 183)' }}>
+                                                        This service will cover all the tasks from general service without oil and adds oil-based component maintenance,such as
                                                     </span>
 
                                                     <ul className='serviceList'>
@@ -469,7 +464,7 @@ const Home = () => {
                                                         <li> <span> Brake and grar oil </span> </li>
                                                     </ul>
                                                 </Box>
-                                                
+
                                             </Box>
                                         </Modal>
                                     </div>
@@ -477,14 +472,14 @@ const Home = () => {
                                     <div className='pricing'>
                                         <h2>Special Service <span className='h2-span'>With Oil</span></h2>
 
-                                        <span>Rs 599/-</span>
+                                        <span>Rs 799/-</span>
 
                                         <span>Get to know more about this service</span>
 
                                         <p onClick={handleOpen3}>Click here</p>
 
                                         <a href='#booking'><button>Book Service</button></a>
-                                        
+
                                         <Modal
                                             open={open3}
                                             onClose={handleClose3}
@@ -493,18 +488,18 @@ const Home = () => {
                                         >
                                             <Box sx={style}>
 
-                                                <Box sx = {{
-                                                    position:'relative',
-                                                    alignItems:'center',
-                                                    color:'white',
-                                                    left:'50%',
-                                                    top:'-1rem',
-                                                    fontSize:'1.5rem',
-                                                    fontWeight:'900',
-                                                    cursor:'pointer'
+                                                <Box sx={{
+                                                    position: 'relative',
+                                                    alignItems: 'center',
+                                                    color: 'white',
+                                                    left: '50%',
+                                                    top: '-1rem',
+                                                    fontSize: '1.5rem',
+                                                    fontWeight: '900',
+                                                    cursor: 'pointer'
                                                 }}
-                                                onClick = {handleClose3}
-                                                > 
+                                                    onClick={handleClose3}
+                                                >
                                                     <i class="fa-solid fa-xmark"></i>
                                                 </Box>
 
@@ -513,11 +508,11 @@ const Home = () => {
                                                 </div>
 
                                                 <Box>
-                                                    <span style={{color:'rgb(189, 183, 183)'}}>
+                                                    <span style={{ color: 'rgb(189, 183, 183)' }}>
                                                         This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new. </strong>
                                                     </span>
                                                 </Box>
-                                                
+
                                             </Box>
                                         </Modal>
 
@@ -710,7 +705,7 @@ const Home = () => {
                                         </div>
 
                                         <div className='time'>
-                                            <p>: &nbsp;&nbsp;hindustanautomobiles1934@gmail.com</p>
+                                            <p>: &nbsp;&nbsp;thepistonlounge@gmail.com</p>
                                             <p>: &nbsp;&nbsp;tausifshaikh2505@gmail.com</p>
                                             <p>: &nbsp;&nbsp;8657445050</p>
                                         </div>
