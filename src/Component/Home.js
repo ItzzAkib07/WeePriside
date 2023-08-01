@@ -120,14 +120,17 @@ const Home = () => {
 
 
     // modal states
+    // states for modal - 1
     const [open, setOpen] = React.useState(false);
     const handleOpen1 = () => setOpen(true);
     const handleClose1 = () => setOpen(false);
 
+    // states for modal - 2
     const [open2, setOpen2] = React.useState(false);
     const handleOpen2 = () => setOpen2(true);
     const handleClose2 = () => setOpen2(false);
 
+    // states for modal - 3
     const [open3, setOpen3] = React.useState(false);
     const handleOpen3 = () => setOpen3(true);
     const handleClose3 = () => setOpen3(false);
