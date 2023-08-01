@@ -94,6 +94,7 @@ const Home = () => {
     const [getPhone, setPhone] = React.useState('');
     const [getQuery, setQuery] = React.useState('');
 
+    // Funtion to send mail
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -134,30 +135,42 @@ const Home = () => {
 
     return (
         <>
+            {/* Main Container */}
+            <section className='home-container'>
 
-            <div className='home-container'>
 
+                {/* Header section */}
                 <section id='header'>
 
                     <div className='header'>
 
+
+                        {/* Open side - navbar button */}
                         <div className='menu-btn'>
-
                             <span className='btn' id='open' onClick={slide}><i class="fa-solid fa-bars"></i></span>
-
                         </div>
 
+                        {/* Logo section */}
                         <div className='logo'>
 
-                            <a href='#home'> <img src={logo} /></a>
+                            <SmoothScrollingLink to="home" >
+                                <img src={logo} />
+                            </SmoothScrollingLink>
+
 
                             <div className='title animate__animated animate__shakeX'>
-                                <a href='#home'><span >THE <span className='half-title'>PISTON LOUNGE</span> </span></a>
+                                <SmoothScrollingLink to="home" >
+                                    <span >THE <span className='half-title'>PISTON LOUNGE</span> </span>
+                                </SmoothScrollingLink>
                             </div>
+
                         </div>
 
+
+                        {/* Side - navbar section  */}
                         <div className='side-navbar' id='side-navbar'>
 
+                            {/* title and close navbar */}
                             <div className='close-hamburger'>
                                 <span style={{ marginLeft: '1rem' }}>THE PISTON LOUNGE</span>
 
@@ -166,7 +179,7 @@ const Home = () => {
                             </div>
 
 
-
+                            {/* Side - navItem section */}
                             <div className='side-navItems' id='side-navItems'>
 
                                 <SmoothScrollingLink to="home" >
@@ -181,7 +194,6 @@ const Home = () => {
                                         <i class="fa-solid fa-gear"></i>
                                         <span>Our Services</span>
                                     </span>
-
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="booking" >
@@ -192,7 +204,7 @@ const Home = () => {
                                 </SmoothScrollingLink>
 
 
-                                <SmoothScrollingLink to="contact" >
+                                <SmoothScrollingLink to="contact">
                                     <span className="subnavbtn" >
                                         <i class="fa-solid fa-phone"></i>
                                         <span>Contact Us</span>
@@ -207,8 +219,12 @@ const Home = () => {
 
                 </section>
 
-                <div className='home-sections'>
 
+                {/* body section */}
+                <section className='home-sections'>
+
+
+                    {/* Hero section */}
                     <section id='home' className='hero' data-aos="zoom-in">
 
                         <div className='downArrow'>
@@ -216,9 +232,9 @@ const Home = () => {
                             <span >SCROLL DOWN</span>
                         </div>
 
-
                     </section>
 
+                    {/* Quality Assured section */}
                     <section className='quality'>
 
                         <div className='sec-1' data-aos="fade-up">
@@ -244,9 +260,10 @@ const Home = () => {
 
                     </section>
 
+                    {/* Our sevices section */}
                     <section className='servicing-images' id='services'>
 
-                    <h1 style={{ textAlign: 'center', marginTop:'3rem' }} data-aos="fade-down">Our Services</h1>
+                        <h1 style={{ textAlign: 'center', marginTop: '3rem' }} data-aos="fade-down">Our Services</h1>
 
                         <div className='servicing'>
 
@@ -316,283 +333,90 @@ const Home = () => {
 
                     </section>
 
-                    <section >
 
+                    {/* Service Information Section */}
+                    <section className='service-container'>
 
-                        <div className='service-container'>
+                        <div className='service-details' id='service-details'>
 
-                            
-                            <div className='service-details' id='service-details'>
+                            <div className='service' id='service1' data-aos="fade-right">
 
-                                <div className='service' id='service1' data-aos="fade-right">
-
-                                    <div className='img'>
-                                        <img src={brake} />
-                                    </div>
-
-                                    <h4>Brake Service</h4>
-
-                                    <div className='information'>
-
-                                        <p id='p1'>
-
-                                            Regular bike brake service is crucial for safety, longevity, performance, and comfort. Properly maintained brakes ensure your safety while riding, prolong the lifespan of components, enhance stopping power, and provide a more enjoyable riding experience.
-                                        </p>
-
-                                    </div>
+                                <div className='img'>
+                                    <img src={brake} />
                                 </div>
 
-                                <div className='service' id='service2' data-aos="fade-left">
-                                    <div className='img'>
-                                        <img src={engine} />
-                                    </div>
+                                <h4>Brake Service</h4>
 
-                                    <h4>Engine Service</h4>
+                                <div className='information'>
 
-                                    <div className='information'>
-                                        <p id='p2'>
-                                            Regular bike engine service is essential for performance, safety, longevity, fuel efficiency, and resale value. Maintaining your engine ensures proper functionality, prevents issues, reduces the risk of accidents, prolongs its lifespan, saves fuel costs, and enhances resale prospects.
-                                        </p>
-                                    </div>
+                                    <p id='p1'>
+
+                                        Regular bike brake service is crucial for safety, longevity, performance, and comfort. Properly maintained brakes ensure your safety while riding, prolong the lifespan of components, enhance stopping power, and provide a more enjoyable riding experience.
+                                    </p>
 
                                 </div>
+                            </div>
 
-                                <div className='service' id='service3' data-aos="fade-right">
-                                    <div className='img'>
-                                        <img src={wheel} />
-                                    </div>
-
-                                    <h4>Wheel Service</h4>
-
-                                    <div className='information'>
-
-                                        <p id='p3'>
-                                            Regular bike wheel service ensures safety, performance, and longevity. It provides smoother rides, prevents accidents, and extends the lifespan of your bike components.it enhances comfort and aesthetics for an overall biking experience.
-
-                                        </p>
-
-                                    </div>
+                            <div className='service' id='service2' data-aos="fade-left">
+                                <div className='img'>
+                                    <img src={engine} />
                                 </div>
 
-                                <div className='service' id='service4' data-aos="fade-left">
-                                    <div className='img'>
-                                        <img src={oil} />
-                                    </div>
+                                <h4>Engine Service</h4>
 
-                                    <h4>Oil Service</h4>
-
-                                    <div className='information'>
-
-                                        <p id='p4'>
-                                            Regular bike oil service ensures proper lubrication, cooling, and performance, extending engine life and preventing damage from contamination. Fresh oil reduces friction, increases horsepower, and improves fuel efficiency for a smooth ride.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-                                <div className='service' id='service5' data-aos="fade-right">
-                                    <div className='img'>
-                                        <img src={battery} />
-                                    </div>
-
-                                    <h4>Battery Service</h4>
-
-                                    <div className='information'>
-
-                                        <p id='p5'>
-                                            Regular bike battery service ensures reliable starting, proper electrical component functioning, and enhanced battery lifespan. It also promotes safety by preventing electrical issues and potential engine stalling while providing long-term cost savings.
-                                        </p>
-                                    </div>
-
+                                <div className='information'>
+                                    <p id='p2'>
+                                        Regular bike engine service is essential for performance, safety, longevity, fuel efficiency, and resale value. Maintaining your engine ensures proper functionality, prevents issues, reduces the risk of accidents, prolongs its lifespan, saves fuel costs, and enhances resale prospects.
+                                    </p>
                                 </div>
 
                             </div>
 
-                            <div className='pricing-container' data-aos="fade-up">
+                            <div className='service' id='service3' data-aos="fade-right">
+                                <div className='img'>
+                                    <img src={wheel} />
+                                </div>
 
-                                <h1 id='pricing' data-aos="fade-down">Pricing</h1>
+                                <h4>Wheel Service</h4>
 
-                                <div className='listing' >
+                                <div className='information'>
 
-                                    <div className='pricing' >
-                                        <h2>General Service <span>Without Oil</span></h2>
+                                    <p id='p3'>
+                                        Regular bike wheel service ensures safety, performance, and longevity. It provides smoother rides, prevents accidents, and extends the lifespan of your bike components.it enhances comfort and aesthetics for an overall biking experience.
 
-                                        <span>Rs 399/-</span>
+                                    </p>
 
-                                        <span>Get to know more about this service </span>
+                                </div>
+                            </div>
 
-                                        <p onClick={handleOpen1}>Click here</p>
+                            <div className='service' id='service4' data-aos="fade-left">
+                                <div className='img'>
+                                    <img src={oil} />
+                                </div>
 
-                                        <a href='#booking'><button>Book Service</button></a>
+                                <h4>Oil Service</h4>
 
-                                        <Modal
-                                            open={open}
-                                            onClose={handleClose1}
-                                            aria-labelledby="modal-modal-title"
-                                            aria-describedby="modal-modal-description"
-                                        >
-                                            <Box sx={style}>
+                                <div className='information'>
 
-                                                <Box sx={{
-                                                    position: 'relative',
-                                                    alignItems: 'center',
-                                                    color: 'white',
-                                                    left: '50%',
-                                                    top: '-1rem',
-                                                    fontSize: '1.5rem',
-                                                    fontWeight: '900',
-                                                    cursor: 'pointer'
-                                                }}
-                                                    onClick={handleClose1}
-                                                >
-                                                    <i class="fa-solid fa-xmark"></i>
-                                                </Box>
+                                    <p id='p4'>
+                                        Regular bike oil service ensures proper lubrication, cooling, and performance, extending engine life and preventing damage from contamination. Fresh oil reduces friction, increases horsepower, and improves fuel efficiency for a smooth ride.
+                                    </p>
+                                </div>
 
-                                                <div className='modal-header'>
-                                                    <h2>General Service <span>Without Oil</span></h2>
-                                                </div>
+                            </div>
 
-                                                <Box>
-                                                    <ul className='serviceList'>
-                                                        <li> <span> Cleaning</span> </li>
-                                                        <li> <span> Chain Cleaning </span> </li>
-                                                        <li> <span> Chain Lubrication </span> </li>
-                                                        <li> <span> Brake Adjustment </span> </li>
-                                                        <li> <span> Brake Pad Inspection </span> </li>
-                                                        <li> <span> Brake Caliper Alignment </span> </li>
-                                                        <li> <span> Gear Shifting Adjustment </span> </li>
-                                                        <li> <span> Tire Inspection </span> </li>
-                                                        <li> <span> Headset Adjustment </span> </li>
-                                                        <li> <span> Cable Inspection </span> </li>
-                                                    </ul>
-                                                </Box>
+                            <div className='service' id='service5' data-aos="fade-right">
+                                <div className='img'>
+                                    <img src={battery} />
+                                </div>
 
-                                            </Box>
-                                        </Modal>
+                                <h4>Battery Service</h4>
 
-                                    </div>
+                                <div className='information'>
 
-                                    <div className='pricing'>
-                                        <h2>General Service <span>With Oil</span></h2>
-
-                                        <span>Rs 699/-</span>
-
-                                        <span>Get to know more about this service </span>
-
-                                        <p onClick={handleOpen2}>Click here</p>
-
-                                        <a href='#booking'><button>Book Service</button></a>
-
-                                        <Modal
-                                            open={open2}
-                                            onClose={handleClose2}
-                                            aria-labelledby="modal-modal-title"
-                                            aria-describedby="modal-modal-description"
-                                        >
-                                            <Box sx={style}>
-
-                                                <Box sx={{
-                                                    position: 'relative',
-                                                    alignItems: 'center',
-                                                    color: 'white',
-                                                    left: '50%',
-                                                    top: '-1rem',
-                                                    fontSize: '1.5rem',
-                                                    fontWeight: '900',
-                                                    cursor: 'pointer'
-                                                }}
-                                                    onClick={handleClose2}
-                                                >
-                                                    <i class="fa-solid fa-xmark"></i>
-                                                </Box>
-
-                                                <div className='modal-header'>
-                                                    <h2>General Service <span>With Oil</span></h2>
-                                                </div>
-
-                                                <Box>
-                                                    <span style={{ color: 'rgb(189, 183, 183)' }}>
-                                                        This service will cover all the tasks from general service without oil and adds oil-based component maintenance,such as
-                                                    </span>
-
-                                                    <ul className='serviceList'>
-                                                        <li> <span> checking oil levels</span> </li>
-                                                        <li> <span> Draining and topping up the oil </span> </li>
-                                                        <li> <span> suspension forks </span> </li>
-                                                        <li> <span> shock absorbers </span> </li>
-                                                        <li> <span> nternal gear hubs </span> </li>
-                                                        <li> <span> Brake and grar oil </span> </li>
-                                                    </ul>
-                                                </Box>
-
-                                            </Box>
-                                        </Modal>
-                                    </div>
-
-                                    <div className='pricing'>
-                                        <h2>Special Service <span className='h2-span'>Customizable</span></h2>
-
-                                        <span>Rs 799/-</span>
-
-                                        <span>Get to know more about this service</span>
-
-                                        <p onClick={handleOpen3}>Click here</p>
-
-                                        <a href='#booking'><button>Book Service</button></a>
-
-                                        <Modal
-                                            open={open3}
-                                            onClose={handleClose3}
-                                            aria-labelledby="modal-modal-title"
-                                            aria-describedby="modal-modal-description"
-                                        >
-                                            <Box sx={style}>
-
-                                                <Box sx={{
-                                                    position: 'relative',
-                                                    alignItems: 'center',
-                                                    color: 'white',
-                                                    left: '50%',
-                                                    top: '-1rem',
-                                                    fontSize: '1.5rem',
-                                                    fontWeight: '900',
-                                                    cursor: 'pointer'
-                                                }}
-                                                    onClick={handleClose3}
-                                                >
-                                                    <i class="fa-solid fa-xmark"></i>
-                                                </Box>
-
-                                                <div className='modal-header'>
-                                                    <h2>Special Service <span>Customizable</span></h2>
-                                                </div>
-
-                                                <Box>
-                                                    <span style={{ color: 'rgb(189, 183, 183)' }}>
-                                                        This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new.</strong>
-                                                    </span>
-                                                </Box>
-
-                                            </Box>
-                                        </Modal>
-
-                                    </div>
-
-                                    <div className='pricing-information'>
-
-                                        <h2>AFFORDABLE PRICING PLANS</h2>
-
-                                        <p>We provide the best bike service, recommend the best products through an independent review process.</p>
-
-                                        <ul>
-                                            <li><span>SAME DAY SERVICE</span></li>
-                                            <li><span>CONVENIENT LOCATION</span></li>
-                                            <li><span>ONLINE APPOINTMENT</span></li>
-                                            <li><span>PICK-UP & DROP SERVICE</span></li>
-                                        </ul>
-
-                                    </div>
-
+                                    <p id='p5'>
+                                        Regular bike battery service ensures reliable starting, proper electrical component functioning, and enhanced battery lifespan. It also promotes safety by preventing electrical issues and potential engine stalling while providing long-term cost savings.
+                                    </p>
                                 </div>
 
                             </div>
@@ -602,6 +426,208 @@ const Home = () => {
                     </section>
 
 
+                    {/* pricing section */}
+                    <section id='pricing'>
+
+                        <div className='pricing-container'>
+
+                            <h1 data-aos="fade-down">Pricing</h1>
+
+                            <div className='listing' data-aos="fade-up">
+
+                                <div className='pricing' >
+                                    <h2>General Service <span>Without Oil</span></h2>
+
+                                    <span>Rs 399/-</span>
+
+                                    <span>Get to know more about this service </span>
+
+                                    <p onClick={handleOpen1}>Click here</p>
+
+                                    <SmoothScrollingLink to="booking" >
+                                        <button>Book Service</button>
+                                    </SmoothScrollingLink>
+
+                                    <Modal
+                                        open={open}
+                                        onClose={handleClose1}
+                                        aria-labelledby="modal-modal-title"
+                                        aria-describedby="modal-modal-description"
+                                    >
+                                        <Box sx={style}>
+
+                                            <Box sx={{
+                                                position: 'relative',
+                                                alignItems: 'center',
+                                                color: 'white',
+                                                left: '50%',
+                                                top: '-1rem',
+                                                fontSize: '1.5rem',
+                                                fontWeight: '900',
+                                                cursor: 'pointer'
+                                            }}
+                                                onClick={handleClose1}
+                                            >
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </Box>
+
+                                            <div className='modal-header'>
+                                                <h2>General Service <span>Without Oil</span></h2>
+                                            </div>
+
+                                            <Box>
+                                                <ul className='serviceList'>
+                                                    <li> <span> Cleaning</span> </li>
+                                                    <li> <span> Chain Cleaning </span> </li>
+                                                    <li> <span> Chain Lubrication </span> </li>
+                                                    <li> <span> Brake Adjustment </span> </li>
+                                                    <li> <span> Brake Pad Inspection </span> </li>
+                                                    <li> <span> Brake Caliper Alignment </span> </li>
+                                                    <li> <span> Gear Shifting Adjustment </span> </li>
+                                                    <li> <span> Tire Inspection </span> </li>
+                                                    <li> <span> Headset Adjustment </span> </li>
+                                                    <li> <span> Cable Inspection </span> </li>
+                                                </ul>
+                                            </Box>
+
+                                        </Box>
+                                    </Modal>
+
+                                </div>
+
+                                <div className='pricing'>
+                                    <h2>General Service <span>With Oil</span></h2>
+
+                                    <span>Rs 699/-</span>
+
+                                    <span>Get to know more about this service </span>
+
+                                    <p onClick={handleOpen2}>Click here</p>
+
+
+                                    <SmoothScrollingLink to="booking" >
+                                        <button>Book Service</button>
+                                    </SmoothScrollingLink>
+
+                                    <Modal
+                                        open={open2}
+                                        onClose={handleClose2}
+                                        aria-labelledby="modal-modal-title"
+                                        aria-describedby="modal-modal-description"
+                                    >
+                                        <Box sx={style}>
+
+                                            <Box sx={{
+                                                position: 'relative',
+                                                alignItems: 'center',
+                                                color: 'white',
+                                                left: '50%',
+                                                top: '-1rem',
+                                                fontSize: '1.5rem',
+                                                fontWeight: '900',
+                                                cursor: 'pointer'
+                                            }}
+                                                onClick={handleClose2}
+                                            >
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </Box>
+
+                                            <div className='modal-header'>
+                                                <h2>General Service <span>With Oil</span></h2>
+                                            </div>
+
+                                            <Box>
+                                                <span style={{ color: 'rgb(189, 183, 183)' }}>
+                                                    This service will cover all the tasks from general service without oil and adds oil-based component maintenance,such as
+                                                </span>
+
+                                                <ul className='serviceList'>
+                                                    <li> <span> checking oil levels</span> </li>
+                                                    <li> <span> Draining and topping up the oil </span> </li>
+                                                    <li> <span> suspension forks </span> </li>
+                                                    <li> <span> shock absorbers </span> </li>
+                                                    <li> <span> nternal gear hubs </span> </li>
+                                                    <li> <span> Brake and grar oil </span> </li>
+                                                </ul>
+                                            </Box>
+
+                                        </Box>
+                                    </Modal>
+                                </div>
+
+                                <div className='pricing'>
+                                    <h2>Special Service <span className='h2-span'>Customizable</span></h2>
+
+                                    <span>Rs 799/-</span>
+
+                                    <span>Get to know more about this service</span>
+
+                                    <p onClick={handleOpen3}>Click here</p>
+
+                                    <SmoothScrollingLink to="booking" >
+                                        <button>Book Service</button>
+                                    </SmoothScrollingLink>
+
+                                    <Modal
+                                        open={open3}
+                                        onClose={handleClose3}
+                                        aria-labelledby="modal-modal-title"
+                                        aria-describedby="modal-modal-description"
+                                    >
+                                        <Box sx={style}>
+
+                                            <Box sx={{
+                                                position: 'relative',
+                                                alignItems: 'center',
+                                                color: 'white',
+                                                left: '50%',
+                                                top: '-1rem',
+                                                fontSize: '1.5rem',
+                                                fontWeight: '900',
+                                                cursor: 'pointer'
+                                            }}
+                                                onClick={handleClose3}
+                                            >
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </Box>
+
+                                            <div className='modal-header'>
+                                                <h2>Special Service <span>Customizable</span></h2>
+                                            </div>
+
+                                            <Box>
+                                                <span style={{ color: 'rgb(189, 183, 183)' }}>
+                                                    This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new.</strong>
+                                                </span>
+                                            </Box>
+
+                                        </Box>
+                                    </Modal>
+
+                                </div>
+
+                                <div className='pricing-information'>
+
+                                    <h2>AFFORDABLE PRICING PLANS</h2>
+
+                                    <p>We provide the best bike service, recommend the best products through an independent review process.</p>
+
+                                    <ul>
+                                        <li><span>SAME DAY SERVICE</span></li>
+                                        <li><span>CONVENIENT LOCATION</span></li>
+                                        <li><span>ONLINE APPOINTMENT</span></li>
+                                        <li><span>PICK-UP & DROP SERVICE</span></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    {/* booking Section */}
                     <section id='booking'>
 
                         <div className='booking-container' data-aos="flip-up">
@@ -625,7 +651,10 @@ const Home = () => {
                                     <input type='text' id='details' name='details' placeholder='Tell us how we can help you?' autoComplete='off' onChange={(e) => setQuery(e.target.value)} />
                                 </div>
 
-                                <a className='serivce-link' href='#pricing'>Check our services here</a>
+
+                                <SmoothScrollingLink to="pricing" >
+                                    <span className='serivce-link'>Check-out our plans here</span>
+                                </SmoothScrollingLink>
 
                                 <button className='booking-btn' id='btn' type='submit'></button>
 
@@ -635,6 +664,7 @@ const Home = () => {
 
                     </section>
 
+                    {/* contact Section */}
                     <section id='contact'>
 
                         <div className='form-container' data-aos="fade-up">
@@ -685,7 +715,7 @@ const Home = () => {
 
                                 <div className='support'>
 
-                                    <h2>Customer support</h2>
+                                    <h2>Customer Support</h2>
 
                                     <div className='info'>
 
@@ -713,6 +743,8 @@ const Home = () => {
 
                     </section>
 
+
+                    {/* Brands Image slide show */}
                     <section id='slideshow' data-aos="zoom-in">
 
                         <h1>Brands we have serviced</h1>
@@ -779,16 +811,16 @@ const Home = () => {
                         </Splide>
                     </section>
 
-                </div>
+                </section>
 
+                {/* Footer section */}
                 <section id='footer'>
                     <div className='footer'>
 
                         <footer>
                             <span>
-                                &copy; The Piston Lounge - 2023
+                                &copy;2023, The Piston Lounge
                             </span>
-
                         </footer>
 
                         <div>
@@ -802,13 +834,13 @@ const Home = () => {
 
                 </section>
 
-
+                {/* Scroll Top button */}
                 <SmoothScrollingLink to="home" >
-                    <span className='scroll' href='#home'>
+                    <span className='scroll'>
                         <button><i class="fa-solid fa-jet-fighter-up"></i></button>
                     </span>
                 </SmoothScrollingLink>
-            </div>
+            </section>
 
         </>
     )

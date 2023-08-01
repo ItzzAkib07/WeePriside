@@ -131,9 +131,10 @@ body {
   padding: 0 2rem;
   align-items: center;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.subnavbtn a {
+.subnavbtn span {
   text-decoration: none;
   color: white;
   font-weight: 600;
@@ -145,10 +146,10 @@ body {
   background-color: rgb(189, 183, 183);
 }
 
-.active {
-  color: white;
+.active{
   font-weight: bold;
-  background-color: #2196f3;
+  background-color: rgb(189, 183, 183);
+  color: black;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////   Header section  //////////////////////////////////////////////////////////////////////////////// */
@@ -178,6 +179,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
+  cursor: pointer;
 }
 
 .header .logo img {
@@ -463,6 +465,7 @@ header li a:hover {
   justify-content: center;
   margin: 1rem 0;
   flex-wrap: wrap;
+  padding: 0 1rem;
   overflow: hidden;
 }
 
@@ -500,11 +503,6 @@ header li a:hover {
   margin-top: 1rem;
 }
 
-.service-container {
-  max-height: 100%;
-  /* max-width: 100%; */
-  padding: 0 1rem;
-}
 
 h1 {
   color: black;
@@ -1689,7 +1687,7 @@ h1:hover {
   }
 
   .pricing-information {
-    width: 100%;
+    width: 90%;
   }
 
   .servicing-images {
