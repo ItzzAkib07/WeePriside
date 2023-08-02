@@ -9,13 +9,14 @@ body {
 
 /* @import "https://rsms.me/inter/inter.css"; */
 
-:root 
-{
-   font-family: 'Inter', sans-serif;
+:root {
+  font-family: "Inter", sans-serif;
 }
 
 @supports (font-variation-settings: normal) {
-  :root { font-family: 'Inter var', sans-serif; }
+  :root {
+    font-family: "Inter var", sans-serif;
+  }
 }
 
 /* width */
@@ -146,7 +147,7 @@ body {
   background-color: rgb(189, 183, 183);
 }
 
-.active{
+.active {
   font-weight: bold;
   background-color: rgb(189, 183, 183);
   color: black;
@@ -205,7 +206,7 @@ body {
 }
 .header .logo:hover span {
   color: white;
-  text-shadow:5px 5px 30px white;
+  text-shadow: 5px 5px 30px white;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
@@ -218,7 +219,7 @@ body {
 
 .header .logo:hover .half-title {
   color: white;
-  text-shadow:5px 5px 30px white;
+  text-shadow: 5px 5px 30px white;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
@@ -251,28 +252,25 @@ header li a:hover {
   transition: ease 0.5s linear;
 }
 
-.header .menu-btn .btn{
+.header .menu-btn .btn {
   font-size: 1.5rem;
   outline: none;
   cursor: pointer;
-  color:gray;
+  color: gray;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
-.header .menu-btn .btn:hover{
+.header .menu-btn .btn:hover {
   color: white;
-  text-shadow:5px 5px 30px white;
+  text-shadow: 5px 5px 30px white;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-
-
-
 
 /* ///////////////////////////////////////////////////////////////////////////////   Home section  //////////////////////////////////////////////////////////////////////////////// */
 
@@ -292,7 +290,7 @@ header li a:hover {
 .downArrow {
   border-radius: 50%;
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -503,7 +501,6 @@ header li a:hover {
   margin-top: 1rem;
 }
 
-
 h1 {
   color: black;
   font-size: 2.5rem;
@@ -570,7 +567,6 @@ h1:hover {
   width: 50%;
   height: 20rem;
   overflow: hidden;
-
 }
 
 .section-1 .sub-1 img {
@@ -611,7 +607,6 @@ h1:hover {
   justify-content: center;
   flex-direction: row;
   overflow: hidden;
-
 }
 
 .section-2 .sub-3 {
@@ -621,7 +616,6 @@ h1:hover {
   width: 50%;
   height: 20rem;
   overflow: hidden;
-
 }
 
 .section-2 .sub-3 p {
@@ -663,7 +657,6 @@ h1:hover {
   width: 50%;
   height: 20rem;
   overflow: hidden;
-
 }
 
 .section-3 .sub-5 img {
@@ -712,7 +705,6 @@ h1:hover {
   width: 50%;
   height: 20rem;
   overflow: hidden;
-
 }
 
 .servicing h1 {
@@ -819,7 +811,7 @@ h1:hover {
   flex-direction: column;
   text-align: center;
   color: rgb(189, 183, 183);
-  }
+}
 
 .pricing h2 span {
   font-size: 0.9rem;
@@ -827,7 +819,7 @@ h1:hover {
   font-weight: 900;
 }
 
-.modal-header h2{
+.modal-header h2 {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -870,10 +862,9 @@ h1:hover {
   font-size: 1rem;
   font-weight: 400;
   font-weight: bold;
-
 }
 
-.pricing a:hover button{
+.pricing a:hover button {
   color: whitesmoke;
   font-weight: bold;
   font-weight: bold;
@@ -883,7 +874,7 @@ h1:hover {
   background-color: #424242;
 }
 
-.serviceList{
+.serviceList {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -891,12 +882,12 @@ h1:hover {
   gap: 1rem;
 }
 
-.serviceList li{
+.serviceList li {
   font-weight: 900;
   cursor: pointer;
 }
 
-.serviceList li span{
+.serviceList li span {
   color: rgb(189, 183, 183);
 }
 
@@ -1022,7 +1013,7 @@ h1:hover {
 
 /* ///////////////////////////////////////////////////////////////////////////////   Booking Section  //////////////////////////////////////////////////////////////////////////////// */
 
-#booking{
+#booking {
   overflow: hidden;
 }
 
@@ -1106,15 +1097,12 @@ h1:hover {
   background-color: #212121;
 } */
 
-
-
-
-.form .booking-btn { 
-  min-width: 30%; 
-  height: 4rem; 
-  position: relative; 
-  border-radius: 50px; 
-  cursor: pointer 
+.form .booking-btn {
+  min-width: 30%;
+  height: 4rem;
+  position: relative;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 .form .booking-btn:hover::after {
@@ -1134,12 +1122,11 @@ h1:hover {
   inset: 5px;
   border-radius: 45px;
   z-index: 1;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
-
 @property --r {
-  syntax: '<angle>';
+  syntax: "<angle>";
   inherits: false;
   initial-value: 0deg;
 }
@@ -1161,13 +1148,13 @@ h1:hover {
 /* better version */
 
 @property --r2 {
-  syntax: '<angle>';
+  syntax: "<angle>";
   inherits: false;
   initial-value: 0deg;
 }
 
 @property --x {
-  syntax: '<length>';
+  syntax: "<length>";
   inherits: false;
   initial-value: 0px;
 }
@@ -1278,6 +1265,7 @@ h1:hover {
 
 /* ///////////////////////////////////////////////////////////////////////////////   Address section  //////////////////////////////////////////////////////////////////////////////// */
 
+
 .address {
   width: 35%;
   height: 20rem;
@@ -1304,8 +1292,8 @@ h1:hover {
       var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
     conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
       var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
-      background-color: white;
-      box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
+  background-color: white;
+  box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
   transition: 0.3s, background-position 0.3s 0.3s;
   cursor: pointer;
 }
@@ -1315,10 +1303,9 @@ h1:hover {
   transition: 0.3s, background-size 0.3s 0.3s;
 }
 
-.address h2{
+.address h2 {
   color: black;
   border-bottom: 2px solid #424242;
-
 }
 
 .address .details a {
@@ -1331,8 +1318,6 @@ h1:hover {
   color: black;
   font-weight: bold;
 }
-
-
 
 .address .details {
   width: 90%;
@@ -1368,6 +1353,43 @@ h1:hover {
   text-decoration: none;
 }
 
+.map {
+  width: 35%;
+  height: 22rem;
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  text-align: center;
+  align-items: center;
+
+  --c: black; /* the border color */
+  --b: 3px; /* the border thickness*/
+  --g: 5px; /* the gap on hover */
+  /* padding: calc(var(--g) + var(--b)); */
+
+  --_g: #0000 25%, var(--c) 0;
+
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+  background-color: white;
+  box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
+  transition: 0.3s, background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.map:hover {
+  --_i: 100%;
+  transition: 0.3s, background-size 0.3s 0.3s;
+}
+
 .hours {
   width: 35%;
   height: 20rem;
@@ -1394,8 +1416,8 @@ h1:hover {
     conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
       var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
 
-      background-color: white;
-      box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
+  background-color: white;
+  box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
 
   transition: 0.3s, background-position 0.3s 0.3s;
   cursor: pointer;
@@ -1406,7 +1428,7 @@ h1:hover {
   transition: 0.3s, background-size 0.3s 0.3s;
 }
 
-.hours h2{
+.hours h2 {
   color: black;
   border-bottom: 2px solid #424242;
 }
@@ -1421,7 +1443,6 @@ h1:hover {
   color: black;
   font-weight: bold;
 }
-
 
 .support {
   width: 35%;
@@ -1460,19 +1481,15 @@ h1:hover {
   transition: 0.3s, background-size 0.3s 0.3s;
 }
 
-
-
 .support h2 {
   color: black;
   border-bottom: 2px solid #424242;
-
 }
 
 .support p {
   color: black;
   font-weight: bold;
 }
-
 
 .support .info {
   display: flex;
@@ -1482,7 +1499,7 @@ h1:hover {
 
 /* ///////////////////////////////////////////////////////////////////////////////   Brands section  //////////////////////////////////////////////////////////////////////////////// */
 
-#slideshow{
+#slideshow {
   overflow: hidden;
 }
 
@@ -1557,33 +1574,32 @@ h1:hover {
   align-items: center;
 }
 
-.footer-heart{
-  text-align:center;
-  font-family: open sans, sans-serif; 
+.footer-heart {
+  text-align: center;
+  font-family: open sans, sans-serif;
 }
 
-.footer-heart a{
+.footer-heart a {
   border-bottom: 1px solid #453886;
   color: white;
-  padding-bottom: .25em;
+  padding-bottom: 0.25em;
   text-decoration: none;
 }
 
-.footer-heart a:hover{
-  color:#2196f3; 
+.footer-heart a:hover {
+  color: #2196f3;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
   background-position: bottom;
   background-repeat: repeat-x;
   background-size: 20%;
   border-bottom: 0;
-  padding-bottom: .3em;
+  padding-bottom: 0.3em;
   text-decoration: none;
 }
 
-.emoji{
+.emoji {
   vertical-align: middle;
 }
-
 
 /* ///////////////////////////////////////////////////////////////////////////////   Media Queries section  //////////////////////////////////////////////////////////////////////////////// */
 
@@ -1595,7 +1611,6 @@ h1:hover {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-
   .hero {
     height: 85vh;
     margin-bottom: 2rem;
@@ -1614,12 +1629,12 @@ h1:hover {
     margin: 0 1rem;
     flex-direction: column;
   }
-  
+
   .quality .sec-1 {
     height: 100%;
     width: 100%;
   }
-  
+
   .quality .sec-2 {
     width: 100%;
   }
@@ -1660,18 +1675,17 @@ h1:hover {
     padding: 1rem 0;
   }
 
-  .service .img{
+  .service .img {
     padding-left: 1rem;
   }
 
-  .service h4{
+  .service h4 {
     padding-left: 1rem;
   }
 
-  .service .information p{
+  .service .information p {
     padding-left: 1rem;
   }
-
 
   .listing {
     flex-direction: column;
@@ -1709,21 +1723,19 @@ h1:hover {
   .section-1 .sub-2 {
     width: 100%;
     overflow: hidden;
-
   }
 
-  .section-1 .sub-2 h1{
+  .section-1 .sub-2 h1 {
     font-size: 1.5rem;
     margin: 0.5rem 0;
   }
 
   .servicing .section-2 {
     flex-direction: column-reverse;
-
   }
 
   .servicing .section-2 {
-        flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
 
   .section-2 .sub-3 {
@@ -1731,7 +1743,7 @@ h1:hover {
     overflow: hidden;
   }
 
-  .section-2 .sub-3 h1{
+  .section-2 .sub-3 h1 {
     margin: 0.5rem 0;
     font-size: 1.5rem;
   }
@@ -1763,7 +1775,7 @@ h1:hover {
     overflow: hidden;
   }
 
-  .section-3 .sub-6 h1{
+  .section-3 .sub-6 h1 {
     margin: 0.5rem 0;
     font-size: 1.5rem;
   }
@@ -1777,7 +1789,7 @@ h1:hover {
     overflow: hidden;
   }
 
-  .section-4 .sub-7 h1{
+  .section-4 .sub-7 h1 {
     margin: 0.5rem 0;
     font-size: 1.5rem;
   }
@@ -1795,7 +1807,7 @@ h1:hover {
     width: 100%;
   }
 
-  .form .booking-btn{
+  .form .booking-btn {
     width: 50%;
     height: 3rem;
   }
@@ -1823,6 +1835,11 @@ h1:hover {
     width: 100%;
   }
 
+  .map {
+    margin: 1rem 0;
+    width: 92%;
+  }
+
   .hours {
     margin: 1rem 0;
     width: 100%;
@@ -1837,14 +1854,14 @@ h1:hover {
     left: 85%;
   }
 
-  #slideshow{
+  #slideshow {
     display: none;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) {
-    /* body {
+  /* body {
     background: green;
   } */
 
@@ -1912,6 +1929,11 @@ h1:hover {
     width: 45%;
   }
 
+  .map {
+    margin: 0;
+    width: 43%;
+  }
+
   .hours {
     margin: 0;
     width: 45%;
@@ -1919,7 +1941,7 @@ h1:hover {
 
   .support {
     margin: 0;
-    width: 50%;
+    width: 45%;
   }
 
   .support .info {
@@ -1932,43 +1954,55 @@ h1:hover {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   /* body {
     background: blue;
   } */
 
+  .service-details .service {
+    width: 45%;
+  }
+
   .pricing p {
     width: 90%;
   }
+
+  .map {
+    margin: 0;
+    width: 41%;
+}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 993px) {
-  body {
     /* background: orange; */
-    .scroll{
-  left: 95%;
-}
+    .scroll {
+      left: 95%;
+    }
     .section-1 .sub-1 img {
-  object-fit: cover;
-}
+      object-fit: cover;
+    }
     .section-2 .sub-4 img {
-  object-fit: cover;
-}
-      .section-3 .sub-5 img {
-  object-fit: cover;
-}
-    
-      .section-4 .sub-8 img {
-  object-fit: cover;
-}
+      object-fit: cover;
+    }
+    .section-3 .sub-5 img {
+      object-fit: cover;
+    }
+
+    .section-4 .sub-8 img {
+      object-fit: cover;
+    }
+
+    .map {
+      margin: 0;
+      width: 42%;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1201px) {
   /* body {background: pink;} */
-  .scroll{
-  left: 95%;
-}
+  .scroll {
+    left: 95%;
+  }
 }

@@ -135,7 +135,6 @@ const Home = () => {
     const handleOpen3 = () => setOpen3(true);
     const handleClose3 = () => setOpen3(false);
 
-
     return (
         <>
             {/* Main Container */}
@@ -680,7 +679,6 @@ const Home = () => {
 
                                     <h2>Address</h2>
 
-
                                     <div className='details '>
                                         <span><a href='https://goo.gl/maps/WoDP7swRrsGZ1fzi8' target="_blank">37/2 Bidi kamgar road, opp. axis bank ATM Machine, Chandan Nagar, Kharadi, Pune, Maharashtra, 411014</a></span>
                                     </div>
@@ -688,6 +686,12 @@ const Home = () => {
                                     <button className='address-btn'>
                                         <a href='https://goo.gl/maps/WoDP7swRrsGZ1fzi8' target="_blank">Get Directions <i class="fa-solid fa-road"></i></a>
                                     </button>
+
+                                </div>
+                                
+                                <div className='map'>
+
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1891.1828430015382!2d73.9298891!3d18.5575452!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sHindustan%20two%20wheeler%20spare%20parts%20and%20servic!5e0!3m2!1sen!2sin!4v1690981342871!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{height:'100%', width:'100%', border:'none' }}/>
 
                                 </div>
 
