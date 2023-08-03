@@ -1028,6 +1028,7 @@ h1:hover {
 
 .booking-container .form {
   /* width: 100%; */
+  height: auto;
   --c: #9e9e9e; /* the border color */
   --b: 5px; /* the border thickness*/
   --g: 5px; /* the gap on hover */
@@ -1995,7 +1996,7 @@ h1:hover {
 
     .map {
       margin: 0;
-      width: 42%;
+      width: 43%;
   }
 }
 

@@ -50,6 +50,11 @@ import 'react-toastify/dist/ReactToastify.css';
 // MUI imports
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import TextField from '@mui/material/TextField';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 // Modal style
 const style = {
@@ -92,18 +97,22 @@ const Home = () => {
     const form = useRef();
     const [getName, setName] = React.useState('');
     const [getPhone, setPhone] = React.useState('');
+    const [getModal, setModal] = React.useState('');
+    const [getService, setService] = React.useState('');
     const [getQuery, setQuery] = React.useState('');
 
     // Funtion to send mail
     const sendEmail = (e) => {
         e.preventDefault();
 
-        if (getName !== "" && getPhone !== "" && getQuery !== "") {
+        if (getName !== "" && getPhone !== "" && getModal !== "" && getService !== "") {
 
             emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
                 .then((result) => {
                     toast("Thank you for choosing The Piston Lounge.\n Give us some time will get back to you soon.")
-                    window.location.reload(false);
+                    setTimeout(() => {
+                        window.location.reload(false);
+                    }, 5000);
                 }, (error) => {
                     toast.error("Not able to book service. Please check your connection or try again later.");
                     console.log(error.text);
@@ -112,7 +121,7 @@ const Home = () => {
             toast.error("Please fill all the fields");
         }
     };
-
+    
     //   init Aos animation
     useEffect(() => {
         AOS.init();
@@ -640,17 +649,72 @@ const Home = () => {
 
                                 <div className='input'>
                                     <i className="fa-solid fa-user"></i>
-                                    <input type='text' id='name' name='name' placeholder='Enter your name' autoFocus autoComplete='off' onChange={(e) => setName(e.target.value)} />
+                                    {/* <input type='text' id='name' name='name' placeholder='Enter your name' autoFocus autoComplete='off' onChange={(e) => setName(e.target.value)} /> */}
+                                    <TextField id='name' name='name' label="Name"  value={getName} variant="standard"  autoComplete='off' onChange={(e) => setName(e.target.value)}
+                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                        InputLabelProps={{
+                                            sx: {
+                                                color: "gray",
+                                            }
+                                        }} />
                                 </div>
 
                                 <div className='input'>
                                     <i className="fa-solid fa-phone"></i>
-                                    <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' onChange={(e) => setPhone(e.target.value)} />
+                                    {/* <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' onChange={(e) => setPhone(e.target.value)} /> */}
+                                    <TextField id='phone' name='phone' label="Phone number" value={getPhone} variant="standard" autoComplete='off' onChange={(e) => setPhone(e.target.value)}
+                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                        InputLabelProps={{
+                                            sx: {
+                                                color: "gray",
+                                            }
+                                        }} />
+                                </div>
+
+                                <div className='input'>
+                                    <i class="fa-solid fa-motorcycle"></i>
+                                    {/* <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' onChange={(e) => setPhone(e.target.value)} /> */}
+                                    <TextField id='modal' name='modal' label="Bike modal" value={getModal} variant="standard"  autoComplete='off' onChange={(e) => setModal(e.target.value)}
+                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                        InputLabelProps={{
+                                            sx: {
+                                                color: "gray",
+                                            }
+                                        }} />
+                                </div>
+
+                                <div className='input'>
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                    <FormControl variant='standard' sx={{ m: 1, minWidth: 120, width: '100%' }}>
+                                        <InputLabel id="demo-simple-select-helper-label" sx={{ color: 'gray' }}>Select Service</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-helper-label"
+                                            id="serviceType"
+                                            name='serviceType'
+                                            value={getService}
+                                            label="Select Service"
+                                            onChange={(e) => setService(e.target.value)}
+                                            sx={{ color: 'wheat', width: '100%', borderBottom: '1px solid gray' }}
+                                        >
+                                            <MenuItem value={''}><em>None</em></MenuItem>
+                                            <MenuItem value={'Periodic Service'}>Periodic Service</MenuItem>
+                                            <MenuItem value={'Complete Service'}>Complete Service</MenuItem>
+                                            <MenuItem value={'Washing & Polishing'}>Washing & Polishing </MenuItem>
+                                            <MenuItem value={'Bike Wrapping or Painting'}>Bike Wrapping or Painting</MenuItem>
+                                        </Select>
+                                    </FormControl>
                                 </div>
 
                                 <div className='input'>
                                     <i className="fa-solid fa-note-sticky"></i>
-                                    <input type='text' id='details' name='details' placeholder='Tell us how we can help you?' autoComplete='off' onChange={(e) => setQuery(e.target.value)} />
+                                    {/* <input type='text' id='details' name='details' placeholder='Tell us how we can help you?' autoComplete='off' onChange={(e) => setQuery(e.target.value)} /> */}
+                                    <TextField id='details' name='details' label="Tell us how we can help you?" value={getQuery} variant="standard" autoComplete='off' onChange={(e) => setQuery(e.target.value)}
+                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                        InputLabelProps={{
+                                            sx: {
+                                                color: "gray",
+                                            }
+                                        }} />
                                 </div>
 
 
@@ -688,10 +752,10 @@ const Home = () => {
                                     </button>
 
                                 </div>
-                                
+
                                 <div className='map'>
 
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1891.1828430015382!2d73.9298891!3d18.5575452!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sHindustan%20two%20wheeler%20spare%20parts%20and%20servic!5e0!3m2!1sen!2sin!4v1690981342871!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{height:'100%', width:'100%', border:'none' }}/>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1891.1828430015382!2d73.9298891!3d18.5575452!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sHindustan%20two%20wheeler%20spare%20parts%20and%20servic!5e0!3m2!1sen!2sin!4v1690981342871!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
 
                                 </div>
 
