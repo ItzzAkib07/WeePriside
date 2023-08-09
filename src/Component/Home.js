@@ -3,7 +3,7 @@ import SmoothScrollingLink from '../Component/SmoothScrollingLink';
 
 // Header
 import 'animate.css';
-import logo from '../images/The Piston Lounge.png'
+import logo from '../images/Logo.png'
 
 // quality 
 import quality from '../images/maintainance.svg'
@@ -55,6 +55,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { Tooltip } from '@mui/material';
 
 // Modal style
 const style = {
@@ -121,7 +122,7 @@ const Home = () => {
             toast.error("Please fill all the fields");
         }
     };
-    
+
     //   init Aos animation
     useEffect(() => {
         AOS.init();
@@ -157,9 +158,11 @@ const Home = () => {
 
 
                         {/* Open side - navbar button */}
+                        <Tooltip title = "Menu">
                         <div className='menu-btn'>
                             <span className='btn' id='open' onClick={slide}><i class="fa-solid fa-bars"></i></span>
                         </div>
+                        </Tooltip>
 
                         {/* Logo section */}
                         <div className='logo'>
@@ -171,7 +174,7 @@ const Home = () => {
 
                             <div className='title animate__animated animate__shakeX'>
                                 <SmoothScrollingLink to="home" >
-                                    <span >THE <span className='half-title'>PISTON LOUNGE</span> </span>
+                                    <span >THE <span className='half-title'>PISTON BIKE LOUNGE</span></span>
                                 </SmoothScrollingLink>
                             </div>
 
@@ -183,7 +186,7 @@ const Home = () => {
 
                             {/* title and close navbar */}
                             <div className='close-hamburger'>
-                                <span style={{ marginLeft: '1rem' }}>THE PISTON LOUNGE</span>
+                                <span style={{ marginLeft: '1rem' }}>THE PISTON BIKE LOUNGE</span>
 
                                 <button id='close' onClick={close}><i class="fa-solid fa-xmark"></i></button>
 
@@ -194,39 +197,54 @@ const Home = () => {
                             <div className='side-navItems' id='side-navItems'>
 
                                 <SmoothScrollingLink to="home" >
-                                    <span className="subnavbtn" >
-                                        <i class="fa-solid fa-home"></i>
-                                        <span>Home</span>
-                                    </span>
+                                        <span className="subnavbtn"><i class="fa-solid fa-home"></i> Home</span>
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="services" >
-                                    <span className="subnavbtn" >
-                                        <i class="fa-solid fa-gear"></i>
-                                        <span>Our Services</span>
-                                    </span>
+                                        <span className="subnavbtn"> <i class="fa-solid fa-gear"></i> Our Services</span>
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="booking" >
-                                    <span className="subnavbtn" >
-                                        <i class="fa-solid fa-user-pen"></i>
-                                        <span >Book service</span>
-                                    </span>
+                                       
+                                        <span className="subnavbtn"> <i class="fa-solid fa-user-pen"></i> Book service</span>
                                 </SmoothScrollingLink>
 
-
                                 <SmoothScrollingLink to="contact">
-                                    <span className="subnavbtn" >
-                                        <i class="fa-solid fa-phone"></i>
-                                        <span>Contact Us</span>
-                                    </span>
+                                        
+                                        <span className="subnavbtn"> <i class="fa-solid fa-phone"></i> Contact Us</span>
                                 </SmoothScrollingLink>
 
                             </div>
 
+                            {/* Navbar Footer */}
+
+                            <Box sx = {{
+                                width:'100%',
+                                textAlign:'center',
+                                position:'absolute',
+                                bottom:'0'
+
+                            }}>
+                                <footer>
+                                    <span>
+                                        &copy;2023, The Piston Bike Lounge
+                                    </span>
+                                </footer>
+
+                                <div>
+                                    <p class="footer-heart">
+                                        Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+                                            <img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
+                                        </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank'>Akib Mulla</a>
+                                    </p>
+                                </div>
+
+                            </Box>
+
                         </div>
 
                     </div>
+
 
                 </section>
 
@@ -650,7 +668,7 @@ const Home = () => {
                                 <div className='input'>
                                     <i className="fa-solid fa-user"></i>
                                     {/* <input type='text' id='name' name='name' placeholder='Enter your name' autoFocus autoComplete='off' onChange={(e) => setName(e.target.value)} /> */}
-                                    <TextField id='name' name='name' label="Name"  value={getName} variant="standard"  autoComplete='off' onChange={(e) => setName(e.target.value)}
+                                    <TextField id='name' name='name' label="Name" value={getName} variant="standard" autoComplete='off' onChange={(e) => setName(e.target.value)}
                                         sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
                                         InputLabelProps={{
                                             sx: {
@@ -674,7 +692,7 @@ const Home = () => {
                                 <div className='input'>
                                     <i class="fa-solid fa-motorcycle"></i>
                                     {/* <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' onChange={(e) => setPhone(e.target.value)} /> */}
-                                    <TextField id='modal' name='modal' label="Bike modal" value={getModal} variant="standard"  autoComplete='off' onChange={(e) => setModal(e.target.value)}
+                                    <TextField id='modal' name='modal' label="Bike modal" value={getModal} variant="standard" autoComplete='off' onChange={(e) => setModal(e.target.value)}
                                         sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
                                         InputLabelProps={{
                                             sx: {
@@ -890,7 +908,7 @@ const Home = () => {
 
                         <footer>
                             <span>
-                                &copy;2023, The Piston Lounge
+                                &copy;2023, The Piston Bike Lounge
                             </span>
                         </footer>
 
