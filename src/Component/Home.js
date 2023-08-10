@@ -3,7 +3,7 @@ import SmoothScrollingLink from '../Component/SmoothScrollingLink';
 
 // Header
 import 'animate.css';
-import logo from '../images/Logo.png'
+import logo from '../images/BannerLogo.png'
 
 // quality 
 import quality from '../images/maintainance.svg'
