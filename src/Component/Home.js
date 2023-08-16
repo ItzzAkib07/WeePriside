@@ -645,8 +645,23 @@ const Home = () => {
                                         <li><span>SAME DAY SERVICE</span></li>
                                         <li><span>CONVENIENT LOCATION</span></li>
                                         <li><span>ONLINE APPOINTMENT</span></li>
-                                        <li><span>PICK-UP & DROP SERVICE</span></li>
                                     </ul>
+
+                                </div>
+
+                                <div className='pricing-information'>
+
+                                    <h2>PICK-UP & DROP SERVICE</h2>
+
+                                    <p>
+                                        We provide a convenient service for both car and bike washing. You can choose either car or bike washing exclusively. We offer pickup and drop-off from any location beyond 5km with an additional charge of 100. 
+                                        <br/>
+                                        <ul>
+                                            <li>
+                                                <span>Enjoy a 7-10 day warranty on our services.</span>
+                                            </li>
+                                        </ul>
+                                    </p>
 
                                 </div>
 
@@ -762,18 +777,19 @@ const Home = () => {
                                     <h2>Address</h2>
 
                                     <div className='details '>
-                                        <span><a href='https://goo.gl/maps/WoDP7swRrsGZ1fzi8' target="_blank">37/2 Bidi kamgar road, opp. axis bank ATM Machine, Chandan Nagar, Kharadi, Pune, Maharashtra, 411014</a></span>
+                                        <span><a href='https://goo.gl/maps/EyrnVhqbJKK1BNQW8' target="_blank">Sr 231/2, New Airport Rd, next to Elite Tennis Academy, Opp. Turtle Wax Car Care Studio, Viman Nagar, Pune, Maharashtra, 411014</a></span>
                                     </div>
 
                                     <button className='address-btn'>
-                                        <a href='https://goo.gl/maps/WoDP7swRrsGZ1fzi8' target="_blank">Get Directions <i class="fa-solid fa-road"></i></a>
+                                        <a href='https://goo.gl/maps/EyrnVhqbJKK1BNQW8' target="_blank">Get Directions <i class="fa-solid fa-road"></i></a>
                                     </button>
 
                                 </div>
 
                                 <div className='map'>
 
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1891.1828430015382!2d73.9298891!3d18.5575452!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sHindustan%20two%20wheeler%20spare%20parts%20and%20servic!5e0!3m2!1sen!2sin!4v1690981342871!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
+
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.956290218121!2d73.90550125483718!3d18.567558238633854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1ecfd04c219%3A0xd85b904ee6804bd0!2sTurtle%20Wax%20Car%20Care%20Studio%20-%20Roughtaar%20Automotive!5e0!3m2!1sen!2sin!4v1692206736667!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
 
                                 </div>
 
@@ -815,8 +831,8 @@ const Home = () => {
                                         </div>
 
                                         <div className='time'>
-                                            <p>: &nbsp;&nbsp;thepistonlounge@gmail.com</p>
-                                            <p>: &nbsp;&nbsp;tausifshaikh2505@gmail.com</p>
+                                            <p>:&nbsp;&nbsp;<a href="mailto:admin@thepistonbikelounge.com">admin@thepistonbikelounge.com</a></p>
+                                            <p>:&nbsp;&nbsp;<a href="mailto:tausifshaikh2505@gmail.com">tausifshaikh2505@gmail.com</a></p>
                                             <p>: &nbsp;&nbsp;8657445050</p>
                                         </div>
 
