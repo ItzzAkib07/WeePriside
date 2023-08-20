@@ -39,6 +39,34 @@ body {
   background: orangered;
 }
 
+/* WhatsApp button */
+.whatsapp {
+  left: 2%;
+  width: 3rem;
+  bottom: 1rem;
+  height: 3rem;
+  display: flex;
+  cursor: pointer;
+  position: sticky;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+}
+
+.whatsapp button {
+  border: none;
+  outline: none;
+  color: white !important;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 50%;
+  background-color: inherit !important;
+}
+
+.whatsapp button a:visited{
+  color: white;
+}
 /* Scroll top button */
 .scroll {
   width: 100%;
@@ -151,6 +179,57 @@ body {
   font-weight: bold;
   background-color: rgb(189, 183, 183);
   color: black;
+}
+
+.icons {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-size: 24px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icons a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.icons a:hover {
+  color: #ff9900; /* Change to the color you prefer */
+}
+
+.icons a .fa-facebook {
+  background-color: #1877f2; /* Facebook blue color */
+}
+
+.icons a .fa-instagram {
+  background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.icons a .fa-whatsapp {
+  background-color: #25d366; /* WhatsApp green color */
+}
+
+.icons i {
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+}
+
+.icons i:hover {
+  transform: scale(1.2);
+}
+
+#social-head{
+  color: #eee;
+  font-family: 'Bree Serif', serif;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////   Header section  //////////////////////////////////////////////////////////////////////////////// */
@@ -296,6 +375,7 @@ header li a:hover {
   align-items: center;
   flex-direction: column;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 /* Styles for the arrow icon */
@@ -332,7 +412,8 @@ header li a:hover {
   align-items: center;
   gap: 1rem;
   padding: 0 1rem;
-  margin: 2rem 0;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   overflow: hidden;
 }
 

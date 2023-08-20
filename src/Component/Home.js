@@ -158,10 +158,10 @@ const Home = () => {
 
 
                         {/* Open side - navbar button */}
-                        <Tooltip title = "Menu">
-                        <div className='menu-btn'>
-                            <span className='btn' id='open' onClick={slide}><i class="fa-solid fa-bars"></i></span>
-                        </div>
+                        <Tooltip title="Menu">
+                            <div className='menu-btn'>
+                                <span className='btn' id='open' onClick={slide}><i className="fa-solid fa-bars"></i></span>
+                            </div>
                         </Tooltip>
 
                         {/* Logo section */}
@@ -188,41 +188,81 @@ const Home = () => {
                             <div className='close-hamburger'>
                                 <span style={{ marginLeft: '1rem' }}>THE PISTON BIKE LOUNGE</span>
 
-                                <button id='close' onClick={close}><i class="fa-solid fa-xmark"></i></button>
+                                <button id='close' onClick={close}><i className="fa-solid fa-xmark"></i></button>
 
                             </div>
-
 
                             {/* Side - navItem section */}
                             <div className='side-navItems' id='side-navItems'>
 
                                 <SmoothScrollingLink to="home" >
-                                        <span className="subnavbtn"><i class="fa-solid fa-home"></i> Home</span>
+                                    <span className="subnavbtn"><i className="fa-solid fa-home"></i> Home</span>
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="services" >
-                                        <span className="subnavbtn"> <i class="fa-solid fa-gear"></i> Our Services</span>
+                                    <span className="subnavbtn"> <i className="fa-solid fa-gear"></i> Our Services</span>
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="booking" >
-                                       
-                                        <span className="subnavbtn"> <i class="fa-solid fa-user-pen"></i> Book service</span>
+
+                                    <span className="subnavbtn"> <i className="fa-solid fa-user-pen"></i> Book service</span>
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="contact">
-                                        
-                                        <span className="subnavbtn"> <i class="fa-solid fa-phone"></i> Contact Us</span>
+
+                                    <span className="subnavbtn"> <i className="fa-solid fa-phone"></i> Contact Us</span>
                                 </SmoothScrollingLink>
 
                             </div>
 
-                            {/* Navbar Footer */}
 
-                            <Box sx = {{
-                                width:'100%',
-                                textAlign:'center',
-                                position:'absolute',
-                                bottom:'0'
+                            {/* Social Icons */}
+                            <Box sx={{
+                                width: '100%',
+                                textAlign: 'center',
+                                position: 'absolute',
+                                bottom: '6rem'
+
+                            }}>
+                                <span>
+                                    <h2 id="social-head">Get In Touch With Us </h2>
+                                </span>
+
+                                <Box sx = {{
+
+                                }}>
+                                    <ul style={{padding:"0"}}>
+
+                                        <li className="icons">
+                                            <a href="https://www.facebook.com/profile.php?id=61550075405673&mibextid=ZbWKwL" target="_blank">
+                                                <i className="fa-brands fa-facebook" ></i>
+                                            </a>
+                                        </li>
+
+                                        <li className="icons">
+                                            <a href="https://instagram.com/thepistonbikelounge?igshid=MzRlODBiNWFlZA==" target="_blank">
+                                                <i className="fa-brands fa-instagram"></i>
+                                            </a>
+                                        </li>
+
+                                        <li className="icons">
+                                            <a href="https://wa.me/message/FXCIZ4L4CNDJK1" target="_blank">
+                                                <i className="fa-brands fa-whatsapp"></i>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </Box>
+
+                            </Box>
+
+
+                            {/* Navbar Footer */}
+                            <Box sx={{
+                                width: '100%',
+                                textAlign: 'center',
+                                position: 'absolute',
+                                bottom: '0'
 
                             }}>
                                 <footer>
@@ -232,9 +272,9 @@ const Home = () => {
                                 </footer>
 
                                 <div>
-                                    <p class="footer-heart">
-                                        Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
-                                            <img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
+                                    <p className="footer-heart">
+                                        Made with <g-emoji className="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+                                            <img className="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
                                         </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank'>Akib Mulla</a>
                                     </p>
                                 </div>
@@ -255,16 +295,17 @@ const Home = () => {
 
                     {/* Hero section */}
                     <section id='home' className='hero' data-aos="zoom-in">
-
+                    
+                    <SmoothScrollingLink to="quality" >
                         <div className='downArrow'>
-                            <i class="fa-solid fa-arrow-down-long"></i>
+                            <i className="fa-solid fa-arrow-down-long"></i>
                             <span >SCROLL DOWN</span>
                         </div>
-
+                    </SmoothScrollingLink>
                     </section>
 
                     {/* Quality Assured section */}
-                    <section className='quality'>
+                    <section className='quality' id='quality'>
 
                         <div className='sec-1' data-aos="fade-up">
 
@@ -274,7 +315,7 @@ const Home = () => {
                                 The best two wheeler services delivery with assured quality.
                             </span>
 
-                            <ul class="circle-list">
+                            <ul className="circle-list">
                                 <li>Skilled Mechanics</li>
                                 <li>7 Day Service Warranty</li>
                                 <li>Genuine Spares</li>
@@ -497,7 +538,7 @@ const Home = () => {
                                             }}
                                                 onClick={handleClose1}
                                             >
-                                                <i class="fa-solid fa-xmark"></i>
+                                                <i className="fa-solid fa-xmark"></i>
                                             </Box>
 
                                             <div className='modal-header'>
@@ -558,7 +599,7 @@ const Home = () => {
                                             }}
                                                 onClick={handleClose2}
                                             >
-                                                <i class="fa-solid fa-xmark"></i>
+                                                <i className="fa-solid fa-xmark"></i>
                                             </Box>
 
                                             <div className='modal-header'>
@@ -571,12 +612,12 @@ const Home = () => {
                                                 </span>
 
                                                 <ul className='serviceList'>
-                                                    <li> <span> checking oil levels</span> </li>
+                                                    <li> <span> Checking oil levels</span> </li>
                                                     <li> <span> Draining and topping up the oil </span> </li>
-                                                    <li> <span> suspension forks </span> </li>
-                                                    <li> <span> shock absorbers </span> </li>
-                                                    <li> <span> nternal gear hubs </span> </li>
-                                                    <li> <span> Brake and grar oil </span> </li>
+                                                    <li> <span> Suspension forks </span> </li>
+                                                    <li> <span> Shock absorbers </span> </li>
+                                                    <li> <span> Internal gear hubs </span> </li>
+                                                    <li> <span> Brake and Gear oil </span> </li>
                                                 </ul>
                                             </Box>
 
@@ -617,7 +658,7 @@ const Home = () => {
                                             }}
                                                 onClick={handleClose3}
                                             >
-                                                <i class="fa-solid fa-xmark"></i>
+                                                <i className="fa-solid fa-xmark"></i>
                                             </Box>
 
                                             <div className='modal-header'>
@@ -654,8 +695,8 @@ const Home = () => {
                                     <h2>PICK-UP & DROP SERVICE</h2>
 
                                     <p>
-                                        We provide a convenient service for both car and bike washing. You can choose either car or bike washing exclusively. We offer pickup and drop-off from any location beyond 5km with an additional charge of 100. 
-                                        <br/>
+                                        We provide a convenient service for both car and bike washing. You can choose either car or bike washing exclusively. We offer pickup and drop-off from any location beyond 5km with an <strong>additional charge of 100.</strong>
+                                        <br />
                                         <ul>
                                             <li>
                                                 <span>Enjoy a 7-10 day warranty on our services.</span>
@@ -705,7 +746,7 @@ const Home = () => {
                                 </div>
 
                                 <div className='input'>
-                                    <i class="fa-solid fa-motorcycle"></i>
+                                    <i className="fa-solid fa-motorcycle"></i>
                                     {/* <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' onChange={(e) => setPhone(e.target.value)} /> */}
                                     <TextField id='modal' name='modal' label="Bike modal" value={getModal} variant="standard" autoComplete='off' onChange={(e) => setModal(e.target.value)}
                                         sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
@@ -717,7 +758,7 @@ const Home = () => {
                                 </div>
 
                                 <div className='input'>
-                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                    <i className="fa-solid fa-screwdriver-wrench"></i>
                                     <FormControl variant='standard' sx={{ m: 1, minWidth: 120, width: '100%' }}>
                                         <InputLabel id="demo-simple-select-helper-label" sx={{ color: 'gray' }}>Select Service</InputLabel>
                                         <Select
@@ -781,7 +822,7 @@ const Home = () => {
                                     </div>
 
                                     <button className='address-btn'>
-                                        <a href='https://goo.gl/maps/EyrnVhqbJKK1BNQW8' target="_blank">Get Directions <i class="fa-solid fa-road"></i></a>
+                                        <a href='https://goo.gl/maps/EyrnVhqbJKK1BNQW8' target="_blank">Get Directions <i className="fa-solid fa-road"></i></a>
                                     </button>
 
                                 </div>
@@ -825,9 +866,9 @@ const Home = () => {
                                     <div className='info'>
 
                                         <div className='days'>
-                                            <p><i class="fa-solid fa-envelope"></i></p>
-                                            <p><i class="fa-solid fa-envelope"></i></p>
-                                            <p><i class="fa-solid fa-phone"></i></p>
+                                            <p><i className="fa-solid fa-envelope"></i></p>
+                                            <p><i className="fa-solid fa-envelope"></i></p>
+                                            <p><i className="fa-solid fa-phone"></i></p>
                                         </div>
 
                                         <div className='time'>
@@ -922,6 +963,47 @@ const Home = () => {
                 <section id='footer'>
                     <div className='footer'>
 
+
+                        {/* Social Icons */}
+                        {/* <Box sx={{
+                            width: '100%',
+                            textAlign: 'center',
+                            position: 'absolute',
+                            bottom: '6rem'
+
+                        }}>
+                            <span>
+                                <h2 id="social-head">Get In Touch With Us </h2>
+                            </span>
+
+                            <Box sx = {{
+
+                            }}>
+                                <ul style={{padding:"0"}}>
+
+                                    <li className="icons">
+                                        <a href="https://www.facebook.com/akib.mulla.961" target="_blank" className='facebook'>
+                                            <i className="fa-brands fa-facebook"></i>
+                                        </a>
+                                    </li>
+
+                                    <li className="icons">
+                                        <a href="https://www.instagram.com/itzz._akib._____/" target="_blank">
+                                            <i className="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </li>
+
+                                    <li className="icons">
+                                        <a href="https://github.com/ItzzAkib07" target="_blank">
+                                            <i className="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </Box>
+
+                        </Box> */}
+
                         <footer>
                             <span>
                                 &copy;2023, The Piston Bike Lounge
@@ -929,9 +1011,9 @@ const Home = () => {
                         </footer>
 
                         <div>
-                            <p class="footer-heart">
-                                Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
-                                    <img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
+                            <p className="footer-heart">
+                                Made with <g-emoji className="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+                                    <img className="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
                                 </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank'>Akib Mulla</a>
                             </p>
                         </div>
@@ -939,11 +1021,26 @@ const Home = () => {
 
                 </section>
 
+                {/* WhatsAPP Button */}
+                <Tooltip title="Chat with us on Whatsapp" placement="right">
+                    <span className='whatsapp'>
+                        <button>
+                        <a href = "https://wa.me/message/FXCIZ4L4CNDJK1" target='_blank'>
+                            <i className="fa-brands fa-whatsapp"></i>
+                        </a>
+                        </button>
+                    </span>
+                </Tooltip>
+
                 {/* Scroll Top button */}
                 <SmoothScrollingLink to="home" >
-                    <span className='scroll'>
-                        <button><i class="fa-solid fa-jet-fighter-up"></i></button>
-                    </span>
+                    <Tooltip title="Scroll to Top" placement="left">
+                            <span className='scroll'>
+                                <button>
+                                    <i className="fa-solid fa-jet-fighter-up"></i>
+                                </button>
+                            </span>
+                    </Tooltip>
                 </SmoothScrollingLink>
             </section>
 
