@@ -963,47 +963,6 @@ const Home = () => {
                 <section id='footer'>
                     <div className='footer'>
 
-
-                        {/* Social Icons */}
-                        {/* <Box sx={{
-                            width: '100%',
-                            textAlign: 'center',
-                            position: 'absolute',
-                            bottom: '6rem'
-
-                        }}>
-                            <span>
-                                <h2 id="social-head">Get In Touch With Us </h2>
-                            </span>
-
-                            <Box sx = {{
-
-                            }}>
-                                <ul style={{padding:"0"}}>
-
-                                    <li className="icons">
-                                        <a href="https://www.facebook.com/akib.mulla.961" target="_blank" className='facebook'>
-                                            <i className="fa-brands fa-facebook"></i>
-                                        </a>
-                                    </li>
-
-                                    <li className="icons">
-                                        <a href="https://www.instagram.com/itzz._akib._____/" target="_blank">
-                                            <i className="fa-brands fa-instagram"></i>
-                                        </a>
-                                    </li>
-
-                                    <li className="icons">
-                                        <a href="https://github.com/ItzzAkib07" target="_blank">
-                                            <i className="fa-brands fa-whatsapp"></i>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </Box>
-
-                        </Box> */}
-
                         <footer>
                             <span>
                                 &copy;2023, The Piston Bike Lounge

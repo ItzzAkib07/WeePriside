@@ -64,6 +64,11 @@ body {
   background-color: inherit !important;
 }
 
+.whatsapp button a{
+  color: white;
+  text-decoration: none;
+}
+
 .whatsapp button a:visited{
   color: white;
 }
