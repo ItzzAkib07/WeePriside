@@ -273,7 +273,7 @@ body {
   transform: scale(0.7);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  filter: saturate(10);
+  filter: brightness(0) invert(1)  /* Completely grayscale */
 }
 
 .header .logo img:hover {

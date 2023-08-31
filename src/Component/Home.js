@@ -228,10 +228,10 @@ const Home = () => {
                                     <h2 id="social-head">Get In Touch With Us </h2>
                                 </span>
 
-                                <Box sx = {{
+                                <Box sx={{
 
                                 }}>
-                                    <ul style={{padding:"0"}}>
+                                    <ul style={{ padding: "0" }}>
 
                                         <li className="icons">
                                             <a href="https://www.facebook.com/profile.php?id=61550075405673&mibextid=ZbWKwL" target="_blank">
@@ -295,13 +295,13 @@ const Home = () => {
 
                     {/* Hero section */}
                     <section id='home' className='hero' data-aos="zoom-in">
-                    
-                    <SmoothScrollingLink to="quality" >
-                        <div className='downArrow'>
-                            <i className="fa-solid fa-arrow-down-long"></i>
-                            <span >SCROLL DOWN</span>
-                        </div>
-                    </SmoothScrollingLink>
+
+                        <SmoothScrollingLink to="quality" >
+                            <div className='downArrow'>
+                                <i className="fa-solid fa-arrow-down-long"></i>
+                                <span >SCROLL DOWN</span>
+                            </div>
+                        </SmoothScrollingLink>
                     </section>
 
                     {/* Quality Assured section */}
@@ -818,19 +818,18 @@ const Home = () => {
                                     <h2>Address</h2>
 
                                     <div className='details '>
-                                        <span><a href='https://goo.gl/maps/EyrnVhqbJKK1BNQW8' target="_blank">Sr 231/2, New Airport Rd, next to Elite Tennis Academy, Opp. Turtle Wax Car Care Studio, Viman Nagar, Pune, Maharashtra, 411014</a></span>
+                                        <span><a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank">Sr 231/2, New airport road, opp. Turtle wax car care studio, Clover Park, Viman Nagar, Pune, Maharashtra 411014</a></span>
                                     </div>
 
                                     <button className='address-btn'>
-                                        <a href='https://goo.gl/maps/EyrnVhqbJKK1BNQW8' target="_blank">Get Directions <i className="fa-solid fa-road"></i></a>
+                                        <a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank">Get Directions <i className="fa-solid fa-road"></i></a>
                                     </button>
 
                                 </div>
 
                                 <div className='map'>
 
-
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.956290218121!2d73.90550125483718!3d18.567558238633854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1ecfd04c219%3A0xd85b904ee6804bd0!2sTurtle%20Wax%20Car%20Care%20Studio%20-%20Roughtaar%20Automotive!5e0!3m2!1sen!2sin!4v1692206736667!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.1430271143336!2d73.90498707473623!3d18.567589467737257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sThe%20Piston%20Bike%20Lounge!5e0!3m2!1sen!2sin!4v1693466323046!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
 
                                 </div>
 
@@ -984,9 +983,9 @@ const Home = () => {
                 <Tooltip title="Chat with us on Whatsapp" placement="right">
                     <span className='whatsapp'>
                         <button>
-                        <a href = "https://wa.me/message/FXCIZ4L4CNDJK1" target='_blank'>
-                            <i className="fa-brands fa-whatsapp"></i>
-                        </a>
+                            <a href="https://wa.me/message/FXCIZ4L4CNDJK1" target='_blank'>
+                                <i className="fa-brands fa-whatsapp"></i>
+                            </a>
                         </button>
                     </span>
                 </Tooltip>
@@ -994,11 +993,11 @@ const Home = () => {
                 {/* Scroll Top button */}
                 <SmoothScrollingLink to="home" >
                     <Tooltip title="Scroll to Top" placement="left">
-                            <span className='scroll'>
-                                <button>
-                                    <i className="fa-solid fa-jet-fighter-up"></i>
-                                </button>
-                            </span>
+                        <span className='scroll'>
+                            <button>
+                                <i className="fa-solid fa-jet-fighter-up"></i>
+                            </button>
+                        </span>
                     </Tooltip>
                 </SmoothScrollingLink>
             </section>
