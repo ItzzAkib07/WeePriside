@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import SmoothScrollingLink from '../Component/SmoothScrollingLink';
 
 // Header
@@ -56,6 +56,17 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Tooltip } from '@mui/material';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import moment from 'moment'
+import DateTimePicker from '@mui/lab/DateTimePicker';
+
+// React-Datepicker
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+
 
 // Modal style
 const style = {
@@ -101,25 +112,77 @@ const Home = () => {
     const [getModal, setModal] = React.useState('');
     const [getService, setService] = React.useState('');
     const [getQuery, setQuery] = React.useState('');
+    const [fromDate, setFromDate] = React.useState('');
+    const [getAddress, setAddress] = React.useState('');
+    const [currentDate, setCurrentDate] = React.useState(new Date());
+
+    const [showFields, setShowFields] = useState(false); // Initialize the checkbox state
+
+
+    const pickupDate = moment(fromDate).format('DD-MM-YYYY hh:mm A');
+
 
     // Funtion to send mail
+    // const sendEmail = (e) => {
+    //     e.preventDefault();
+
+    //     if (getName !== "" && getPhone !== "" && getModal !== "" && getService !== "") {
+
+    //         emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
+    //             .then((result) => {
+    //                 toast("Thank you for choosing The Piston Bike Lounge.\n Give us some time will get back to you soon.")
+    //                 setTimeout(() => {
+    //                     window.location.reload(false);
+    //                 }, 5000);
+    //             }, (error) => {
+    //                 toast.error("Not able to book service. Please check your connection or try again later.");
+    //                 console.log(error.text);
+    //             });
+    //     } else {
+    //         toast.error("Please fill all the fields");
+    //     }
+    // };
+
+
+    // Function to send mail
     const sendEmail = (e) => {
         e.preventDefault();
 
         if (getName !== "" && getPhone !== "" && getModal !== "" && getService !== "") {
-
-            emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
-                .then((result) => {
-                    toast("Thank you for choosing The Piston Lounge.\n Give us some time will get back to you soon.")
-                    setTimeout(() => {
-                        window.location.reload(false);
-                    }, 5000);
-                }, (error) => {
-                    toast.error("Not able to book service. Please check your connection or try again later.");
-                    console.log(error.text);
-                });
+            if (showFields) {
+                // Check if date and address fields are filled when the checkbox is checked
+                if (fromDate !== "" && getAddress !== "") {
+                    // Send email when date and address fields are filled
+                    emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
+                        .then((result) => {
+                            toast("Thank you for choosing The Piston Lounge.\n Give us some time, we will get back to you soon.");
+                            setTimeout(() => {
+                                window.location.reload(false);
+                            }, 5000);
+                        })
+                        .catch((error) => {
+                            toast.error("Not able to book the service. Please check your connection or try again later.");
+                            console.log(error.text);
+                        });
+                } else {
+                    toast.error("Please fill in the date and address fields.");
+                }
+            } else {
+                // Send email when the checkbox is unchecked
+                emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
+                    .then((result) => {
+                        toast("Thank you for choosing The Piston Lounge.\n Give us some time, we will get back to you soon.");
+                        setTimeout(() => {
+                            window.location.reload(false);
+                        }, 5000);
+                    })
+                    .catch((error) => {
+                        toast.error("Not able to book the service. Please check your connection or try again later.");
+                        console.log(error.text);
+                    });
+            }
         } else {
-            toast.error("Please fill all the fields");
+            toast.error("Please fill in all the fields.");
         }
     };
 
@@ -144,6 +207,24 @@ const Home = () => {
     const [open3, setOpen3] = React.useState(false);
     const handleOpen3 = () => setOpen3(true);
     const handleClose3 = () => setOpen3(false);
+
+    const handleFromDateChange = date => {
+        setFromDate(date);
+    };
+
+
+
+
+    // for getting the currnt date and time
+    useEffect(() => {
+        setCurrentDate(new Date());
+    }, []);
+
+    // funtoion to toggle the fields after checking the checkbox
+    const toggleFields = () => {
+        setShowFields(!showFields);
+    };
+
 
     return (
         <>
@@ -475,7 +556,7 @@ const Home = () => {
 
                             </div>
 
-                            <div className='service' id='service5' data-aos="fade-right">
+                            <div className='service' id='service5' data-aos="fade-right" >
                                 <div className='img'>
                                     <img src={battery} />
                                 </div>
@@ -792,9 +873,73 @@ const Home = () => {
                                 </div>
 
 
-                                <SmoothScrollingLink to="pricing" >
-                                    <span className='serivce-link'>Check-out our plans here</span>
-                                </SmoothScrollingLink>
+
+                                <div className='booking-text' style={{
+                                    width: '80%',
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center'
+                                }}>
+
+                                    <FormGroup>
+                                        <FormControlLabel control={<Checkbox checked={showFields} onChange={toggleFields} />} label="Want Pick-up & Drop service? Click here." />
+                                    </FormGroup>
+
+                                    <SmoothScrollingLink to="pricing" >
+                                        <span className='serivce-link'>Check-out our plans here</span>
+                                    </SmoothScrollingLink>
+
+                                </div>
+
+
+
+                                {showFields && ( // Conditionally render the elements when the checkbox is checked
+                                    <>
+                                        <span id='dateLabel' style={{ width: '75%', textAlign: 'left !important' }}>
+                                            Please select the bike pick-up date and time
+                                        </span>
+
+                                        <div className='input' id='dateField'>
+                                            <i className="fa-solid fa-calendar"></i>
+                                            <DatePicker
+                                                id='pickupDate'
+                                                name='pickupDate'
+                                                timeIntervals={30}
+                                                selectsStart
+                                                showTimeSelect
+                                                dateFormat="yyyy-MM-dd HH:mm"
+                                                value={fromDate}
+                                                selected={fromDate}
+                                                onChange={handleFromDateChange}
+                                                minDate={currentDate}
+                                                placeholderText='Please select date and time for pickup'
+                                                isClearable
+                                                wrapperClassName='date'
+                                            />
+                                        </div>
+
+                                        <div className='input' id='addField'>
+                                            <i className="fa-solid fa-location-dot"></i>
+                                            <TextField
+                                                id='address'
+                                                name='address'
+                                                label="Enter pickup address"
+                                                value={getAddress}
+                                                variant="standard"
+                                                autoComplete='off'
+                                                onChange={(e) => setAddress(e.target.value)}
+                                                sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                                InputLabelProps={{
+                                                    sx: {
+                                                        color: "gray",
+                                                    }
+                                                }}
+                                            />
+                                        </div>
+                                    </>
+                                )}
+
+
 
                                 <button className='booking-btn' id='btn' type='submit'></button>
 
