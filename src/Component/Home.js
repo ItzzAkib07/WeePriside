@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import SmoothScrollingLink from '../Component/SmoothScrollingLink';
 
+// landing page video
+import video from '../images/smoke.mp4'
+
 // Header
 import 'animate.css';
 import logo from '../images/BannerLogo.png'
@@ -115,34 +118,8 @@ const Home = () => {
     const [fromDate, setFromDate] = React.useState('');
     const [getAddress, setAddress] = React.useState('');
     const [currentDate, setCurrentDate] = React.useState(new Date());
-
     const [showFields, setShowFields] = useState(false); // Initialize the checkbox state
-
-
     const pickupDate = moment(fromDate).format('DD-MM-YYYY hh:mm A');
-
-
-    // Funtion to send mail
-    // const sendEmail = (e) => {
-    //     e.preventDefault();
-
-    //     if (getName !== "" && getPhone !== "" && getModal !== "" && getService !== "") {
-
-    //         emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
-    //             .then((result) => {
-    //                 toast("Thank you for choosing The Piston Bike Lounge.\n Give us some time will get back to you soon.")
-    //                 setTimeout(() => {
-    //                     window.location.reload(false);
-    //                 }, 5000);
-    //             }, (error) => {
-    //                 toast.error("Not able to book service. Please check your connection or try again later.");
-    //                 console.log(error.text);
-    //             });
-    //     } else {
-    //         toast.error("Please fill all the fields");
-    //     }
-    // };
-
 
     // Function to send mail
     const sendEmail = (e) => {
@@ -226,11 +203,41 @@ const Home = () => {
     };
 
 
+
+    // Landing page
+    const [showFirstSection, setShowFirstSection] = useState(true);
+
+    useEffect(() => {
+        // Hide the first section after 10 seconds
+        const timeoutId = setTimeout(() => {
+            setShowFirstSection(false);
+        }, 7000);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, []);
+
+
     return (
         <>
+
+            {showFirstSection && (
+                <section className="one">
+                    <video src={video} autoPlay muted />
+                    <h1 className='landing-h1'>
+                        <span>THE</span>
+                        <span>PISTON</span>
+                        <span>BIKE</span>
+                        <span>LOUNGE</span>
+                    </h1>
+                </section>
+            )}
+
+
+
             {/* Main Container */}
             <section className='home-container'>
-
 
                 {/* Header section */}
                 <section id='header'>
@@ -368,7 +375,6 @@ const Home = () => {
 
 
                 </section>
-
 
                 {/* body section */}
                 <section className='home-sections'>
@@ -974,7 +980,7 @@ const Home = () => {
 
                                 <div className='map'>
 
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.1430271143336!2d73.90498707473623!3d18.567589467737257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sThe%20Piston%20Bike%20Lounge!5e0!3m2!1sen!2sin!4v1693466323046!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.1430271143336!2d73.90498707473623!3d18.567589467737257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sThe%20Piston%20Bike%20Lounge!5e0!3m2!1sen!2sin!4v1693466323046!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
 
                                 </div>
 
@@ -1145,6 +1151,7 @@ const Home = () => {
                         </span>
                     </Tooltip>
                 </SmoothScrollingLink>
+
             </section>
 
         </>
