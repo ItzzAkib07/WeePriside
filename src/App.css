@@ -47,6 +47,18 @@ h1{
 }
 
 
+.offerModalStyle{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 90%;
+    box-shadow: 24;
+}
 
 /* Landing page */
 
@@ -145,6 +157,9 @@ video{
 .whatsapp button a:visited{
   color: white;
 }
+
+
+
 /* Scroll top button */
 .scroll {
   width: 100%;
@@ -1803,6 +1818,18 @@ h1:hover {
     /* background-color: red; */
   }
 
+  .offerModalStyle{
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translate(-50%, -50%);
+      width: 85%;
+      height: 90%;
+      box-shadow: 24;
+  }
   .one{
     display: flex;
     justify-content: center;

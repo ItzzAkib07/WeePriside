@@ -21,6 +21,7 @@ import service1 from '../images/service1.jpg';
 import service2 from '../images/service2.jpg';
 import painting from '../images/painting.jpg';
 import wasing from '../images/bikeWash.jpg';
+import diwali from '../images/Happy diwali.jpg'
 
 
 // booking or contact
@@ -86,6 +87,11 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+};
+
+// Modal style Diwali offer
+const offerModalStyle = {
+    
 };
 
 
@@ -185,6 +191,12 @@ const Home = () => {
     const handleOpen3 = () => setOpen3(true);
     const handleClose3 = () => setOpen3(false);
 
+
+    // states for modal - 4 Diwali Offer
+    const [open4, setOpen4] = React.useState(false);
+    const handleOpen4 = () => setOpen4(true);
+    const handleClose4 = () => setOpen4(false);
+
     const handleFromDateChange = date => {
         setFromDate(date);
     };
@@ -195,6 +207,7 @@ const Home = () => {
     // for getting the currnt date and time
     useEffect(() => {
         setCurrentDate(new Date());
+        
     }, []);
 
     // funtoion to toggle the fields after checking the checkbox
@@ -211,10 +224,12 @@ const Home = () => {
         // Hide the first section after 10 seconds
         const timeoutId = setTimeout(() => {
             setShowFirstSection(false);
+            handleOpen4();
         }, 7000);
 
         return () => {
             clearTimeout(timeoutId);
+
         };
     }, []);
 
@@ -238,6 +253,9 @@ const Home = () => {
 
             {/* Main Container */}
             <section className='home-container'>
+
+
+
 
                 {/* Header section */}
                 <section id='header'>
@@ -378,6 +396,38 @@ const Home = () => {
 
                 {/* body section */}
                 <section className='home-sections'>
+
+                    {/* Offer section modal */}
+                    <section className='offer' >
+                        <Modal
+                            open={open4}
+                            onClose={handleClose4}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                        >
+                            <div className='offerModalStyle' >
+
+                                    <Box sx={{
+                                        position: 'absolute',
+                                        alignItems: 'center',
+                                        color: 'white',
+                                        left: '103%',
+                                        top: '0',
+                                        fontSize: '1.5rem',
+                                        fontWeight: '900',
+                                        cursor: 'pointer',
+                                        padding:'0'
+                                    }}
+                                        onClick={handleClose4}
+                                    >
+                                        <i className="fa-solid fa-xmark"></i>
+                                    </Box>
+
+                                    <img src={diwali} style={{width:'100%', height:'100%'}}/>
+
+                            </div>
+                        </Modal>
+                    </section>
 
 
                     {/* Hero section */}
