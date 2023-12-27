@@ -398,7 +398,7 @@ const Home = () => {
                 <section className='home-sections'>
 
                     {/* Offer section modal */}
-                    <section className='offer' >
+                    {/* <section className='offer' >
                         <Modal
                             open={open4}
                             onClose={handleClose4}
@@ -427,7 +427,7 @@ const Home = () => {
 
                             </div>
                         </Modal>
-                    </section>
+                    </section> */}
 
 
                     {/* Hero section */}
