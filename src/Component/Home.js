@@ -1,27 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import SmoothScrollingLink from '../Component/SmoothScrollingLink';
 
-// landing page video
-import video from '../images/smoke.mp4'
 
 // Header
 import 'animate.css';
-import logo from '../images/BannerLogo.png'
+import logo from '../images/logo.jpg'
 
 // quality 
-import quality from '../images/maintainance.svg'
+import about from '../images/about.jpg'
 
 // services
-import brake from '../images/brake.png';
-import engine from '../images/engine.png';
-import wheel from '../images/wheel.png';
-import oil from '../images/oil.png';
-import battery from '../images/battery.png';
-import service1 from '../images/service1.jpg';
-import service2 from '../images/service2.jpg';
-import painting from '../images/painting.jpg';
-import wasing from '../images/bikeWash.jpg';
-import diwali from '../images/Happy diwali.jpg'
+import geo from '../images/political.jpeg';
+import poll from '../images/opinion.jpg';
+import campaign from '../images/campaion.jpg';
+import manifesto from '../images/manifesto.jpg';
+import marketing from '../images/digital.jpg';
 
 
 // booking or contact
@@ -29,20 +22,6 @@ import emailjs from '@emailjs/browser';
 
 
 // slideshow
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-import "@splidejs/splide/dist/css/splide.min.css";
-import honda from '../images/honda.png';
-import hero from '../images/hero.png';
-import yamaha from '../images/yamaha.png';
-import ktm from '../images/ktm.png';
-import suzuki from '../images/suzuki.png';
-import bajaj from '../images/bajaj.png';
-import RE from '../images/RE.png';
-import jawa from '../images/jawa.png';
-import tvs from '../images/tvs.png';
-
-
 // AOS Animation 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -91,7 +70,7 @@ const style = {
 
 // Modal style Diwali offer
 const offerModalStyle = {
-    
+
 };
 
 
@@ -207,7 +186,7 @@ const Home = () => {
     // for getting the currnt date and time
     useEffect(() => {
         setCurrentDate(new Date());
-        
+
     }, []);
 
     // funtoion to toggle the fields after checking the checkbox
@@ -225,7 +204,7 @@ const Home = () => {
         const timeoutId = setTimeout(() => {
             setShowFirstSection(false);
             handleOpen4();
-        }, 7000);
+        }, 5000);
 
         return () => {
             clearTimeout(timeoutId);
@@ -239,12 +218,10 @@ const Home = () => {
 
             {showFirstSection && (
                 <section className="one">
-                    <video src={video} autoPlay muted />
                     <h1 className='landing-h1'>
-                        <span>THE</span>
-                        <span>PISTON</span>
-                        <span>BIKE</span>
-                        <span>LOUNGE</span>
+                        <span>WEE</span>
+                        <br />
+                        <span>PRESIDE</span>
                     </h1>
                 </section>
             )}
@@ -253,9 +230,6 @@ const Home = () => {
 
             {/* Main Container */}
             <section className='home-container'>
-
-
-
 
                 {/* Header section */}
                 <section id='header'>
@@ -280,7 +254,7 @@ const Home = () => {
 
                             <div className='title animate__animated animate__shakeX'>
                                 <SmoothScrollingLink to="home" >
-                                    <span >THE <span className='half-title'>PISTON BIKE LOUNGE</span></span>
+                                    <span >Wee Preside</span>
                                 </SmoothScrollingLink>
                             </div>
 
@@ -292,7 +266,7 @@ const Home = () => {
 
                             {/* title and close navbar */}
                             <div className='close-hamburger'>
-                                <span style={{ marginLeft: '1rem' }}>THE PISTON BIKE LOUNGE</span>
+                                <span style={{ marginLeft: '1rem' }}>Wee Preside</span>
 
                                 <button id='close' onClick={close}><i className="fa-solid fa-xmark"></i></button>
 
@@ -305,13 +279,13 @@ const Home = () => {
                                     <span className="subnavbtn"><i className="fa-solid fa-home"></i> Home</span>
                                 </SmoothScrollingLink>
 
-                                <SmoothScrollingLink to="services" >
-                                    <span className="subnavbtn"> <i className="fa-solid fa-gear"></i> Our Services</span>
+                                <SmoothScrollingLink to="about" >
+                                    <span className="subnavbtn"> <i className="fa-solid fa-gear"></i> About Us</span>
                                 </SmoothScrollingLink>
 
-                                <SmoothScrollingLink to="booking" >
+                                <SmoothScrollingLink to="services" >
 
-                                    <span className="subnavbtn"> <i className="fa-solid fa-user-pen"></i> Book service</span>
+                                    <span className="subnavbtn"> <i className="fa-solid fa-user-pen"></i> Our Services</span>
                                 </SmoothScrollingLink>
 
                                 <SmoothScrollingLink to="contact">
@@ -373,7 +347,7 @@ const Home = () => {
                             }}>
                                 <footer>
                                     <span>
-                                        &copy;2023, The Piston Bike Lounge
+                                        &copy;2023, Wee Preside
                                     </span>
                                 </footer>
 
@@ -397,72 +371,44 @@ const Home = () => {
                 {/* body section */}
                 <section className='home-sections'>
 
-                    {/* Offer section modal */}
-                    {/* <section className='offer' >
-                        <Modal
-                            open={open4}
-                            onClose={handleClose4}
-                            aria-labelledby="modal-modal-title"
-                            aria-describedby="modal-modal-description"
-                        >
-                            <div className='offerModalStyle' >
-
-                                    <Box sx={{
-                                        position: 'absolute',
-                                        alignItems: 'center',
-                                        color: 'white',
-                                        left: '103%',
-                                        top: '0',
-                                        fontSize: '1.5rem',
-                                        fontWeight: '900',
-                                        cursor: 'pointer',
-                                        padding:'0'
-                                    }}
-                                        onClick={handleClose4}
-                                    >
-                                        <i className="fa-solid fa-xmark"></i>
-                                    </Box>
-
-                                    <img src={diwali} style={{width:'100%', height:'100%'}}/>
-
-                            </div>
-                        </Modal>
-                    </section> */}
-
-
                     {/* Hero section */}
-                    <section id='home' className='hero' data-aos="zoom-in">
+                    <section id='home' className='hero'>
 
-                        <SmoothScrollingLink to="quality" >
-                            <div className='downArrow'>
-                                <i className="fa-solid fa-arrow-down-long"></i>
-                                <span >SCROLL DOWN</span>
-                            </div>
-                        </SmoothScrollingLink>
+                        <div className='content'>
+                            <span className='sub-heading'>Wee Stand for Transparency</span>
+                            <span className='heading'>Wee Preside</span>
+                            <span className='role'>POLITICAL CONSULTANCY</span>
+                            <span className='slogan'>A lack of transparency results in distrust and a deep sense of insecurity</span>
+                        </div>
+
                     </section>
 
+                    <h1 id='about' style={{ textAlign: 'center', marginTop: '4rem', marginLeft: '1rem' }} data-aos="fade-down">About Us</h1>
+
+
                     {/* Quality Assured section */}
-                    <section className='quality' id='quality'>
+                    <section className='quality'>
+
 
                         <div className='sec-1' data-aos="fade-up">
 
-                            <span>Quality Assured</span>
+                            
 
-                            <span>
-                                The best two wheeler services delivery with assured quality.
-                            </span>
+                            <p>
 
-                            <ul className="circle-list">
-                                <li>Skilled Mechanics</li>
-                                <li>7 Day Service Warranty</li>
-                                <li>Genuine Spares</li>
-                                <li>Contactless Service</li>
-                            </ul>
+                                <h5 style={{fontWeight:'bold'}}>Strategic Insight for Winning Campaigns: Wee Preside</h5>
+
+                                Wee Preside is a Passionate Political Consultancy who can conduct
+                                comprehensive research and provide organized political campaign and
+                                event support. Proficient at completing polling and conducting
+                                demographic research, organizing political events, and providing
+                                campaign assistance.
+                            </p>
 
                         </div>
 
                         <div className='sec-2' data-aos="fade-up">
-                            <img src={quality}></img>
+                            <img src={about}></img>
                         </div>
 
                     </section>
@@ -476,46 +422,55 @@ const Home = () => {
 
                             <div className='section-1' >
 
-                                <div className='sub-1' data-aos="fade-right">
-                                    <img src={service1} />
-                                </div>
+                                <p>
+                                    We are political aficionados that enjoy methodically planning the best
+                                    strategies, conceptualising ground-breaking campaigns, working on
+                                    crafting and delivering the best messages, and engaging with the
+                                    audience and influencing them to take action. We can be your one-stop
+                                    shop for polling solutions and give you the tools you need to win the
+                                    election. We use the most recent technology to make your job simpler.
+                                    We support introducing total transparency and accountability into the
+                                    political system, which will increase democracy's vitality, sturdiness,
+                                    participatory nature, and representativeness. We have a range of
+                                    services to make this happen.
 
-                                <div className='sub-2' data-aos="fade-left">
-                                    <p>
-                                        <h1>PERIODIC SERVICE</h1>
+                                </p>
 
-                                        At our garage, we provide reliable periodic service to keep your bike in peak condition. Our skilled technicians perform thorough inspections, adjustments, and lubrication to ensure smooth and safe rides, giving you peace of mind on the road. Trust us to maintain your bike's performance and keep it running at its best.
-                                    </p>
-                                </div>
                             </div>
 
                             <div className='section-2'>
 
                                 <div className='sub-3' data-aos="fade-right">
                                     <p>
-                                        <h1>COMPLETE BIKE SERVICE</h1>
+                                        <h1>Geo Political Profiling</h1>
 
-                                        Our full bike service covers all your motorcycle's needs, from inspections to tune-ups and fluid replacements. Ride with confidence knowing your bike is in excellent condition with our top-notch care and expertise. Experience the convenience and reliability of our comprehensive service for a smooth and efficient ride.
+                                        Geopolitical profiling comprises
+                                        booth- or village-level profiling, which incorporates voting
+                                        preferences, demographic voting, strength areas, and weaknesses
+                                        with an influencer list to strengthen organisations.
                                     </p>
                                 </div>
 
                                 <div className='sub-4' data-aos="fade-left">
-                                    <img src={service2} />
+                                    <img src={geo} />
                                 </div>
                             </div>
 
                             <div className='section-3'>
 
                                 <div className='sub-5' data-aos="fade-right">
-                                    <img src={wasing} />
+                                    <img src={poll} />
                                 </div>
 
                                 <div className='sub-6' data-aos="fade-left">
 
                                     <p>
-                                        <h1>WASHING & POLISHING</h1>
+                                        <h1>Opinion Polls</h1>
 
-                                        At our garage, we provide meticulous bike washing and polishing services to bring back the shine and luster to your motorcycle. Our skilled team ensures thorough cleaning, removing dirt and grime, and follows it up with expert polishing to leave your bike looking brand new and well-maintained. Trust us to give your two-wheeler the care and attention it deserves, leaving you with a gleaming and refreshed ride after each visit.
+                                        If elections were held today, an impartial,
+                                        unbiased opinion poll would be a crucial instrument for assessing
+                                        the mood of your people. The state's mood swing is crucial in
+                                        determining the future.
                                     </p>
                                 </div>
                             </div>
@@ -525,14 +480,61 @@ const Home = () => {
                                 <div className='sub-7' data-aos="fade-right">
 
                                     <p>
-                                        <h1>PAINTING</h1>
+                                        <h1>Campaign Management</h1>
 
-                                        In our garage, we offer comprehensive services, including bike painting. Trust us to revitalize your bike's appearance with skilled and professional painting techniques, adding a fresh and vibrant look to your beloved ride. Let our team of experts handle your bike painting needs, ensuring excellent results and customer satisfaction.
+                                        The most crucial phase of an
+                                        election is the campaigning phase. Wee Preside here has a team
+                                        of experts who worked with IPAC and designed campaigns for
+                                        Andhra Pradesh Chief Minister Jagan Reddy, Delhi Chief Minister
+                                        Arvind Kejriwal, Punjab Chief Minister Bhagwant Mann, Jharkhand
+                                        Chief Minister Hemant Soren, Bihar Chief Minister Nitish Kumar,
+                                        and Ex-CMs of Maharashtra and Punjab Captain Amrinder Singh.
+
                                     </p>
                                 </div>
 
                                 <div className='sub-8' data-aos="fade-left">
-                                    <img src={painting} />
+                                    <img src={campaign} />
+                                </div>
+                            </div>
+
+                            <div className='section-3'>
+
+                                <div className='sub-5' data-aos="fade-right">
+                                    <img src={manifesto} />
+                                </div>
+
+                                <div className='sub-6' data-aos="fade-left">
+
+                                    <p>
+                                        <h1>Manifesto Creation</h1>
+                                        In order to create a successful
+                                        manifesto, you must listen to your electorate, comprehend their
+                                        needs, and ensure that you both acknowledge and reassure
+                                        people that you are prepared to meet those demands. A team from
+                                        Wee Preside worked on similar projects for the assembly elections
+                                        in Gujarat, Punjab, and Karnataka at the moment. Minimum
+                                        content and Maximum Connect is moto of Wee Preside.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className='section-4'>
+
+                                <div className='sub-7' data-aos="fade-right">
+
+                                    <p>
+                                        <h1>Digital Marketing</h1>
+                                        The world is transitioning to digital, that
+                                        much is true. Furthermore, it is crucial for you to be present where
+                                        your target audience is. So, it is crucial to engage online and
+                                        communicate with your voters. This is every political party's most
+                                        useful and strategic tool post-COVID.
+                                    </p>
+                                </div>
+
+                                <div className='sub-8' data-aos="fade-left">
+                                    <img src={marketing} />
                                 </div>
                             </div>
 
@@ -542,23 +544,22 @@ const Home = () => {
 
 
                     {/* Service Information Section */}
-                    <section className='service-container'>
+                    {/* <section className='service-container'>
 
                         <div className='service-details' id='service-details'>
 
                             <div className='service' id='service1' data-aos="fade-right">
 
-                                <div className='img'>
-                                    <img src={brake} />
-                                </div>
-
-                                <h4>Brake Service</h4>
+                                <h2>Digital Marketing</h2>
 
                                 <div className='information'>
 
                                     <p id='p1'>
-
-                                        Regular bike brake service is crucial for safety, longevity, performance, and comfort. Properly maintained brakes ensure your safety while riding, prolong the lifespan of components, enhance stopping power, and provide a more enjoyable riding experience.
+                                        The world is transitioning to digital, that
+                                        much is true. Furthermore, it is crucial for you to be present where
+                                        your target audience is. So, it is crucial to engage online and
+                                        communicate with your voters. This is every political party's most
+                                        useful and strategic tool post-COVID.
                                     </p>
 
                                 </div>
@@ -612,17 +613,18 @@ const Home = () => {
 
                             </div>
 
-                            <div className='service' id='service5' data-aos="fade-right" >
-                                <div className='img'>
-                                    <img src={battery} />
-                                </div>
+                            <div className='service' id='service5' data-aos="fade-right">
 
-                                <h4>Battery Service</h4>
+                                <h1>Digital Marketing</h1>
 
                                 <div className='information'>
 
                                     <p id='p5'>
-                                        Regular bike battery service ensures reliable starting, proper electrical component functioning, and enhanced battery lifespan. It also promotes safety by preventing electrical issues and potential engine stalling while providing long-term cost savings.
+                                        The world is transitioning to digital, that
+                                        much is true. Furthermore, it is crucial for you to be present where
+                                        your target audience is. So, it is crucial to engage online and
+                                        communicate with your voters. This is every political party's most
+                                        useful and strategic tool post-COVID.
                                     </p>
                                 </div>
 
@@ -630,11 +632,11 @@ const Home = () => {
 
                         </div>
 
-                    </section>
+                    </section> */}
 
 
                     {/* pricing section */}
-                    <section id='pricing'>
+                    {/* <section id='pricing'>
 
                         <div className='pricing-container'>
 
@@ -847,163 +849,8 @@ const Home = () => {
 
                         </div>
 
-                    </section>
+                    </section> */}
 
-                    {/* booking Section */}
-                    <section id='booking'>
-
-                        <div className='booking-container' data-aos="flip-up">
-
-                            <h1 id='book' data-aos="fade-down">Book Your Services</h1>
-
-                            <form className='form' ref={form} onSubmit={sendEmail} >
-
-                                <div className='input'>
-                                    <i className="fa-solid fa-user"></i>
-                                    {/* <input type='text' id='name' name='name' placeholder='Enter your name' autoFocus autoComplete='off' onChange={(e) => setName(e.target.value)} /> */}
-                                    <TextField id='name' name='name' label="Name" value={getName} variant="standard" autoComplete='off' onChange={(e) => setName(e.target.value)}
-                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
-                                        InputLabelProps={{
-                                            sx: {
-                                                color: "gray",
-                                            }
-                                        }} />
-                                </div>
-
-                                <div className='input'>
-                                    <i className="fa-solid fa-phone"></i>
-                                    {/* <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' onChange={(e) => setPhone(e.target.value)} /> */}
-                                    <TextField id='phone' name='phone' label="Phone number" value={getPhone} variant="standard" autoComplete='off' onChange={(e) => setPhone(e.target.value)}
-                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
-                                        InputLabelProps={{
-                                            sx: {
-                                                color: "gray",
-                                            }
-                                        }} />
-                                </div>
-
-                                <div className='input'>
-                                    <i className="fa-solid fa-motorcycle"></i>
-                                    {/* <input type='phone' id='phone' name='phone' placeholder='Enter your mobile number' autoComplete='off' onChange={(e) => setPhone(e.target.value)} /> */}
-                                    <TextField id='modal' name='modal' label="Bike modal" value={getModal} variant="standard" autoComplete='off' onChange={(e) => setModal(e.target.value)}
-                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
-                                        InputLabelProps={{
-                                            sx: {
-                                                color: "gray",
-                                            }
-                                        }} />
-                                </div>
-
-                                <div className='input'>
-                                    <i className="fa-solid fa-screwdriver-wrench"></i>
-                                    <FormControl variant='standard' sx={{ m: 1, minWidth: 120, width: '100%' }}>
-                                        <InputLabel id="demo-simple-select-helper-label" sx={{ color: 'gray' }}>Select Service</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-helper-label"
-                                            id="serviceType"
-                                            name='serviceType'
-                                            value={getService}
-                                            label="Select Service"
-                                            onChange={(e) => setService(e.target.value)}
-                                            sx={{ color: 'wheat', width: '100%', borderBottom: '1px solid gray' }}
-                                        >
-                                            <MenuItem value={''}><em>None</em></MenuItem>
-                                            <MenuItem value={'Periodic Service'}>Periodic Service</MenuItem>
-                                            <MenuItem value={'Complete Service'}>Complete Service</MenuItem>
-                                            <MenuItem value={'Washing & Polishing'}>Washing & Polishing </MenuItem>
-                                            <MenuItem value={'Bike Wrapping or Painting'}>Bike Wrapping or Painting</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </div>
-
-                                <div className='input'>
-                                    <i className="fa-solid fa-note-sticky"></i>
-                                    {/* <input type='text' id='details' name='details' placeholder='Tell us how we can help you?' autoComplete='off' onChange={(e) => setQuery(e.target.value)} /> */}
-                                    <TextField id='details' name='details' label="Tell us how we can help you?" value={getQuery} variant="standard" autoComplete='off' onChange={(e) => setQuery(e.target.value)}
-                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
-                                        InputLabelProps={{
-                                            sx: {
-                                                color: "gray",
-                                            }
-                                        }} />
-                                </div>
-
-
-
-                                <div className='booking-text' style={{
-                                    width: '80%',
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center'
-                                }}>
-
-                                    <FormGroup>
-                                        <FormControlLabel control={<Checkbox checked={showFields} onChange={toggleFields} />} label="Want Pick-up & Drop service? Click here." />
-                                    </FormGroup>
-
-                                    <SmoothScrollingLink to="pricing" >
-                                        <span className='serivce-link'>Check-out our plans here</span>
-                                    </SmoothScrollingLink>
-
-                                </div>
-
-
-
-                                {showFields && ( // Conditionally render the elements when the checkbox is checked
-                                    <>
-                                        <span id='dateLabel' style={{ width: '75%', textAlign: 'left !important' }}>
-                                            Please select the bike pick-up date and time
-                                        </span>
-
-                                        <div className='input' id='dateField'>
-                                            <i className="fa-solid fa-calendar"></i>
-                                            <DatePicker
-                                                id='pickupDate'
-                                                name='pickupDate'
-                                                timeIntervals={30}
-                                                selectsStart
-                                                showTimeSelect
-                                                dateFormat="yyyy-MM-dd HH:mm"
-                                                value={fromDate}
-                                                selected={fromDate}
-                                                onChange={handleFromDateChange}
-                                                minDate={currentDate}
-                                                placeholderText='Please select date and time for pickup'
-                                                isClearable
-                                                wrapperClassName='date'
-                                            />
-                                        </div>
-
-                                        <div className='input' id='addField'>
-                                            <i className="fa-solid fa-location-dot"></i>
-                                            <TextField
-                                                id='address'
-                                                name='address'
-                                                label="Enter pickup address"
-                                                value={getAddress}
-                                                variant="standard"
-                                                autoComplete='off'
-                                                onChange={(e) => setAddress(e.target.value)}
-                                                sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
-                                                InputLabelProps={{
-                                                    sx: {
-                                                        color: "gray",
-                                                    }
-                                                }}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-
-
-
-                                <button className='booking-btn' id='btn' type='submit'></button>
-
-                            </form>
-                        </div>
-                        <ToastContainer />
-
-                    </section>
 
                     {/* contact Section */}
                     <section id='contact'>
@@ -1019,11 +866,11 @@ const Home = () => {
                                     <h2>Address</h2>
 
                                     <div className='details '>
-                                        <span><a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank">Sr 231/2, New airport road, opp. Turtle wax car care studio, Clover Park, Viman Nagar, Pune, Maharashtra 411014</a></span>
+                                        <span><a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank" rel="noreferrer">Sr 231/2, New airport road, opp. Turtle wax car care studio, Clover Park, Viman Nagar, Pune, Maharashtra 411014</a></span>
                                     </div>
 
                                     <button className='address-btn'>
-                                        <a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank">Get Directions <i className="fa-solid fa-road"></i></a>
+                                        <a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank" rel="noreferrer">Get Directions <i className="fa-solid fa-road"></i></a>
                                     </button>
 
                                 </div>
@@ -1034,30 +881,6 @@ const Home = () => {
 
                                 </div>
 
-                                <div className='hours'>
-
-                                    <h2>Open Hours</h2>
-
-
-                                    <div className='timing'>
-
-                                        <div className='days'>
-                                            <p>Monday - Friday</p>
-                                            <p>Saturday</p>
-                                            <p>Sunday</p>
-                                        </div>
-
-                                        <div className='time'>
-                                            <p>: &nbsp;&nbsp; 9 AM - 9 PM</p>
-                                            <p>: &nbsp;&nbsp; 9 AM - 9 PM</p>
-                                            <p>: &nbsp;&nbsp; 9 AM - 9 PM</p>
-                                        </div>
-
-                                    </div>
-
-                                    <p>Timings may warry</p>
-
-                                </div>
 
                                 <div className='support'>
 
@@ -1090,73 +913,6 @@ const Home = () => {
                     </section>
 
 
-                    {/* Brands Image slide show */}
-                    <section id='slideshow' data-aos="zoom-in">
-
-                        <h1>Brands we have serviced</h1>
-
-                        <Splide options={{
-                            type: 'loop',
-                            rewind: true,
-                            autoplay: true,
-                            perMove: 1,
-                            gap: '2rem',
-                            arrows: false,
-                            pagination: false,
-                            autoScroll: {
-                                pauseOnHover: true,
-                                pauseOnFocus: false,
-                                speed: 2
-                            },
-                        }}
-                            extensions={{ AutoScroll }}>
-                            <SplideSlide>
-                                <div className='brands-container'>
-
-                                    <div className='brands'>
-
-                                        <div className='brand'>
-                                            <img src={honda} alt="Our Partners"></img>
-                                        </div>
-
-                                        <div className='brand'>
-                                            <img src={yamaha} alt="Our Partners"></img>
-                                        </div>
-
-                                        <div className='brand'>
-                                            <img src={RE} alt="Our Partners"></img>
-                                        </div>
-
-                                        <div className='brand'>
-                                            <img src={jawa} alt="Our Partners"></img>
-                                        </div>
-
-                                        <div className='brand'>
-                                            <img src={suzuki} alt="Our Partners"></img>
-                                        </div>
-
-                                        <div className='brand'>
-                                            <img src={ktm} alt="Our Partners"></img>
-                                        </div>
-
-                                        <div className='brand'>
-                                            <img src={hero} alt="Our Partners"></img>
-                                        </div>
-
-                                        <div className='brand'>
-                                            <img src={tvs} alt="Our Partners"></img>
-                                        </div>
-
-                                        <div className='brand'>
-                                            <img src={bajaj} alt="Our Partners"></img>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </SplideSlide>
-                        </Splide>
-                    </section>
-
                 </section>
 
                 {/* Footer section */}
@@ -1165,7 +921,7 @@ const Home = () => {
 
                         <footer>
                             <span>
-                                &copy;2023, The Piston Bike Lounge
+                                &copy;2023, Wee Preside
                             </span>
                         </footer>
 
@@ -1173,7 +929,7 @@ const Home = () => {
                             <p className="footer-heart">
                                 Made with <g-emoji className="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
                                     <img className="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
-                                </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank'>Akib Mulla</a>
+                                </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank' rel="noreferrer">Akib Mulla</a>
                             </p>
                         </div>
                     </div>
@@ -1184,7 +940,7 @@ const Home = () => {
                 <Tooltip title="Chat with us on Whatsapp" placement="right">
                     <span className='whatsapp'>
                         <button>
-                            <a href="https://wa.me/message/FXCIZ4L4CNDJK1" target='_blank'>
+                            <a href="https://wa.me/message/FXCIZ4L4CNDJK1" target='_blank' rel="noreferrer">
                                 <i className="fa-brands fa-whatsapp"></i>
                             </a>
                         </button>
