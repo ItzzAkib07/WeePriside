@@ -75,7 +75,7 @@ video {
 
 .landing-h1 {
   z-index: 10000;
-  position: relative;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
@@ -323,6 +323,10 @@ video {
   background-color: #25d366; /* WhatsApp green color */
 }
 
+.icons a .fa-twitter {
+  background-color: lightskyblue; /* twitter green color */
+}
+
 .icons i {
   padding: 10px;
   border-radius: 50%;
@@ -463,7 +467,7 @@ header li a:hover {
 
 .hero {
   width: 100%;
-  background-image: url("/src/images/bg.jpg"); 
+  background-image: url("/src/images/hero.jpg"); 
   height: 90vh; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -472,6 +476,21 @@ header li a:hover {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -1; /* To place the blur effect behind other content */
 }
 
 .hero .content {
@@ -486,18 +505,25 @@ header li a:hover {
 
 .content .heading{
   font-size: 10rem;
+  color: white;
 }
 .content .sub-heading{
   font-size: 2rem;
+  color: white;
 }
 .content .role{
   font-size: 7rem;
+  color: rgb(0, 123, 255);
 }
 .content .slogan{
   width: 45%;
   text-align: right;
   align-self: flex-end;
   font-size: 2rem;
+  color: whitesmoke;
+  background-color: black;
+  padding: .5rem;
+  border-radius: 1rem;
 }
 
 .downArrow {
@@ -570,10 +596,21 @@ header li a:hover {
 
 .quality .sec-2 {
   width: 50%;
-  height: 30rem;
+  height: 40rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.quality .sec-2 .founderName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: .5rem;
+  font-size: 100%;
+  font-weight: bold;
 }
 
 .quality .sec-2 img {
@@ -1223,7 +1260,7 @@ h1:hover {
 .booking-container .form {
   /* width: 100%; */
   height: auto;
-  --c: blueviolet; /* the border color */
+  --c: blue; /* the border color */
   --b: 5px; /* the border thickness*/
   --g: 5px; /* the gap on hover */
   /* padding: calc(var(--g) + var(--b)); */
@@ -1306,7 +1343,7 @@ h1:hover {
 }
 
 .form .booking-btn::after {
-  content: "BOOK SERVICE";
+  content: "SEND MESSAGE";
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1853,12 +1890,48 @@ h1:hover {
   }
 
   .hero {
-    height: 85vh;
+    height: 92vh;
     margin-bottom: 2rem;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    /* background-image: url("/src/images/Hero_Bg.jpg"); The image used */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero .content {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 1rem;
+  }
+  
+  .content .heading{
+    font-size: 3rem;
+    color: white;
+  }
+  .content .sub-heading{
+    font-size: 1.5rem;
+    color: white;
+  }
+  .content .role{
+    font-size: 1.5rem;
+    color: rgb(0, 123, 255);
+  }
+  .content .slogan{
+    width: 60%;
+    text-align: right;
+    align-self: flex-end;
+    font-size: 1rem;
+    color: whitesmoke;
+    background-color: black;
+    padding: .5rem;
+    border-radius: 1rem;
   }
 
   .downArrow {
@@ -1875,6 +1948,10 @@ h1:hover {
     height: 100%;
     width: 100%;
   }
+
+  .quality .sec-1 p {
+    font-size: 1.5rem;
+}
 
   .quality .sec-2 {
     width: 100%;
@@ -1950,6 +2027,12 @@ h1:hover {
 
   .servicing .section-1 {
     flex-direction: column;
+  }
+
+  .section-1 p{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem;
   }
 
   .section-1 .sub-1 {

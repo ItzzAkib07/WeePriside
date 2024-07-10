@@ -216,6 +216,7 @@ const Home = () => {
     return (
         <>
 
+            {/* landing page animation */}
             {showFirstSection && (
                 <section className="one">
                     <h1 className='landing-h1'>
@@ -288,7 +289,7 @@ const Home = () => {
                                     <span className="subnavbtn"> <i className="fa-solid fa-user-pen"></i> Our Services</span>
                                 </SmoothScrollingLink>
 
-                                <SmoothScrollingLink to="contact">
+                                <SmoothScrollingLink to="booking">
 
                                     <span className="subnavbtn"> <i className="fa-solid fa-phone"></i> Contact Us</span>
                                 </SmoothScrollingLink>
@@ -320,8 +321,14 @@ const Home = () => {
                                         </li>
 
                                         <li className="icons">
-                                            <a href="https://instagram.com/thepistonbikelounge?igshid=MzRlODBiNWFlZA==" target="_blank">
+                                            <a href="https://www.instagram.com/weepreside?igsh=YXBoa3h4NGQ2cmx6" target="_blank">
                                                 <i className="fa-brands fa-instagram"></i>
+                                            </a>
+                                        </li>
+
+                                        <li className="icons">
+                                            <a href="https://x.com/WeePreside/status/1798036176324161808?s=19" target="_blank">
+                                                <i className="fa-brands fa-twitter"></i>
                                             </a>
                                         </li>
 
@@ -376,7 +383,7 @@ const Home = () => {
 
                         <div className='content'>
                             <span className='sub-heading'>Wee Stand for Transparency</span>
-                            <span className='heading'>Wee Preside</span>
+                            <span className='heading'><span style={{color:'skyblue'}}>W</span>ee <span style={{color:'skyblue'}}>P</span>reside</span>
                             <span className='role'>POLITICAL CONSULTANCY</span>
                             <span className='slogan'>A lack of transparency results in distrust and a deep sense of insecurity</span>
                         </div>
@@ -386,17 +393,14 @@ const Home = () => {
                     <h1 id='about' style={{ textAlign: 'center', marginTop: '4rem', marginLeft: '1rem' }} data-aos="fade-down">About Us</h1>
 
 
-                    {/* Quality Assured section */}
+                    {/* About section */}
                     <section className='quality'>
 
 
                         <div className='sec-1' data-aos="fade-up">
-
-                            
-
                             <p>
 
-                                <h5 style={{fontWeight:'bold'}}>Strategic Insight for Winning Campaigns: Wee Preside</h5>
+                                <h5 style={{ fontWeight: 'bold' }}>Strategic Insight for Winning Campaigns: Wee Preside</h5>
 
                                 Wee Preside is a Passionate Political Consultancy who can conduct
                                 comprehensive research and provide organized political campaign and
@@ -413,6 +417,32 @@ const Home = () => {
 
                     </section>
 
+                    {/* founder section */}
+                    <h1 id='about' style={{ textAlign: 'center', marginTop: '4rem', marginLeft: '1rem' }} data-aos="fade-down">Our Founder's</h1>
+
+                    <section className='quality'>
+
+                        <div className='sec-2' data-aos="fade-right">
+                            <img src={about}></img>
+
+
+                            <div className='founderName'>
+                                <span>Akib Mulla</span>
+                                <span>Founder</span>
+                            </div>
+                        </div>
+
+                        <div className='sec-2' data-aos="fade-left">
+                            <img src={about}></img>
+
+                            <div className='founderName'>
+                                <span>Akib Mulla</span>
+                                <span>Founder</span>
+                            </div>
+                        </div>
+
+                    </section>
+
                     {/* Our sevices section */}
                     <section className='servicing-images' id='services'>
 
@@ -422,7 +452,7 @@ const Home = () => {
 
                             <div className='section-1' >
 
-                                <p>
+                                <p data-aos="zoom-in">
                                     We are political aficionados that enjoy methodically planning the best
                                     strategies, conceptualising ground-breaking campaigns, working on
                                     crafting and delivering the best messages, and engaging with the
@@ -852,8 +882,70 @@ const Home = () => {
                     </section> */}
 
 
-                    {/* contact Section */}
-                    <section id='contact'>
+                    {/* Contsct form Section */}
+                    <section id='booking'>
+
+                        <div className='booking-container' data-aos="flip-up">
+
+                            <h1 id='book' data-aos="fade-down">Contact Us</h1>
+
+                            <form className='form' ref={form} onSubmit={sendEmail} >
+
+                                <div className='input'>
+                                    <i className="fa-solid fa-user"></i>
+                                    <TextField id='name' name='name' label="Name" value={getName} variant="standard" autoComplete='off' onChange={(e) => setName(e.target.value)}
+                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                        InputLabelProps={{
+                                            sx: {
+                                                color: "gray",
+                                            }
+                                        }} />
+                                </div>
+
+                                <div className='input'>
+                                    <i className="fa-solid fa-phone"></i>
+                                    <TextField id='phone' name='phone' label="Phone number" value={getPhone} variant="standard" autoComplete='off' onChange={(e) => setPhone(e.target.value)}
+                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                        InputLabelProps={{
+                                            sx: {
+                                                color: "gray",
+                                            }
+                                        }} />
+                                </div>
+
+                                <div className='input'>
+                                    <i className="fa-solid fa-city"></i>
+                                    <TextField id='modal' name='modal' label="City" value={getModal} variant="standard" autoComplete='off' onChange={(e) => setModal(e.target.value)}
+                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                        InputLabelProps={{
+                                            sx: {
+                                                color: "gray",
+                                            }
+                                        }} />
+                                </div>
+
+                                <div className='input'>
+                                    <i className="fa-solid fa-note-sticky"></i>
+                                    {/* <input type='text' id='details' name='details' placeholder='Tell us how we can help you?' autoComplete='off' onChange={(e) => setQuery(e.target.value)} /> */}
+                                    <TextField id='details' name='details' label="Tell us how we can help you?" value={getQuery} variant="standard" autoComplete='off' onChange={(e) => setQuery(e.target.value)}
+                                        sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
+                                        InputLabelProps={{
+                                            sx: {
+                                                color: "gray",
+                                            }
+                                        }} />
+                                </div>
+
+                                <button className='booking-btn' id='btn' type='submit'></button>
+
+                            </form>
+                        </div>
+                        <ToastContainer />
+
+                    </section>
+
+                    {/* contact address Section */}
+                    <section>
 
                         <div className='form-container' data-aos="fade-up">
 
@@ -895,9 +987,9 @@ const Home = () => {
                                         </div>
 
                                         <div className='time'>
-                                            <p>:&nbsp;&nbsp;<a href="mailto:admin@thepistonbikelounge.com">admin@thepistonbikelounge.com</a></p>
-                                            <p>:&nbsp;&nbsp;<a href="mailto:tausifshaikh2505@gmail.com">tausifshaikh2505@gmail.com</a></p>
-                                            <p>: &nbsp;&nbsp;8657445050</p>
+                                            <p>:&nbsp;&nbsp;<a href="mailto:admin@thepistonbikelounge.com">admin@weepreside.com</a></p>
+                                            <p>:&nbsp;&nbsp;<a href="mailto:tausifshaikh2505@gmail.com">krishna@gmail.com</a></p>
+                                            <p>: &nbsp;&nbsp;1234567890</p>
                                         </div>
 
                                     </div>
