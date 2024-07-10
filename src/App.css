@@ -1912,15 +1912,15 @@ h1:hover {
   }
   
   .content .heading{
-    font-size: 3rem;
+    font-size: 4.5rem;
     color: white;
   }
   .content .sub-heading{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: white;
   }
   .content .role{
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: rgb(0, 123, 255);
   }
   .content .slogan{
@@ -1932,6 +1932,7 @@ h1:hover {
     background-color: black;
     padding: .5rem;
     border-radius: 1rem;
+    margin-right: .5rem;
   }
 
   .downArrow {
@@ -2030,8 +2031,8 @@ h1:hover {
   }
 
   .section-1 p{
-    width: 100%;
-    font-size: 1.5rem;
+    width: 95%;
+    font-size: 1rem;
     padding: 0.5rem;
   }
 

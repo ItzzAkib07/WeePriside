@@ -220,9 +220,9 @@ const Home = () => {
             {showFirstSection && (
                 <section className="one">
                     <h1 className='landing-h1'>
-                        <span>WEE</span>
+                        <span><span style={{color:'skyblue'}}>W</span>ee</span>
                         <br />
-                        <span>PRESIDE</span>
+                        <span><span style={{color:'skyblue'}}>P</span>reside</span>
                     </h1>
                 </section>
             )}
@@ -452,7 +452,7 @@ const Home = () => {
 
                             <div className='section-1' >
 
-                                <p data-aos="zoom-in">
+                                <p data-aos="zoom-in" style={{padding:'0 .5rem'}}>
                                     We are political aficionados that enjoy methodically planning the best
                                     strategies, conceptualising ground-breaking campaigns, working on
                                     crafting and delivering the best messages, and engaging with the
@@ -948,8 +948,6 @@ const Home = () => {
                     <section>
 
                         <div className='form-container' data-aos="fade-up">
-
-                            <h1 data-aos="fade-down">Contact Us</h1>
 
                             <div className='center-info' >
 
