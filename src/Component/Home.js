@@ -110,43 +110,25 @@ const Home = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        if (getName !== "" && getPhone !== "" && getModal !== "" && getService !== "") {
-            if (showFields) {
-                // Check if date and address fields are filled when the checkbox is checked
-                if (fromDate !== "" && getAddress !== "") {
-                    // Send email when date and address fields are filled
-                    emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
-                        .then((result) => {
-                            toast("Thank you for choosing The Piston Lounge.\n Give us some time, we will get back to you soon.");
-                            setTimeout(() => {
-                                window.location.reload(false);
-                            }, 5000);
-                        })
-                        .catch((error) => {
-                            toast.error("Not able to book the service. Please check your connection or try again later.");
-                            console.log(error.text);
-                        });
-                } else {
-                    toast.error("Please fill in the date and address fields.");
-                }
-            } else {
-                // Send email when the checkbox is unchecked
-                emailjs.sendForm('service_t7mpdet', 'template_9drd373', form.current, 'DTYHmwwee9kgpN9ZT')
-                    .then((result) => {
-                        toast("Thank you for choosing The Piston Lounge.\n Give us some time, we will get back to you soon.");
-                        setTimeout(() => {
-                            window.location.reload(false);
-                        }, 5000);
-                    })
-                    .catch((error) => {
-                        toast.error("Not able to book the service. Please check your connection or try again later.");
-                        console.log(error.text);
-                    });
-            }
-        } else {
+        if (getName !== "" && getPhone !== "" && getModal !== "" && getQuery !== "") {
+
+            // Send email when the checkbox is unchecked
+            emailjs.sendForm('service_1hpvog4', 'template_s10e1ai', form.current, 'tiozmsqpHyfvx7sdX')
+                .then((result) => {
+                    toast("Thank you for choosing The Piston Lounge.\n Give us some time, we will get back to you soon.");
+                    setTimeout(() => {
+                        window.location.reload(false);
+                    }, 5000);
+                })
+                .catch((error) => {
+                    toast.error("Not able to book the service. Please check your connection or try again later.");
+                    console.log(error.text);
+                });
+        }
+        else {
             toast.error("Please fill in all the fields.");
         }
-    };
+    }
 
     //   init Aos animation
     useEffect(() => {
@@ -220,9 +202,9 @@ const Home = () => {
             {showFirstSection && (
                 <section className="one">
                     <h1 className='landing-h1'>
-                        <span><span style={{color:'skyblue'}}>W</span>ee</span>
+                        <span><span style={{ color: 'skyblue' }}>W</span>ee</span>
                         <br />
-                        <span><span style={{color:'skyblue'}}>P</span>reside</span>
+                        <span><span style={{ color: 'skyblue' }}>P</span>reside</span>
                     </h1>
                 </section>
             )}
@@ -383,7 +365,7 @@ const Home = () => {
 
                         <div className='content'>
                             <span className='sub-heading'>Wee Stand for Transparency</span>
-                            <span className='heading'><span style={{color:'skyblue'}}>W</span>ee <span style={{color:'skyblue'}}>P</span>reside</span>
+                            <span className='heading'><span style={{ color: 'skyblue' }}>W</span>ee <span style={{ color: 'skyblue' }}>P</span>reside</span>
                             <span className='role'>POLITICAL CONSULTANCY</span>
                             <span className='slogan'>A lack of transparency results in distrust and a deep sense of insecurity</span>
                         </div>
@@ -452,7 +434,7 @@ const Home = () => {
 
                             <div className='section-1' >
 
-                                <p data-aos="zoom-in" style={{padding:'0 .5rem'}}>
+                                <p data-aos="zoom-in" style={{ padding: '0 .5rem' }}>
                                     We are political aficionados that enjoy methodically planning the best
                                     strategies, conceptualising ground-breaking campaigns, working on
                                     crafting and delivering the best messages, and engaging with the
@@ -951,7 +933,7 @@ const Home = () => {
 
                             <div className='center-info' >
 
-                                <div className='address'>
+                                {/* <div className='address'>
 
                                     <h2>Address</h2>
 
@@ -963,7 +945,7 @@ const Home = () => {
                                         <a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank" rel="noreferrer">Get Directions <i className="fa-solid fa-road"></i></a>
                                     </button>
 
-                                </div>
+                                </div> */}
 
                                 <div className='map'>
 
