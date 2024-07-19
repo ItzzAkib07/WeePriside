@@ -7,6 +7,7 @@ import 'animate.css';
 import logo from '../images/logo.jpg'
 
 // quality 
+import founder from '../images/founder1.jpg'
 import about from '../images/about.jpg'
 
 // services
@@ -32,23 +33,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // MUI imports
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import { Tooltip } from '@mui/material';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import moment from 'moment'
-import DateTimePicker from '@mui/lab/DateTimePicker';
 
-// React-Datepicker
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
 
 
 // Modal style
@@ -67,12 +54,6 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-
-// Modal style Diwali offer
-const offerModalStyle = {
-
-};
-
 
 
 const Home = () => {
@@ -98,26 +79,49 @@ const Home = () => {
     const [getName, setName] = React.useState('');
     const [getPhone, setPhone] = React.useState('');
     const [getModal, setModal] = React.useState('');
-    const [getService, setService] = React.useState('');
     const [getQuery, setQuery] = React.useState('');
-    const [fromDate, setFromDate] = React.useState('');
-    const [getAddress, setAddress] = React.useState('');
-    const [currentDate, setCurrentDate] = React.useState(new Date());
-    const [showFields, setShowFields] = useState(false); // Initialize the checkbox state
-    const pickupDate = moment(fromDate).format('DD-MM-YYYY hh:mm A');
 
     // Function to send mail
+    // const sendEmail = (e) => {
+    //     e.preventDefault();
+
+    //     if (getName !== "" && getPhone !== "" && getModal !== "" && getQuery !== "") {
+
+    //         // Send email when the checkbox is unchecked
+    //         emailjs.sendForm('service_1hpvog4', 'template_s10e1ai', form.current, 'tiozmsqpHyfvx7sdX')
+    //             .then((result) => {
+    //                 toast("Thank you for choosing The Piston Lounge.\n Give us some time, we will get back to you soon.");
+    //                 setTimeout(() => {
+    //                     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    //                     window.location.reload(false);
+    //                 }, 5000);
+    //             })
+    //             .catch((error) => {
+    //                 toast.error("Not able to book the service. Please check your connection or try again later.");
+    //                 console.log(error.text);
+    //             });
+    //     }
+    //     else {
+    //         toast.error("Please fill in all the fields.");
+    //     }
+    // }
     const sendEmail = (e) => {
         e.preventDefault();
 
         if (getName !== "" && getPhone !== "" && getModal !== "" && getQuery !== "") {
-
             // Send email when the checkbox is unchecked
             emailjs.sendForm('service_1hpvog4', 'template_s10e1ai', form.current, 'tiozmsqpHyfvx7sdX')
                 .then((result) => {
                     toast("Thank you for choosing The Piston Lounge.\n Give us some time, we will get back to you soon.");
                     setTimeout(() => {
-                        window.location.reload(false);
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                        // Clear the form fields
+                        form.current.reset();
+                        // Optionally, reset your state variables if you're using them
+                        setName("");
+                        setPhone("");
+                        setModal("");
+                        setQuery("");
                     }, 5000);
                 })
                 .catch((error) => {
@@ -130,51 +134,11 @@ const Home = () => {
         }
     }
 
+
     //   init Aos animation
     useEffect(() => {
         AOS.init();
     }, [])
-
-
-    // modal states
-    // states for modal - 1
-    const [open, setOpen] = React.useState(false);
-    const handleOpen1 = () => setOpen(true);
-    const handleClose1 = () => setOpen(false);
-
-    // states for modal - 2
-    const [open2, setOpen2] = React.useState(false);
-    const handleOpen2 = () => setOpen2(true);
-    const handleClose2 = () => setOpen2(false);
-
-    // states for modal - 3
-    const [open3, setOpen3] = React.useState(false);
-    const handleOpen3 = () => setOpen3(true);
-    const handleClose3 = () => setOpen3(false);
-
-
-    // states for modal - 4 Diwali Offer
-    const [open4, setOpen4] = React.useState(false);
-    const handleOpen4 = () => setOpen4(true);
-    const handleClose4 = () => setOpen4(false);
-
-    const handleFromDateChange = date => {
-        setFromDate(date);
-    };
-
-
-
-
-    // for getting the currnt date and time
-    useEffect(() => {
-        setCurrentDate(new Date());
-
-    }, []);
-
-    // funtoion to toggle the fields after checking the checkbox
-    const toggleFields = () => {
-        setShowFields(!showFields);
-    };
 
 
 
@@ -185,12 +149,10 @@ const Home = () => {
         // Hide the first section after 10 seconds
         const timeoutId = setTimeout(() => {
             setShowFirstSection(false);
-            handleOpen4();
         }, 5000);
 
         return () => {
             clearTimeout(timeoutId);
-
         };
     }, []);
 
@@ -374,14 +336,11 @@ const Home = () => {
 
                     <h1 id='about' style={{ textAlign: 'center', marginTop: '4rem', marginLeft: '1rem' }} data-aos="fade-down">About Us</h1>
 
-
                     {/* About section */}
                     <section className='quality'>
 
-
                         <div className='sec-1' data-aos="fade-up">
                             <p>
-
                                 <h5 style={{ fontWeight: 'bold' }}>Strategic Insight for Winning Campaigns: Wee Preside</h5>
 
                                 Wee Preside is a Passionate Political Consultancy who can conduct
@@ -390,7 +349,6 @@ const Home = () => {
                                 demographic research, organizing political events, and providing
                                 campaign assistance.
                             </p>
-
                         </div>
 
                         <div className='sec-2' data-aos="fade-up">
@@ -400,27 +358,30 @@ const Home = () => {
                     </section>
 
                     {/* founder section */}
-                    <h1 id='about' style={{ textAlign: 'center', marginTop: '4rem', marginLeft: '1rem' }} data-aos="fade-down">Our Founder's</h1>
+                    <h1 style={{ textAlign: 'center', marginTop: '4rem', marginLeft: '1rem' }} data-aos="fade-down">Our Founder's</h1>
 
-                    <section className='quality'>
+                    <section className='quality' style={{ margin: "0" }}>
 
-                        <div className='sec-2' data-aos="fade-right">
-                            <img src={about}></img>
+                        <div className='sec-2' data-aos="fade-right" style={{ height: "30rem", margin: "0" }}>
 
+                            <img src={founder} style={{ height: "70%", width: "70%" }}></img>
 
                             <div className='founderName'>
                                 <span>Akib Mulla</span>
                                 <span>Founder</span>
                             </div>
+
                         </div>
 
-                        <div className='sec-2' data-aos="fade-left">
-                            <img src={about}></img>
+                        <div className='sec-2' data-aos="fade-left" style={{ height: "30rem", margin: "0" }}>
+
+                            <img src={founder} style={{ height: "70%", width: "70%" }}></img>
 
                             <div className='founderName'>
                                 <span>Akib Mulla</span>
                                 <span>Founder</span>
                             </div>
+
                         </div>
 
                     </section>
@@ -871,7 +832,7 @@ const Home = () => {
 
                             <h1 id='book' data-aos="fade-down">Contact Us</h1>
 
-                            <form className='form' ref={form} onSubmit={sendEmail} >
+                            <form className='form' ref={form} onSubmit={sendEmail} style={{ marginTop: '3rem' }}>
 
                                 <div className='input'>
                                     <i className="fa-solid fa-user"></i>
@@ -927,30 +888,14 @@ const Home = () => {
                     </section>
 
                     {/* contact address Section */}
-                    <section>
+                    <section style={{ backgroundColor: 'black', marginTop: '1rem' }}>
 
                         <div className='form-container' data-aos="fade-up">
 
                             <div className='center-info' >
 
-                                {/* <div className='address'>
-
-                                    <h2>Address</h2>
-
-                                    <div className='details '>
-                                        <span><a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank" rel="noreferrer">Sr 231/2, New airport road, opp. Turtle wax car care studio, Clover Park, Viman Nagar, Pune, Maharashtra 411014</a></span>
-                                    </div>
-
-                                    <button className='address-btn'>
-                                        <a href='https://goo.gl/maps/D6UCGNWCpgEAThuC9' target="_blank" rel="noreferrer">Get Directions <i className="fa-solid fa-road"></i></a>
-                                    </button>
-
-                                </div> */}
-
                                 <div className='map'>
-
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.1430271143336!2d73.90498707473623!3d18.567589467737257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sThe%20Piston%20Bike%20Lounge!5e0!3m2!1sen!2sin!4v1693466323046!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
-
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120691.95186264327!2d72.95073472596198!3d19.036305363019153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c1a8f1f81c29%3A0x7ad553b109514985!2sGami%20Industrial%20Park%20-%20By%20Gami%20Group!5e0!3m2!1sen!2sin!4v1721395112480!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
                                 </div>
 
 
@@ -976,8 +921,6 @@ const Home = () => {
 
 
                                 </div>
-
-
 
                             </div>
                         </div>
@@ -1012,7 +955,7 @@ const Home = () => {
                 <Tooltip title="Chat with us on Whatsapp" placement="right">
                     <span className='whatsapp'>
                         <button>
-                            <a href="https://wa.me/message/FXCIZ4L4CNDJK1" target='_blank' rel="noreferrer">
+                            <a href="https://wa.me/qr/XFG7BRNLHIQZB1" target='_blank' rel="noreferrer">
                                 <i className="fa-brands fa-whatsapp"></i>
                             </a>
                         </button>
