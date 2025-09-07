@@ -7,7 +7,8 @@ import 'animate.css';
 import logo from '../images/logo.jpg'
 
 // quality 
-import founder from '../images/founder1.jpg'
+import founder from '../images/sujit.jpg'
+import cofounder from '../images/krishna.jpg'
 import about from '../images/about.jpg'
 
 // services
@@ -32,9 +33,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // MUI imports
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { Tooltip } from '@mui/material';
+import { Box, Grid, Card, CardContent, Typography, Avatar, TextField, Tooltip } from "@mui/material";
 
 
 
@@ -55,10 +54,35 @@ const style = {
     p: 4,
 };
 
+const founders = [
+    {
+        name: "Sujit Sahu",
+        role: "Founder",
+        img: founder,
+        desc: `Sujit Sahu is the founder of Weepreside, a political consultancy shaped over the past six years.
+           An engineer from Mumbai University and a passionate data enthusiast, he realized the power of
+           data-driven strategies in transforming elections and inspiring meaningful change. With experience
+           working alongside a wide spectrum of political parties and candidates across India, he strongly
+           believes that real progress begins at the grassroots level, by bridging leaders with the voices
+           and aspirations of the people.`
+    },
+    {
+        name: "Krishna Shep",
+        role: "Co-Founder",
+        img: cofounder,
+        desc: `Krishna Shep, the co-founder of Weepreside, brings more than five years of expertise in political
+           consultancy, focusing on electronic campaigning, election management, and booth-level planning.
+           He has successfully spearheaded data-driven, tech-powered campaigns across diverse constituencies,
+           excelling in voter profiling, digital outreach, real-time booth monitoring, and war room operations.
+           Recognized for blending innovation with grassroots execution, Krishna continues to shape effective,
+           results-oriented strategies that drive Weepreside’s modern approach to electioneering.`
+    }
+];
+
 
 const Home = () => {
 
-    // 👇️ scroll to top on page load
+    // scroll to top on page load
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, []);
@@ -82,29 +106,6 @@ const Home = () => {
     const [getQuery, setQuery] = React.useState('');
 
     // Function to send mail
-    // const sendEmail = (e) => {
-    //     e.preventDefault();
-
-    //     if (getName !== "" && getPhone !== "" && getModal !== "" && getQuery !== "") {
-
-    //         // Send email when the checkbox is unchecked
-    //         emailjs.sendForm('service_1hpvog4', 'template_s10e1ai', form.current, 'tiozmsqpHyfvx7sdX')
-    //             .then((result) => {
-    //                 toast("Thank you for choosing The Piston Lounge.\n Give us some time, we will get back to you soon.");
-    //                 setTimeout(() => {
-    //                     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    //                     window.location.reload(false);
-    //                 }, 5000);
-    //             })
-    //             .catch((error) => {
-    //                 toast.error("Not able to book the service. Please check your connection or try again later.");
-    //                 console.log(error.text);
-    //             });
-    //     }
-    //     else {
-    //         toast.error("Please fill in all the fields.");
-    //     }
-    // }
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -329,7 +330,7 @@ const Home = () => {
                             <span className='sub-heading'>Wee Stand for Transparency</span>
                             <span className='heading'><span style={{ color: 'skyblue' }}>W</span>ee <span style={{ color: 'skyblue' }}>P</span>reside</span>
                             <span className='role'>POLITICAL CONSULTANCY</span>
-                            <span className='slogan'>A lack of transparency results in distrust and a deep sense of insecurity</span>
+                            <span className='slogan'>A lack of transparency results in distrust and a deep sense of insecurity.</span>
                         </div>
 
                     </section>
@@ -357,39 +358,96 @@ const Home = () => {
 
                     </section>
 
-                    {/* founder section */}
-                    <h1 style={{ textAlign: 'center', marginTop: '4rem', marginLeft: '1rem' }} data-aos="fade-down">Our Founder's</h1>
+                    <Box sx={{ py: 8, px: { xs: 2, sm: 4, md: 8 } }}>
+                        <Typography
+                            variant="h3"
+                            align="center"
+                            gutterBottom
+                            sx={{
+                                fontWeight: "bold",
+                                mb: 6,
+                                letterSpacing: 1.5,
+                                color: "text.primary",
+                            }}
+                            initial={{ opacity: 0, y: -40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            Founders
+                        </Typography>
 
-                    <section className='quality' style={{ margin: "0" }}>
+                        <Grid container spacing={6} justifyContent="center">
+                            {founders.map((f, i) => (
+                                <Grid item xs={12} md={6} key={i}>
+                                    <Card
+                                        initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.8, delay: i * 0.2 }}
+                                        sx={{
+                                            height: "100%",
+                                            borderRadius: 4,
+                                            backgroundColor: "#fff",
+                                            boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            alignItems: "center",
+                                            textAlign: "center",
+                                            p: { xs: 3, sm: 4 },
+                                            "&:hover": {
+                                                transform: "translateY(-6px)",
+                                                boxShadow: "0 10px 28px rgba(0,0,0,0.12)",
+                                            },
+                                            transition: "all 0.3s ease-in-out",
+                                        }}
+                                    >
+                                        <Avatar
+                                            src={f.img}
+                                            alt={f.name}
+                                            sx={{
+                                                width: 150,
+                                                height: 150,
+                                                mb: 3,
+                                                border: "5px solid #f5f5f5",
+                                                boxShadow: "0 8px 18px rgba(0,0,0,0.15)",
+                                            }}
+                                        />
+                                        <CardContent sx={{ px: 0 }}>
+                                            <Typography
+                                                variant="h5"
+                                                sx={{ fontWeight: "bold", mb: 0.5, color: "text.primary" }}
+                                            >
+                                                {f.name}
+                                            </Typography>
+                                            <Typography
+                                                variant="subtitle1"
+                                                sx={{ color: "text.secondary", fontWeight: 500, mb: 2 }}
+                                            >
+                                                {f.role}
+                                            </Typography>
+                                            <Typography
+                                                variant="body1"
+                                                sx={{
+                                                    lineHeight: 1.8,
+                                                    textAlign: "justify",
+                                                    color: "text.primary",
+                                                    fontSize: "1rem",
+                                                    fontWeight: "bold"
+                                                }}
+                                            >
+                                                {f.desc}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Box>
 
-                        <div className='sec-2' data-aos="fade-right" style={{ height: "30rem", margin: "0" }}>
-
-                            <img src={founder} style={{ height: "70%", width: "70%" }}></img>
-
-                            <div className='founderName'>
-                                <span>Akib Mulla</span>
-                                <span>Founder</span>
-                            </div>
-
-                        </div>
-
-                        <div className='sec-2' data-aos="fade-left" style={{ height: "30rem", margin: "0" }}>
-
-                            <img src={founder} style={{ height: "70%", width: "70%" }}></img>
-
-                            <div className='founderName'>
-                                <span>Akib Mulla</span>
-                                <span>Founder</span>
-                            </div>
-
-                        </div>
-
-                    </section>
 
                     {/* Our sevices section */}
                     <section className='servicing-images' id='services'>
 
-                        <h1 style={{ textAlign: 'center', marginTop: '3rem' }} data-aos="fade-down">Our Services</h1>
+                        <h1 style={{ textAlign: 'center', marginTop: '3rem' }} data-aos="fade-down">Services</h1>
 
                         <div className='servicing'>
 
@@ -516,315 +574,6 @@ const Home = () => {
                     </section>
 
 
-                    {/* Service Information Section */}
-                    {/* <section className='service-container'>
-
-                        <div className='service-details' id='service-details'>
-
-                            <div className='service' id='service1' data-aos="fade-right">
-
-                                <h2>Digital Marketing</h2>
-
-                                <div className='information'>
-
-                                    <p id='p1'>
-                                        The world is transitioning to digital, that
-                                        much is true. Furthermore, it is crucial for you to be present where
-                                        your target audience is. So, it is crucial to engage online and
-                                        communicate with your voters. This is every political party's most
-                                        useful and strategic tool post-COVID.
-                                    </p>
-
-                                </div>
-                            </div>
-
-                            <div className='service' id='service2' data-aos="fade-left">
-                                <div className='img'>
-                                    <img src={engine} />
-                                </div>
-
-                                <h4>Engine Service</h4>
-
-                                <div className='information'>
-                                    <p id='p2'>
-                                        Regular bike engine service is essential for performance, safety, longevity, fuel efficiency, and resale value. Maintaining your engine ensures proper functionality, prevents issues, reduces the risk of accidents, prolongs its lifespan, saves fuel costs, and enhances resale prospects.
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div className='service' id='service3' data-aos="fade-right">
-                                <div className='img'>
-                                    <img src={wheel} />
-                                </div>
-
-                                <h4>Wheel Service</h4>
-
-                                <div className='information'>
-
-                                    <p id='p3'>
-                                        Regular bike wheel service ensures safety, performance, and longevity. It provides smoother rides, prevents accidents, and extends the lifespan of your bike components.it enhances comfort and aesthetics for an overall biking experience.
-
-                                    </p>
-
-                                </div>
-                            </div>
-
-                            <div className='service' id='service4' data-aos="fade-left">
-                                <div className='img'>
-                                    <img src={oil} />
-                                </div>
-
-                                <h4>Oil Service</h4>
-
-                                <div className='information'>
-
-                                    <p id='p4'>
-                                        Regular bike oil service ensures proper lubrication, cooling, and performance, extending engine life and preventing damage from contamination. Fresh oil reduces friction, increases horsepower, and improves fuel efficiency for a smooth ride.
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div className='service' id='service5' data-aos="fade-right">
-
-                                <h1>Digital Marketing</h1>
-
-                                <div className='information'>
-
-                                    <p id='p5'>
-                                        The world is transitioning to digital, that
-                                        much is true. Furthermore, it is crucial for you to be present where
-                                        your target audience is. So, it is crucial to engage online and
-                                        communicate with your voters. This is every political party's most
-                                        useful and strategic tool post-COVID.
-                                    </p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </section> */}
-
-
-                    {/* pricing section */}
-                    {/* <section id='pricing'>
-
-                        <div className='pricing-container'>
-
-                            <h1 data-aos="fade-down">Pricing</h1>
-
-                            <div className='listing' data-aos="fade-up">
-
-                                <div className='pricing' >
-                                    <h2>General Service <span>Without Oil</span></h2>
-
-                                    <span>Rs 399/-</span>
-
-                                    <span>Get to know more about this service </span>
-
-                                    <p onClick={handleOpen1}>Click here</p>
-
-                                    <SmoothScrollingLink to="booking" >
-                                        <button>Book Service</button>
-                                    </SmoothScrollingLink>
-
-                                    <Modal
-                                        open={open}
-                                        onClose={handleClose1}
-                                        aria-labelledby="modal-modal-title"
-                                        aria-describedby="modal-modal-description"
-                                    >
-                                        <Box sx={style}>
-
-                                            <Box sx={{
-                                                position: 'relative',
-                                                alignItems: 'center',
-                                                color: 'white',
-                                                left: '50%',
-                                                top: '-1rem',
-                                                fontSize: '1.5rem',
-                                                fontWeight: '900',
-                                                cursor: 'pointer'
-                                            }}
-                                                onClick={handleClose1}
-                                            >
-                                                <i className="fa-solid fa-xmark"></i>
-                                            </Box>
-
-                                            <div className='modal-header'>
-                                                <h2>General Service <span>Without Oil</span></h2>
-                                            </div>
-
-                                            <Box>
-                                                <ul className='serviceList'>
-                                                    <li> <span> Cleaning</span> </li>
-                                                    <li> <span> Chain Cleaning </span> </li>
-                                                    <li> <span> Chain Lubrication </span> </li>
-                                                    <li> <span> Brake Adjustment </span> </li>
-                                                    <li> <span> Brake Pad Inspection </span> </li>
-                                                    <li> <span> Brake Caliper Alignment </span> </li>
-                                                    <li> <span> Gear Shifting Adjustment </span> </li>
-                                                    <li> <span> Tire Inspection </span> </li>
-                                                    <li> <span> Headset Adjustment </span> </li>
-                                                    <li> <span> Cable Inspection </span> </li>
-                                                </ul>
-                                            </Box>
-
-                                        </Box>
-                                    </Modal>
-
-                                </div>
-
-                                <div className='pricing'>
-                                    <h2>General Service <span>With Oil</span></h2>
-
-                                    <span>Rs 699/-</span>
-
-                                    <span>Get to know more about this service </span>
-
-                                    <p onClick={handleOpen2}>Click here</p>
-
-
-                                    <SmoothScrollingLink to="booking" >
-                                        <button>Book Service</button>
-                                    </SmoothScrollingLink>
-
-                                    <Modal
-                                        open={open2}
-                                        onClose={handleClose2}
-                                        aria-labelledby="modal-modal-title"
-                                        aria-describedby="modal-modal-description"
-                                    >
-                                        <Box sx={style}>
-
-                                            <Box sx={{
-                                                position: 'relative',
-                                                alignItems: 'center',
-                                                color: 'white',
-                                                left: '50%',
-                                                top: '-1rem',
-                                                fontSize: '1.5rem',
-                                                fontWeight: '900',
-                                                cursor: 'pointer'
-                                            }}
-                                                onClick={handleClose2}
-                                            >
-                                                <i className="fa-solid fa-xmark"></i>
-                                            </Box>
-
-                                            <div className='modal-header'>
-                                                <h2>General Service <span>With Oil</span></h2>
-                                            </div>
-
-                                            <Box>
-                                                <span style={{ color: 'rgb(189, 183, 183)' }}>
-                                                    This service will cover all the tasks from general service without oil and adds oil-based component maintenance,such as
-                                                </span>
-
-                                                <ul className='serviceList'>
-                                                    <li> <span> Checking oil levels</span> </li>
-                                                    <li> <span> Draining and topping up the oil </span> </li>
-                                                    <li> <span> Suspension forks </span> </li>
-                                                    <li> <span> Shock absorbers </span> </li>
-                                                    <li> <span> Internal gear hubs </span> </li>
-                                                    <li> <span> Brake and Gear oil </span> </li>
-                                                </ul>
-                                            </Box>
-
-                                        </Box>
-                                    </Modal>
-                                </div>
-
-                                <div className='pricing'>
-                                    <h2>Special Service <span className='h2-span'>Customizable</span></h2>
-
-                                    <span>Rs 799/-</span>
-
-                                    <span>Get to know more about this service</span>
-
-                                    <p onClick={handleOpen3}>Click here</p>
-
-                                    <SmoothScrollingLink to="booking" >
-                                        <button>Book Service</button>
-                                    </SmoothScrollingLink>
-
-                                    <Modal
-                                        open={open3}
-                                        onClose={handleClose3}
-                                        aria-labelledby="modal-modal-title"
-                                        aria-describedby="modal-modal-description"
-                                    >
-                                        <Box sx={style}>
-
-                                            <Box sx={{
-                                                position: 'relative',
-                                                alignItems: 'center',
-                                                color: 'white',
-                                                left: '50%',
-                                                top: '-1rem',
-                                                fontSize: '1.5rem',
-                                                fontWeight: '900',
-                                                cursor: 'pointer'
-                                            }}
-                                                onClick={handleClose3}
-                                            >
-                                                <i className="fa-solid fa-xmark"></i>
-                                            </Box>
-
-                                            <div className='modal-header'>
-                                                <h2>Special Service <span>Customizable</span></h2>
-                                            </div>
-
-                                            <Box>
-                                                <span style={{ color: 'rgb(189, 183, 183)' }}>
-                                                    This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new.</strong>
-                                                </span>
-                                            </Box>
-
-                                        </Box>
-                                    </Modal>
-
-                                </div>
-
-                                <div className='pricing-information'>
-
-                                    <h2>AFFORDABLE PRICING PLANS</h2>
-
-                                    <p>We provide the best bike service, recommend the best products through an independent review process.</p>
-
-                                    <ul>
-                                        <li><span>SAME DAY SERVICE</span></li>
-                                        <li><span>CONVENIENT LOCATION</span></li>
-                                        <li><span>ONLINE APPOINTMENT</span></li>
-                                    </ul>
-
-                                </div>
-
-                                <div className='pricing-information'>
-
-                                    <h2>PICK-UP & DROP SERVICE</h2>
-
-                                    <p>
-                                        We provide a convenient service for both car and bike washing. You can choose either car or bike washing exclusively. We offer pickup and drop-off from any location beyond 5km with an <strong>additional charge of 100.</strong>
-                                        <br />
-                                        <ul>
-                                            <li>
-                                                <span>Enjoy a 7-10 day warranty on our services.</span>
-                                            </li>
-                                        </ul>
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </section> */}
-
-
                     {/* Contsct form Section */}
                     <section id='booking'>
 
@@ -944,23 +693,26 @@ const Home = () => {
                             <p className="footer-heart">
                                 Made with <g-emoji className="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
                                     <img className="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
-                                </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank' rel="noreferrer">Akib Mulla</a>
+                                </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank' rel="noreferrer noopener">Akib Mulla</a>
                             </p>
                         </div>
                     </div>
 
                 </section>
 
-                {/* WhatsAPP Button */}
-                <Tooltip title="Chat with us on Whatsapp" placement="right">
-                    <span className='whatsapp'>
-                        <button>
-                            <a href="https://wa.me/qr/XFG7BRNLHIQZB1" target='_blank' rel="noreferrer">
-                                <i className="fa-brands fa-whatsapp"></i>
-                            </a>
-                        </button>
-                    </span>
+                {/* WhatsApp Button */}
+                <Tooltip title="Chat with us on Whatsapp" placement="left">
+                    <a
+                        href="https://wa.me/qr/XFG7BRNLHIQZB1111"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="whatsapp"
+                        aria-label="Chat with us on WhatsApp"
+                    >
+                        <i className="fa-brands fa-whatsapp"></i>
+                    </a>
                 </Tooltip>
+
 
                 {/* Scroll Top button */}
                 <SmoothScrollingLink to="home" >
