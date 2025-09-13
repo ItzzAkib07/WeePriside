@@ -530,11 +530,11 @@ const Home = () => {
 
                         <h1 style={{ textAlign: 'center', marginTop: '3rem' }} data-aos="fade-down">Services</h1>
 
-                        <div className='servicing'>
+                        <div className='servicing' style={{marginTop: '3rem' }}>
 
                             <div className='section-1' >
 
-                                <p data-aos="zoom-in" style={{ padding: '0 .5rem' }}>
+                                <p data-aos="zoom-in" style={{ padding: '0 .5rem', fontWeight:"bold" }}>
                                     We are political aficionados that enjoy methodically planning the best
                                     strategies, conceptualising ground-breaking campaigns, working on
                                     crafting and delivering the best messages, and engaging with the
@@ -854,13 +854,47 @@ const Home = () => {
 
                         <div className='booking-container' data-aos="flip-up">
 
-                            <h1 id='book' data-aos="fade-down">Contact Us</h1>
+                            <div id='book' data-aos="fade-down">
+                                <Typography
+                                    variant="h1"
+                                    align="center"
+                                    gutterBottom
+                                    sx={{
+                                        fontWeight: "bold",
+                                        letterSpacing: 1.5,
+                                        color: "text.primary",
+                                        fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" }
+                                    }}
+                                    initial={{ opacity: 0, y: -40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                >
+                                    Get a callback !
+                                </Typography>
 
-                            <form className='form' ref={form} onSubmit={sendEmail} style={{ marginTop: '3rem' }}>
+                                <Typography
+                                    variant="h5"
+                                    align="center"
+                                    gutterBottom
+                                    sx={{
+                                        fontWeight: "bold",
+                                        letterSpacing: 1.5,
+                                        color: "text.primary",
+                                        fontSize: { xs: ".7rem", sm: "1rem", md: "1", lg: "1.5rem" }
+                                    }}
+                                    initial={{ opacity: 0, y: -40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                >
+                                    Share us the few details and we will get back to you in a moment.
+                                </Typography>
+                            </div>
+
+                            <form className='form' ref={form} onSubmit={sendEmail} style={{ marginTop: '1rem' }}>
 
                                 <div className='input'>
                                     <i className="fa-solid fa-user"></i>
-                                    <TextField id='name' name='name' label="Name" value={getName} variant="standard" autoComplete='off' onChange={(e) => setName(e.target.value)}
+                                    <TextField id='name' name='name' label="Enter your full name" value={getName} variant="standard" autoComplete='off' onChange={(e) => setName(e.target.value)}
                                         sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
                                         InputLabelProps={{
                                             sx: {
@@ -871,7 +905,7 @@ const Home = () => {
 
                                 <div className='input'>
                                     <i className="fa-solid fa-phone"></i>
-                                    <TextField id='phone' name='phone' label="Phone number" value={getPhone} variant="standard" autoComplete='off' onChange={(e) => setPhone(e.target.value)}
+                                    <TextField type='tel' id='phone' name='phone' label="Enter your phone number" value={getPhone} variant="standard" autoComplete='off' onChange={(e) => setPhone(e.target.value)}
                                         sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
                                         InputLabelProps={{
                                             sx: {
@@ -881,8 +915,8 @@ const Home = () => {
                                 </div>
 
                                 <div className='input'>
-                                    <i className="fa-solid fa-city"></i>
-                                    <TextField id='modal' name='modal' label="City" value={getModal} variant="standard" autoComplete='off' onChange={(e) => setModal(e.target.value)}
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <TextField type='email' id='modal' name='modal' label="Enter your work Email" value={getModal} variant="standard" autoComplete='off' onChange={(e) => setModal(e.target.value)}
                                         sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
                                         InputLabelProps={{
                                             sx: {
@@ -893,7 +927,6 @@ const Home = () => {
 
                                 <div className='input'>
                                     <i className="fa-solid fa-note-sticky"></i>
-                                    {/* <input type='text' id='details' name='details' placeholder='Tell us how we can help you?' autoComplete='off' onChange={(e) => setQuery(e.target.value)} /> */}
                                     <TextField id='details' name='details' label="Tell us how we can help you?" value={getQuery} variant="standard" autoComplete='off' onChange={(e) => setQuery(e.target.value)}
                                         sx={{ color: 'gray', width: '100%', borderBottom: '1px solid gray' }}
                                         InputLabelProps={{
@@ -936,9 +969,9 @@ const Home = () => {
                                         </div>
 
                                         <div className='time'>
-                                            <p>:&nbsp;&nbsp;<a href="mailto:admin@thepistonbikelounge.com">admin@weepreside.com</a></p>
-                                            <p>:&nbsp;&nbsp;<a href="mailto:tausifshaikh2505@gmail.com">krishna@gmail.com</a></p>
-                                            <p>: &nbsp;&nbsp;1234567890</p>
+                                            <p>:&nbsp;&nbsp;<a href="mailto:sahusujit55@gmail.com">sahusujit55@gmail.com</a></p>
+                                            <p>:&nbsp;&nbsp;<a href="mailto:krishna@gmail.com">krishna@gmail.com</a></p>
+                                            <p>: &nbsp;&nbsp;+91-7738166095, &nbsp;&nbsp;+91-9960055537</p>
                                         </div>
 
                                     </div>
@@ -960,7 +993,7 @@ const Home = () => {
 
                         <footer>
                             <span>
-                                &copy;2023, Wee Preside
+                                Copyright © 2025 Wee Preside - All Rights Reserved.
                             </span>
                         </footer>
 

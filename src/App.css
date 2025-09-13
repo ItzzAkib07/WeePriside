@@ -572,7 +572,7 @@ header li a:hover {
   margin-top: 1rem;
   margin-bottom: 2rem;
   overflow: hidden;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .quality .sec-1 {
@@ -875,7 +875,7 @@ h1:hover {
 
 .section-1 p {
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0 3rem;
 }
 
@@ -1306,6 +1306,8 @@ h1:hover {
 
 #booking {
   overflow: hidden;
+  background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+  padding: 1rem 0;
 }
 
 .booking-container {
