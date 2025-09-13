@@ -18,6 +18,17 @@ import campaign from '../images/campaion.jpg';
 import manifesto from '../images/manifesto.jpg';
 import marketing from '../images/digital.jpg';
 
+// client images 
+import mathre from '../images/mathre.jpg';
+import bhaskar from '../images/bhaskar.jpg';
+import kaur from '../images/kaur.jpg';
+import bains from '../images/bains.jpg';
+import aap_logo from '../images/aap_logo.jpg';
+import ncp_logo from '../images/ncp_logo.jpg';
+import bcg_logo from '../images/bcg_logo.png';
+import adani_logo from '../images/adani_logo.png';
+
+
 
 // booking or contact
 import emailjs from '@emailjs/browser';
@@ -78,6 +89,67 @@ const founders = [
            results-oriented strategies that drive Weepreside’s modern approach to electioneering.`
     }
 ];
+
+const clients = [
+    {
+        name: "Suresh Gopinath Mhatre",
+        constituency: "Bhiwandi",
+        state: "Maharashtra",
+        party: "NCP-SP",
+        img: mathre,
+    },
+    {
+        name: "Bhaskar Bhagre",
+        constituency: "Dindori",
+        state: "Maharashtra",
+        party: "NCP-SP",
+        img: bhaskar,
+    },
+    {
+        name: "Madam Praneet Kaur",
+        constituency: "Patiala",
+        state: "Punjab",
+        party: "BJP",
+        img: kaur,
+    },
+    {
+        name: "Harjot Singh Bains",
+        constituency: "Anandpur Sahib",
+        state: "Punjab",
+        party: "AAP",
+        img: bains,
+    },
+];
+
+const clientswork = [
+    {
+        title: "Delhi MCD Election (AAP Party)",
+        points: [
+            "Managed election campaign for 110 seats",
+            "Conducted survey for candidate selection",
+            "Achieved 78% win rate (86 seats won)"
+        ],
+        logos: [aap_logo],   // 👈 wrap single logo in array
+    },
+    {
+        title: "NCP Party Internal Survey (Chinchwad AE By poll 2023)",
+        points: [
+            "Conducted internal survey to inform candidate selection",
+            "Contributed to data-driven decision making"
+        ],
+        logos: [ncp_logo],   // 👈 wrap single logo in array
+    },
+    {
+        title: "Research & Study (Adani Firm & Boston Consulting Group)",
+        points: [
+            "Collaborated on Dharavi Redevelopment plan research",
+            "Contributed to data analysis and strategic recommendation"
+        ],
+        logos: [adani_logo, bcg_logo]   // already array ✅
+    }
+];
+
+
 
 
 const Home = () => {
@@ -358,7 +430,8 @@ const Home = () => {
 
                     </section>
 
-                    <Box sx={{ py: 8, px: { xs: 2, sm: 4, md: 8 } }}>
+                    {/* Founders section */}
+                    <Box sx={{ py: 2, px: { xs: 2, sm: 4, md: 8 }, mb: "2rem" }}>
                         <Typography
                             variant="h3"
                             align="center"
@@ -368,6 +441,7 @@ const Home = () => {
                                 mb: 6,
                                 letterSpacing: 1.5,
                                 color: "text.primary",
+                                fontSize: { xs: "1.75rem", sm: "2rem", md: "2.5rem", lg: "3rem" }
                             }}
                             initial={{ opacity: 0, y: -40 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -376,15 +450,15 @@ const Home = () => {
                             Founders
                         </Typography>
 
-                        <Grid container spacing={6} justifyContent="center">
+                        <Grid container spacing={6} justifyContent="center" alignItems="stretch">
                             {founders.map((f, i) => (
-                                <Grid item xs={12} md={6} key={i}>
+                                <Grid item xs={12} md={6} key={i} sx={{ display: "flex" }}>
                                     <Card
                                         initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         transition={{ duration: 0.8, delay: i * 0.2 }}
                                         sx={{
-                                            height: "100%",
+                                            flex: 1, // ensures equal stretch
                                             borderRadius: 4,
                                             backgroundColor: "#fff",
                                             boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
@@ -411,7 +485,15 @@ const Home = () => {
                                                 boxShadow: "0 8px 18px rgba(0,0,0,0.15)",
                                             }}
                                         />
-                                        <CardContent sx={{ px: 0 }}>
+                                        <CardContent
+                                            sx={{
+                                                flexGrow: 1, // makes content stretch evenly
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                justifyContent: "space-between",
+                                                px: 0,
+                                            }}
+                                        >
                                             <Typography
                                                 variant="h5"
                                                 sx={{ fontWeight: "bold", mb: 0.5, color: "text.primary" }}
@@ -427,11 +509,11 @@ const Home = () => {
                                             <Typography
                                                 variant="body1"
                                                 sx={{
-                                                    lineHeight: 1.8,
+                                                    lineHeight: 1.6,
                                                     textAlign: "justify",
                                                     color: "text.primary",
                                                     fontSize: "1rem",
-                                                    fontWeight: "bold"
+                                                    fontWeight: "bold",
                                                 }}
                                             >
                                                 {f.desc}
@@ -443,8 +525,7 @@ const Home = () => {
                         </Grid>
                     </Box>
 
-
-                    {/* Our sevices section */}
+                    {/* sevices section */}
                     <section className='servicing-images' id='services'>
 
                         <h1 style={{ textAlign: 'center', marginTop: '3rem' }} data-aos="fade-down">Services</h1>
@@ -573,8 +654,202 @@ const Home = () => {
 
                     </section>
 
+                    {/* Client section */}
+                    <Box sx={{ py: 8, px: { xs: 2, sm: 4, md: 8 } }}>
+                        <Typography
+                            variant="h3"
+                            align="center"
+                            gutterBottom
+                            sx={{
+                                fontWeight: "bold",
+                                mb: 6,
+                                letterSpacing: 1.5,
+                                color: "text.primary",
+                                fontSize: { xs: "1.75rem", sm: "2rem", md: "2.5rem", lg: "3rem" }
+                            }}
+                            initial={{ opacity: 0, y: -40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            Our Notable Individual Clients for LS 2024
+                        </Typography>
 
-                    {/* Contsct form Section */}
+                        <Grid container spacing={6} justifyContent="center">
+                            {clients.map((c, i) => (
+                                <Grid item xs={12} sm={6} md={3} key={i}>
+                                    <Card
+                                        initial={{ opacity: 0, y: 40 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, delay: i * 0.2 }}
+                                        sx={{
+                                            borderRadius: 4,
+                                            backgroundColor: "#fff",
+                                            boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
+                                            textAlign: "center",
+                                            p: { xs: 2, sm: 3 },
+                                            height: "100%",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            alignItems: "center",
+                                            "&:hover": {
+                                                transform: "translateY(-6px)",
+                                                boxShadow: "0 10px 28px rgba(0,0,0,0.12)",
+                                            },
+                                            transition: "all 0.3s ease-in-out",
+                                        }}
+                                    >
+                                        <Avatar
+                                            src={c.img}
+                                            alt={c.name}
+                                            sx={{
+                                                width: 130,
+                                                height: 130,
+                                                mb: 2,
+                                                border: "4px solid #f5f5f5",
+                                                boxShadow: "0 6px 16px rgba(0,0,0,0.12)",
+                                            }}
+                                        />
+                                        <CardContent sx={{ px: 0 }}>
+                                            <Typography
+                                                variant="h6"
+                                                sx={{ fontWeight: "bold", mb: 1, color: "text.primary" }}
+                                            >
+                                                {c.name}
+                                            </Typography>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{ color: "text.secondary", fontWeight: 500 }}
+                                            >
+                                                {c.constituency}
+                                            </Typography>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{ color: "text.secondary", mb: 1 }}
+                                            >
+                                                {c.state}
+                                            </Typography>
+                                            <Typography
+                                                variant="subtitle1"
+                                                sx={{ fontWeight: "bold", color: "primary.main" }}
+                                            >
+                                                {c.party}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Box>
+
+                    {/* Clients Work section */}
+                    <Box sx={{ py: 8, px: { xs: 2, sm: 4, md: 8 } }}>
+                        <Typography
+                            variant="h3"
+                            align="center"
+                            gutterBottom
+                            sx={{
+                                fontWeight: "bold",
+                                mb: 6,
+                                letterSpacing: 1.5,
+                                color: "text.primary",
+                                fontSize: { xs: "1.75rem", sm: "2rem", md: "2.5rem", lg: "3rem" }
+                            }}
+                            initial={{ opacity: 0, y: -40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            Our Notable Client Work
+                        </Typography>
+
+                        <Grid container spacing={6} justifyContent="center">
+                            {clientswork.map((c, i) => (
+                                <Grid item xs={12} md={10} key={i}>
+                                    <Card
+                                        initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.8, delay: i * 0.2 }}
+                                        sx={{
+                                            borderRadius: 3,
+                                            backgroundColor: "#fff",
+                                            boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
+                                            display: "flex",
+                                            flexDirection: { xs: "column", sm: "row" }, // responsive row/col
+                                            justifyContent: "space-between",
+                                            alignItems: { xs: "center", sm: "flex-start" },
+                                            p: { xs: 3, sm: 4 },
+                                            "&:hover": {
+                                                transform: "translateY(-6px)",
+                                                boxShadow: "0 10px 28px rgba(0,0,0,0.12)",
+                                            },
+                                            transition: "all 0.3s ease-in-out",
+                                        }}
+                                    >
+                                        {/* Left Side - Text */}
+                                        <CardContent
+                                            sx={{
+                                                flex: 1,
+                                                textAlign: { xs: "center", sm: "left" },
+                                            }}
+                                        >
+                                            <Typography
+                                                variant="h6"
+                                                sx={{ fontWeight: "bold", mb: 1, color: "text.primary" }}
+                                            >
+                                                {c.title}
+                                            </Typography>
+                                            {c.points.map((point, idx) => (
+                                                <Typography
+                                                    key={idx}
+                                                    variant="body1"
+                                                    sx={{
+                                                        color: "text.secondary",
+                                                        mb: 1,
+                                                        fontSize: "0.95rem",
+                                                        lineHeight: 1.6,
+                                                    }}
+                                                >
+                                                    • {point}
+                                                </Typography>
+                                            ))}
+                                        </CardContent>
+
+                                        {/* Right Side - Logos */}
+                                        <Box
+                                            sx={{
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                justifyContent: 'center',
+                                                alignItems: 'center',
+                                                gap: 2,
+                                                mt: { xs: 3, sm: 0 },
+                                                minWidth: { sm: 120 },
+                                            }}
+                                        >
+                                            {c.logos.map((logo, idx) => (
+                                                <Box
+                                                    key={idx}
+                                                    component="img"
+                                                    src={logo}
+                                                    alt="client-logo"
+                                                    sx={{
+                                                        width: 80,
+                                                        height: "auto",
+                                                        objectFit: "contain",
+                                                        display: 'flex',
+                                                        justifyContent: 'center',
+                                                        alignItems: 'center'
+                                                    }}
+                                                />
+                                            ))}
+                                        </Box>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Box>
+
+
+                    {/* Contact Section */}
                     <section id='booking'>
 
                         <div className='booking-container' data-aos="flip-up">
@@ -703,7 +978,7 @@ const Home = () => {
                 {/* WhatsApp Button */}
                 <Tooltip title="Chat with us on Whatsapp" placement="left">
                     <a
-                        href="https://wa.me/qr/XFG7BRNLHIQZB1111"
+                        href="https://wa.me/qr/XFG7BRNLHIQZB1"
                         target="_blank"
                         rel="noreferrer noopener"
                         className="whatsapp"
@@ -718,9 +993,9 @@ const Home = () => {
                 <SmoothScrollingLink to="home" >
                     <Tooltip title="Scroll to Top" placement="left">
                         <span className='scroll'>
-                            <button>
-                                <i className="fa-solid fa-jet-fighter-up"></i>
-                            </button>
+                            {/* <button> */}
+                            <i className="fa-solid fa-arrow-up"></i>
+                            {/* </button> */}
                         </span>
                     </Tooltip>
                 </SmoothScrollingLink>
